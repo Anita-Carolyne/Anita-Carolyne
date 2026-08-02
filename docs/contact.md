@@ -17,9 +17,9 @@ Let's connect and find what best works for you!
 
 | | |
 |---|---|
-| :material-email: **Email** | [(anitaskyelynn@gmail.com)] |
-| :fontawesome-brands-github: **GitHub** | [(https://github.com/Anita-Carolyne)] |
-| :fontawesome-brands-linkedin: **LinkedIn** | [(https://linkedin.com/in/anita-carolyne-orera/)] |
+| :material-email: **Email** | [_Send me an email_](anitaskyelynn@gmail.com) |
+| :fontawesome-brands-github: **GitHub** | [_Find me on Github_](https://github.com/Anita-Carolyne) |
+| :fontawesome-brands-linkedin: **LinkedIn** | [_Let's chat on LinkedIn_](https://linkedin.com/in/anita-carolyne-orera/) |
 
 ---
 
