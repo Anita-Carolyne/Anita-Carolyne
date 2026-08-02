@@ -11,15 +11,15 @@ CHECKLIST
 # Contact
 
 Let's connect and find what best works for you!
-Feel free to reach out through any of the channels below.
+> Feel free to reach out through any of the channels below.
 
 ---
 
 | | |
 |---|---|
-| :material-email: **Email** | anitaskyelynn@gmail.com |
-| :fontawesome-brands-github: **GitHub** | https://github.com/Anita-Carolyne |
-| :fontawesome-brands-linkedin: **LinkedIn** | https://linkedin.com/in/anita-carolyne-orera/ |
+| :material-email: **Email** | [(anitaskyelynn@gmail.com)] |
+| :fontawesome-brands-github: **GitHub** | [(https://github.com/Anita-Carolyne)] |
+| :fontawesome-brands-linkedin: **LinkedIn** | [(https://linkedin.com/in/anita-carolyne-orera/)] |
 
 ---
 
