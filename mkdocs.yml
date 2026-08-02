@@ -1,17 +1,8 @@
-# ============================================================
-# PORTFOLIO CONFIGURATION
-# This file is in the YAML format and is very sensitive to 
-# spaces. Ensure to match the indentation level and spacing
-# of new items with existing ones
-
-# Edit all lines marked [YOUR ...] to customize your site
-# ============================================================
-
-site_name: "[YOUR NAME] - Geospatial Portfolio"
-site_description: "Portfolio of [YOUR NAME] — GIS, Remote Sensing, and Spatial Data Science"
-site_author: "[YOUR NAME]"
-# After your site is live, uncomment and set this to your actual GitHub Pages URL:
-#site_url: "https://your-username.github.io/your-repo-name"
+site_name: "ANITA CAROLYNE - Geospatial Analyst"
+site_description: "Bridging the data gap using Geospatial solutions"
+site_author: "Anita Carolyne Orera"
+# Uncomment after site is set to live:
+#site_url: "https://Anita-Carolyne.github.io/Anita-Carolyne"
 
 theme:
   name: material
@@ -25,15 +16,15 @@ theme:
     # the 'default' (light) and 'slate' (dark) schemes.
     # Available colors: red, pink, purple, deep purple, indigo, blue, light blue,
     # cyan, teal, green, light green, lime, yellow, amber, orange, deep orange
-    - scheme: default            # Light mode
-      primary: indigo
-      accent: blue
+    - scheme: default            # Dark mode
+      primary: blue
+      accent: deep purple
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate              # Dark mode
-      primary: indigo
-      accent: blue
+      primary: blue
+      accent: deep purple
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -59,16 +50,16 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-copyright: "Copyright &copy; [YOUR NAME]"
+copyright: "Copyright &copy; Anita Carolyne Orera"
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/[YOUR-GITHUB-USERNAME]
+      link: https://github.com/Anita-Carolyne
     - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/[YOUR-LINKEDIN-USERNAME]
+      link: https://linkedin.com/in/anita-carolyne-orera/
     - icon: material/email
-      link: mailto:[YOUR-EMAIL-ADDRESS]
+      link: mailto:anitaskyelynn@gmail.com
 
 
 plugins:
