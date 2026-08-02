@@ -5,13 +5,9 @@ hide:
 ---
 <!--
 CHECKLIST FOR THIS PAGE:
-- [ ] Replace each [YOUR ...] placeholder with your actual information
-- [ ] Add or remove job entries as needed (copy the format of an existing entry)
-- [ ] Add or remove education entries
-- [ ] Add or remove certifications
 -->
 
-# Experience & Education
+# Professional Experience & Education
 
 ## Work Experience
 
@@ -19,23 +15,56 @@ CHECKLIST FOR THIS PAGE:
 
 <div class="timeline-entry" markdown>
 
-### [YOUR JOB TITLE] — [YOUR COMPANY / ORGANIZATION]
-*[Month Year] – [Month Year or Present] | [City, Country]*
+### GEOSPATIAL ANALYST — Ecospace Services Ltd
+*February 2025 – Present | Hybrid, Nairobi. Kenya*
 
-- [Describe your main responsibility or achievement in one sentence]
-- [Describe another key task, project, or result]
-- [Describe a tool, method, or skill you applied regularly]
+- Developed a Google Earth Engine (GEE) application and interactive user interface (UI) to automate sugarcane acreage estimation and key index metrices across western catchment counties.
+- Supported cross-functional teams and clients through end-to-end data pipelines, custom PostgreSQL databases, and comprehensive GIS/remote sensing training programs.
+- Applied GEE JavaScript scripting, R automation, and spatial data analysis to transform complex multi-source spectral (drone + satellite) imagery into actionable decision-support tools.
 
 </div>
 
 <div class="timeline-entry" markdown>
 
-### [YOUR PREVIOUS JOB TITLE] — [YOUR PREVIOUS COMPANY]
-*[Month Year] – [Month Year] | [City, Country]*
+### GIS & RS ANALYST - Research and Development — RCMRD
+*August 2023 – February 2024 | Onsite, Nairobi, Kenya*
 
-- [Describe your main responsibility or achievement in one sentence]
-- [Describe another key task, project, or result]
-- [Describe a tool, method, or skill you applied regularly]
+- Spearheaded invasive species mapping for the Geo-mountains Small Grants project, utilizing R and the biomod2 ensemble modeling framework to predict species spread with over 70% accuracy.
+- Conducted long-term spatial analysis across key African ecosystems for the GMES & Africa initiative, including mapping 90% of targeted Somalia wetlands and tracking 30-year land cover trends around Mt. Kenya.
+- Applied R statistical modeling, Python (Jupyter Notebooks), Google Earth Engine, and Git version control to process multi-temporal remote sensing products and maintain collaborative code repositories.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+### UX Researcher, Database designer - Ecospace Services Ltd
+*January 2022 – April 2023 | Remote, Nairobi, Kenya*
+
+- Working as the lead database designer, I enhanced and improved the database structure of the previously developed mobile and web applications under set timelines.
+- Successfully conducted research on user needs informing 80% of the preliminary workflow and structure of the apps involved.
+- Accurately modelled 90% of the entire working of the proposed database system using PostGIS and PostgreSQL.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+### GEOSPATIAL SYSTEMS ATTACHEE - Research and Development — JKUAT
+*November 2021 – April 2022 | Onsite, Kiambu, Kenya*
+
+- Spearheaded the development of geospatial applications for a Small-scale crop-mapping project using machine learning approaches as the GIS student project lead.
+- Successfully guided and coordinated the team to design and develop User Interface screens for the mobile and web application solving more than 60% of the listed gaps and problems faced.
+- Obtained and manipulated several spectral indices and the relevant values using Google Earth Engine and R programming language aside from handling communication between the associated parties.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+### GEOSPATIAL SYSTEMS ATTACHEE - Orbital Africa
+*February 2021 – April 2021 | Onsite, Nairobi, Kenya*
+
+- Achieved simplification of data acquisition, automation of data collection, cleaning, analysis, evaluation and visualization to enhance the data mining process using R programming language.
+- Records Management: Systematically maintained and structured information records from the automated web scraping processes.
+- Automated scraping: Maximized geospatial data capture using ODK collect and performed online data retrieval through web scraping with R, fully automating what was previously a manual data-entry process.
 
 </div>
 
@@ -45,22 +74,15 @@ CHECKLIST FOR THIS PAGE:
 
 ## Education
 
-### [YOUR DEGREE] in [YOUR FIELD]
-**[YOUR UNIVERSITY]** | *[Year of Graduation]*
-
-[Optional: one sentence about your thesis, specialization, or coursework if relevant]
-
----
-
-### [YOUR PREVIOUS DEGREE] in [YOUR FIELD]
-**[YOUR UNIVERSITY]** | *[Year of Graduation]*
+### BSc. GEGIS (Geomatics Engineering and Geospatial Information Systems)
+**JOMO KENYATTA UNIVERSITY OF AGRICULTURE & TECHNOLOGY** | *2023*
+- 2<sup>nd</sup> class Honors (Upper Division)
+> The course encompasses aspects of Data analysis, Cartography, Remote Sensing, Digital Mapping, and ETL processes,
 
 ---
+
 
 ## Certifications
 
-- [Certification Name] — [Issuing Organization], [Year]
-- [Certification Name] — [Issuing Organization], [Year]
-- [Certification Name] — [Issuing Organization], [Year]
-
-*Examples: QGIS Certification, PMP Certification, AWS Certified Cloud Practitioner*
+- AI Expert Annotator — Micro1, 2025
+- AI Career Essentials (AiCE) — ALX Africa, 2024
