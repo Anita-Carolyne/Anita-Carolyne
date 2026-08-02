@@ -17,9 +17,9 @@ Feel free to reach out through any of the channels below.
 
 | | |
 |---|---|
-| :material-email: **Email** | [your-email@example.com](mailto:anitaskyelynn@gmail.com) |
-| :fontawesome-brands-github: **GitHub** | [github.com/[YOUR-GITHUB-USERNAME]](https://github.com/Anita-Carolyne) |
-| :fontawesome-brands-linkedin: **LinkedIn** | [linkedin.com/in/[YOUR-LINKEDIN-USERNAME]](https://linkedin.com/in/anita-carolyne-orera/) |
+| :material-email: **Email** | anitaskyelynn@gmail.com |
+| :fontawesome-brands-github: **GitHub** | https://github.com/Anita-Carolyne |
+| :fontawesome-brands-linkedin: **LinkedIn** | https://linkedin.com/in/anita-carolyne-orera/ |
 
 ---
 
