@@ -1,8 +1,7 @@
 site_name: "ANITA CAROLYNE - Geospatial Analyst"
 site_description: "Bridging the data gap using Geospatial solutions"
 site_author: "Anita Carolyne Orera"
-# Uncomment after site is set to live:
-#site_url: "https://Anita-Carolyne.github.io/Anita-Carolyne"
+site_url: "https://Anita-Carolyne.github.io/Anita-Carolyne"
 
 theme:
   name: material
@@ -17,14 +16,14 @@ theme:
     # Available colors: red, pink, purple, deep purple, indigo, blue, light blue,
     # cyan, teal, green, light green, lime, yellow, amber, orange, deep orange
     - scheme: default            # Dark mode
-      primary: blue
-      accent: deep purple
+      primary: deep purple
+      accent: blue
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate              # Dark mode
-      primary: blue
-      accent: deep purple
+      primary: deep purple
+      accent: green
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -37,7 +36,8 @@ theme:
     code: Roboto Mono
 
 extra_css:
-  - assets/css/extra.css
+  - assets/css/extra.css?v=2
+  - assets/css/style.css
 
 markdown_extensions:
   - md_in_html        # Allows Markdown inside HTML blocks (used for project cards)
