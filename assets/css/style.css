@@ -1,0 +1,16 @@
+/* True Black Background + White Body Text for Slate (Dark) Mode */
+[data-md-color-scheme="slate"] {
+  /* Main Background */
+  --md-default-bg-color:             #000000;
+  --md-default-bg-color--light:      #121212;
+  --md-default-bg-color--lighter:    #1e1e1e;
+
+  /* High-Contrast White Text */
+  --md-default-fg-color:             #ffffff;
+  --md-default-fg-color--light:      #e0e0e0;
+  --md-default-fg-color--lighter:    #cccccc;
+
+  /* Header & Navigation Backgrounds */
+  --md-primary-bg-color:             #000000;
+  --md-sidebar-bg-color:             #000000;
+}
