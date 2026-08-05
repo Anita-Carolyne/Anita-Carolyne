@@ -60,43 +60,45 @@ I am passionate about applying GeoAI techniques to _real-world challenges_ in la
 
     ---
 
-    - Google Earth Engine, QGIS, ArcGIS Pro, 
-    - ERDAS
-    - Multispectral image analysis
+    - :simple-googleearth: Google Earth Engine
+    - :simple-qgis: QGIS
+    - :material-map-marker-path: ArcGIS Pro
+    - :material-satellite-variant: ERDAS Imagine
+    - :material-image-filter-hdr: Multispectral image analysis
 
--   :material-code-braces:{ .lg .middle } **Programming & Machine Learning**
+-   :material-code-braces:{ .lg .middle } **Programming & Scripting**
 
     ---
 
-    - R — sf, terra, ggplot2
-    - Python — GeoPandas, NumPy, Pandas, Matplotlib
-    - JavaScript — Leaflet
-    - SQL, PostgreSQL + PostGIS
+    - :simple-r: **R** — sf, terra, ggplot2
+    - :simple-python: **Python** — GeoPandas, NumPy, Pandas, Matplotlib
+    - :simple-javascript: **JavaScript** — Leaflet
+    - :simple-postgresql: **SQL** — PostgreSQL + PostGIS
 
 -   :material-star-four-points:{ .lg .middle } **Machine Learning & GeoAI**
 
     ---
 
-    - Supervised classification — Random Forest, SVM, XGBoost
-    - Deep learning for image segmentation — U-Net, SAM
-    - scikit-learn, PyTorch, TensorFlow
-    - Object detection in satellite imagery
+    - :simple-scikitlearn: **scikit-learn** — Random Forest, SVM, XGBoost
+    - :simple-pytorch: **PyTorch** & :simple-tensorflow: **TensorFlow**
+    - :material-brain: Deep learning — U-Net, SAM
+    - :material-radar: Object detection in satellite imagery
 
--   :material-earth:{ .lg .middle } **Web Mapping, Data Analysis & Visualization**
+-   :material-earth:{ .lg .middle } **Web Mapping & Visualization**
 
     ---
 
-    - Leaflet.js, Folium, MapLibre GL JS
-    - Data formats — GeoTIFF, NetCDF
-    - Streamlit for data-driven web apps
+    - :simple-leaflet: **Leaflet.js** & **Folium**
+    - :simple-streamlit: **Streamlit** for data apps
+    - :material-code-json: Data formats — GeoTIFF, NetCDF, GeoJSON
 
 -   :material-database:{ .lg .middle } **Data & Cloud**
 
     ---
 
-    - PostgreSQL + PostGIS
-    - Cloud storage: AWS S3, Google Cloud Storage
-    - Data formats: GeoJSON, GeoTIFF, NetCDF
+    - :simple-postgresql: **PostgreSQL** + **PostGIS**
+    - :simple-amazons3: **AWS S3**
+    - :simple-googlecloud: **Google Cloud Storage**
 </div>
 
 
