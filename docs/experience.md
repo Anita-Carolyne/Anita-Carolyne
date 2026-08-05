@@ -15,8 +15,8 @@ CHECKLIST FOR THIS PAGE:
 
 <div class="timeline-entry" markdown>
 
-### GEOSPATIAL ANALYST — Ecospace Services Ltd
-*February 2025 – Present | Hybrid, Nairobi. Kenya*
+### GEOSPATIAL ANALYST — <em>Ecospace Services Ltd</em>
+*February 2025 – Present | <strong>Hybrid</strong>, Nairobi. Kenya*
 
 - Developed a Google Earth Engine (GEE) application and interactive user interface (UI) to automate sugarcane acreage estimation and key index metrices across western catchment counties.
 - Supported cross-functional teams and clients through end-to-end data pipelines, custom PostgreSQL databases, and comprehensive GIS/remote sensing training programs.
@@ -26,8 +26,8 @@ CHECKLIST FOR THIS PAGE:
 
 <div class="timeline-entry" markdown>
 
-### GIS & RS ANALYST - Research and Development — RCMRD
-*August 2023 – February 2024 | Onsite, Nairobi, Kenya*
+### GIS & RS ANALYST - Research and Development — <em>RCMRD</em>
+*August 2023 – February 2024 | <strong>Onsite</strong>, Nairobi, Kenya*
 
 - Spearheaded invasive species mapping for the Geo-mountains Small Grants project, utilizing R and the biomod2 ensemble modeling framework to predict species spread with over 70% accuracy.
 - Conducted long-term spatial analysis across key African ecosystems for the GMES & Africa initiative, including mapping 90% of targeted Somalia wetlands and tracking 30-year land cover trends around Mt. Kenya.
@@ -37,8 +37,8 @@ CHECKLIST FOR THIS PAGE:
 
 <div class="timeline-entry" markdown>
 
-### UX Researcher, Database designer - Ecospace Services Ltd
-*January 2022 – April 2023 | Remote, Nairobi, Kenya*
+### UX Researcher, Database designer - <em>Ecospace Services Ltd</em>
+*January 2022 – April 2023 | <strong>Remote</strong>, Nairobi, Kenya*
 
 - Working as the lead database designer, I enhanced and improved the database structure of the previously developed mobile and web applications under set timelines.
 - Successfully conducted research on user needs informing 80% of the preliminary workflow and structure of the apps involved.
@@ -48,8 +48,8 @@ CHECKLIST FOR THIS PAGE:
 
 <div class="timeline-entry" markdown>
 
-### GEOSPATIAL SYSTEMS ATTACHEE - Research and Development — JKUAT
-*November 2021 – April 2022 | Onsite, Kiambu, Kenya*
+### GEOSPATIAL SYSTEMS ATTACHEE - Research and Development — <em>JKUAT</em>
+*November 2021 – April 2022 | <strong>Onsite</strong>, Kiambu, Kenya*
 
 - Spearheaded the development of geospatial applications for a Small-scale crop-mapping project using machine learning approaches as the GIS student project lead.
 - Successfully guided and coordinated the team to design and develop User Interface screens for the mobile and web application solving more than 60% of the listed gaps and problems faced.
@@ -59,8 +59,8 @@ CHECKLIST FOR THIS PAGE:
 
 <div class="timeline-entry" markdown>
 
-### GEOSPATIAL SYSTEMS ATTACHEE - Orbital Africa
-*February 2021 – April 2021 | Onsite, Nairobi, Kenya*
+### GEOSPATIAL SYSTEMS ATTACHEE - <em>Orbital Africa</em>
+*February 2021 – April 2021 | <strong>Onsite</strong>, Nairobi, Kenya*
 
 - Achieved simplification of data acquisition, automation of data collection, cleaning, analysis, evaluation and visualization to enhance the data mining process using R programming language.
 - Records Management: Systematically maintained and structured information records from the automated web scraping processes.
