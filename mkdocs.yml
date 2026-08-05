@@ -1,4 +1,4 @@
-site_name: "Earth observation, GeoAI & Analytics <i>with Anita</i>"
+site_name: "<span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span>"
 site_description: "Bridging the data gap using Geospatial solutions"
 site_author: "Anita Carolyne Orera"
 site_url: "https://anita-carolyne.github.io/Anita-Carolyne"
@@ -15,18 +15,18 @@ theme:
     # the 'default' (light) and 'slate' (dark) schemes.
     # Available colors: red, pink, purple, deep purple, indigo, blue, light blue,
     # cyan, teal, green, light green, lime, yellow, amber, orange, deep orange
-    - scheme: default            # Dark mode
-      primary: deep purple
-      accent: blue
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate              # Dark mode
+    - scheme: slate            # Dark mode
       primary: deep purple
       accent: green
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+    - scheme: default              # Light mode
+      primary: deep purple
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
   features:
     - navigation.tabs            # Top-level nav items shown as horizontal tabs
     - navigation.top             # Back-to-top button when scrolling up

@@ -225,3 +225,37 @@
   from, to { border-color: transparent; }
   50%      { border-color: #2196f3; }
 }
+
+/* Custom Header Site Title: Green & Increased Size */
+.md-header__title .custom-site-title {
+  color: #034a08;       /* Standard Vibrant Green */
+  font-size: 1.35rem;   /* Increased size */
+  font-weight: 800;
+  display: inline-block;
+}
+
+/* "with Anita": Italicized & Uses Theme Default Color */
+.md-header__title .site-title-author {
+  font-style: italic;
+  font-size: 0.85 rem;   /* Matches header proportion */
+  font-weight: 400;     /* Normal font weight */
+  color: var(--md-default-fg-color); /* Inherits theme text color (Light in dark mode, dark in light mode) */
+  opacity: 0.9;
+}
+
+/* 1. Base H2 Styling (Dark Mode & Slate) */
+.md-typeset h2,
+.about-section h2 {
+  color: #066c0c; /* Brighter, high-contrast green for dark background */
+  font-size: 1.35rem;  /* Reduced header size */
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  transition: color 0.3s ease; /* Smooth transition when toggling modes */
+}
+
+/* 2. Dark Mode Override (Light Scheme (normally labelled default)) */
+[data-md-color-scheme="default"] .md-typeset h2,
+[data-md-color-scheme="default"] .about-section h2 {
+  color: #045609;      /* Dark green for lighter background */
+}
