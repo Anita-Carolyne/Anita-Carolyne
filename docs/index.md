@@ -16,18 +16,15 @@ CHECKLIST FOR THIS PAGE:
     <img src="assets/images/profile.png" alt="ANITA CAROLYNE ORERA"
     class="profile-photo">
   </div>
-<div class="hero">
-  <!-- Group 1: The Image + Halo -->
-  <div class="profile-photo-container">
-    <img src="assets/images/profile.png" alt="Profile Photo" class="profile-photo">
-  </div>
 
   <!-- Group 2: The Text -->
   <div class="hero-text">
     <h1>ANITA CAROLYNE</h1>
-    <p><strong>Geospatial Analyst</strong></p>
+    <p>
+      <strong><span id="hero-typing" class="typing-text"></span></strong>
+    </p>
     <p><em>Bridging the gap between data, Geospatial technologies & AI</em></p>
-    </div>
+  </div>
 </div>
 
 ---
