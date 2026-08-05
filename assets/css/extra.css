@@ -183,9 +183,21 @@
   border: 2px solid var(--md-default-bg-color);
 }
 
+/* Base styling for h3 themes */
 .timeline-entry h3 {
   margin-top: 0;
+  font-weight: 700 !important; /* Bold */
 }
+
+/* Dark Mode: Vibrant Blue for high visibility on dark background */
+[data-md-color-scheme="slate"] .timeline-entry h3 {
+  color: #29b6f6 !important; /* Vibrant Blue */
+}
+/* Light Mode: Darker Blue for high contrast on light background */
+[data-md-color-scheme="default"] .timeline-entry h3 {
+  color: #2196f3 !important; /* Slightly/Darker Blue */
+}
+
 
 /* Skills grid cards on the Home page */
 /* Glowy Blue Outline */
