@@ -97,34 +97,68 @@
 }
 
 /* About Me section on the Home page */
-.about-section {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
+/* ==========================================================================
+   ISOLATED 3-COLUMN HERO GRID (Fixed Image Dimensions)
+   ========================================================================== */
+
+.about-hero-wrapper {
+  display: grid;
+  /* Columns: Exactly 140px for Left Image, Flexible Middle Text, Exactly 140px for Right Image */
+  grid-template-columns: 140px 1fr 140px; 
+  align-items: center;  /* Vertically center images relative to text */
+  gap: 1.5rem;          /* Spacing between images and text */
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+  width: 100%;
 }
 
-.about-text {
-  flex: 1;
+/* Fix Side Image Containers from Collapsing */
+.about-hero-wrapper .about-image-side {
+  width: 140px !important;
+  height: 140px !important;
+  min-width: 140px !important;  /* Prevents grid from squishing the column */
+  min-height: 140px !important;
+  flex-shrink: 0 !important;
 }
 
-.about-image {
-  flex: 0 0 auto;
+/* Force Image to Fill Its Container as a Perfect Circle */
+.about-hero-wrapper .about-image-side img {
+  width: 140px !important;
+  height: 140px !important;
+  max-width: none !important;     /* Overrides MkDocs default max-width constraint */
+  min-width: 140px !important;
+  min-height: 140px !important;
+  border-radius: 50% !important;  /* Perfect circle */
+  object-fit: cover !important;   /* Prevents photo distortion */
+  display: block !important;
+  border: 2px solid #20ba28;     /* Green accent ring */
+  margin: 0 !important;
 }
 
-.about-image img {
-  width: 400px;
-  border-radius: 8px;
+/* Ensure Inner Text Elements Stack Vertically */
+.about-hero-wrapper .about-text {
   display: block;
+  min-width: 0;   /* Allows text/code blocks to wrap without forcing grid overflow */
 }
 
-@media (max-width: 600px) {
-  .about-section {
-    flex-direction: column;
+/* Mobile Responsiveness: Stacks cleanly on mobile screens */
+@media screen and (max-width: 768px) {
+  .about-hero-wrapper {
+    grid-template-columns: 1fr; /* Single column layout */
+    justify-items: center;
+    text-align: center;
+    gap: 1.2rem;
   }
-  .about-image img {
-    width: 100%;
+
+  .about-hero-wrapper .about-image-side,
+  .about-hero-wrapper .about-image-side img {
+    width: 120px !important;
+    height: 120px !important;
+    min-width: 120px !important;
+    min-height: 120px !important;
   }
 }
+
 
 /* Timeline on the Experience page */
 .timeline {
