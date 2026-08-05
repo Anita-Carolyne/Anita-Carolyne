@@ -1,7 +1,7 @@
-site_name: "ANITA CAROLYNE - Geospatial Analyst"
+site_name: "Earth observation, GeoAI & Analytics <i>with Anita</i>"
 site_description: "Bridging the data gap using Geospatial solutions"
 site_author: "Anita Carolyne Orera"
-site_url: "https://Anita-Carolyne.github.io/Anita-Carolyne"
+site_url: "https://anita-carolyne.github.io/Anita-Carolyne"
 
 theme:
   name: material
