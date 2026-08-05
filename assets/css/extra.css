@@ -61,8 +61,11 @@
 
 /* Hero text styles (no changes needed) */
 .hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+  line-height: 1.1;
   color: var(--md-default-fg-color);
 }
 
@@ -203,7 +206,9 @@
 /* Glowing Blue Typing Text & Cursor */
 .typing-text {
   color: #2196f3;
+  font-size: 1.25rem;
   font-weight: 700;
+  line-height: 1.2;
   display: inline-block;
   padding-right: 4px;
   border-right: 3px solid #2196f3;
