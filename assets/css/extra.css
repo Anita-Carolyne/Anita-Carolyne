@@ -237,7 +237,7 @@
 /* "with Anita": Italicized & Uses Theme Default Color */
 .md-header__title .site-title-author {
   font-style: italic;
-  font-size: 0.85 rem;   /* Matches header proportion */
+  font-size: 0.75 rem;   /* Matches header proportion */
   font-weight: 400;     /* Normal font weight */
   color: var(--md-default-fg-color); /* Inherits theme text color (Light in dark mode, dark in light mode) */
   opacity: 0.9;
@@ -258,4 +258,10 @@
 [data-md-color-scheme="default"] .md-typeset h2,
 [data-md-color-scheme="default"] .about-section h2 {
   color: #045609;      /* Dark green for lighter background */
+}
+
+/* Top Navigation Tabs: Slightly Larger & Bold */
+.md-tabs__link {
+  font-size: 0.70rem !important; /* (default is ~0.85rem) */
+  font-weight: 700 !important;   /* Bold text */
 }
