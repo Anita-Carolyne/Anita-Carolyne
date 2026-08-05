@@ -31,19 +31,23 @@ CHECKLIST FOR THIS PAGE:
 
 ## About Me
 
-<div class="about-section" markdown>
-<div class="about-text" markdown>
+<div class="about-hero-wrapper">
+  <!-- 1. Left Image -->
+  <div class="about-image-side">
+    <img src="assets/images/office.png" alt="In-Office Analysis">
+  </div>
 
-I am a Geospatial Analyst With a solid background in Geomatics Engineering and GIS having **3+ years** of experience, driving impactful solutions in ***geospatial data analysis and GeoAI***. 
-I work on extracting actionable insights from satellite imagery and large spatial datasets using ***Google Earth Engine***, ***R***, _Python_ and _open-source GIS tools_.
-I am passionate about applying GeoAI techniques to _real-world challenges_ in land use mapping, climate monitoring, and urban planning.
+  <!-- 2. Middle Text Block (All text stays grouped inside here) -->
+  <div class="about-text" markdown>
+    I am a Geospatial Analyst With a solid background in Geomatics Engineering and GIS having <strong>3+ years</strong> of experience, driving impactful solutions in <strong>geospatial data analysis and GeoAI</strong>. 
+    I work on extracting actionable insights from satellite imagery and large spatial datasets using <strong><em>Google Earth Engine</em></strong>, <strong><em>R</em></strong>, <em>Python</em> and <em>open-source GIS tools</em>.
+    I am passionate about applying GeoAI techniques to <em>real-world challenges</em> in <em>land use mapping</em>, <em>climate monitoring</em>, and <em>urban planning</em>.
+  </div>
 
-</div>
-
-<div class="about-image">
-  <img src="assets/images/about.png" alt="About">
-</div>
-
+  <!-- 3. Right Image -->
+  <div class="about-image-side">
+    <img src="assets/images/field.png" alt="On-site guidance">
+  </div>
 </div>
 
 ---
