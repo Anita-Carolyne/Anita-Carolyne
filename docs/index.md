@@ -16,6 +16,11 @@ CHECKLIST FOR THIS PAGE:
     <img src="assets/images/profile.png" alt="ANITA CAROLYNE ORERA"
     class="profile-photo">
   </div>
+<div class="hero">
+  <!-- Group 1: The Image + Halo -->
+  <div class="profile-photo-container">
+    <img src="assets/images/profile.png" alt="Profile Photo" class="profile-photo">
+  </div>
 
   <!-- Group 2: The Text -->
   <div class="hero-text">
@@ -60,45 +65,45 @@ I am passionate about applying GeoAI techniques to _real-world challenges_ in la
 
     ---
 
-    - :simple-googleearth: Google Earth Engine
-    - :simple-qgis: QGIS
-    - :material-map-marker-path: ArcGIS Pro
-    - :material-satellite-variant: ERDAS Imagine
-    - :material-image-filter-hdr: Multispectral image analysis
+    - <img src="https://cdn.simpleicons.org/googleearth" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **Google Earth Engine**
+    - <img src="https://cdn.simpleicons.org/qgis" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **QGIS**
+    - <img src="https://cdn.simpleicons.org/esri" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **ArcGIS Pro**
+    - :material-satellite-variant: **ERDAS Imagine**
+    - :material-image-filter-hdr: **Multispectral image analysis**
 
 -   :material-code-braces:{ .lg .middle } **Programming & Scripting**
 
     ---
 
-    - :simple-r: **R** — sf, terra, ggplot2
-    - :simple-python: **Python** — GeoPandas, NumPy, Pandas, Matplotlib
-    - :simple-javascript: **JavaScript** — Leaflet
-    - :simple-postgresql: **SQL** — PostgreSQL + PostGIS
+    - <img src="https://cdn.simpleicons.org/r" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **R** — sf, terra, ggplot2
+    - <img src="https://cdn.simpleicons.org/python" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **Python** — GeoPandas, NumPy, Pandas, Matplotlib
+    - <img src="https://cdn.simpleicons.org/javascript" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **JavaScript** — Leaflet
+    - <img src="https://cdn.simpleicons.org/postgresql" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **SQL** — PostgreSQL + PostGIS
 
 -   :material-star-four-points:{ .lg .middle } **Machine Learning & GeoAI**
 
     ---
 
-    - :simple-scikitlearn: **scikit-learn** — Random Forest, SVM, XGBoost
-    - :simple-pytorch: **PyTorch** & :simple-tensorflow: **TensorFlow**
-    - :material-brain: Deep learning — U-Net, SAM
-    - :material-radar: Object detection in satellite imagery
+    - <img src="https://cdn.simpleicons.org/scikitlearn" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **scikit-learn** — Random Forest, SVM, XGBoost
+    - <img src="https://cdn.simpleicons.org/pytorch" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **PyTorch** & <img src="https://cdn.simpleicons.org/tensorflow" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **TensorFlow**
+    - :material-brain: **Deep learning** — U-Net, SAM
+    - :material-radar: **Object detection in satellite imagery**
 
 -   :material-earth:{ .lg .middle } **Web Mapping & Visualization**
 
     ---
 
-    - :simple-leaflet: **Leaflet.js** & **Folium**
-    - :simple-streamlit: **Streamlit** for data apps
-    - :material-code-json: Data formats — GeoTIFF, NetCDF, GeoJSON
+    - <img src="https://cdn.simpleicons.org/leaflet" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **Leaflet.js** & **Folium**
+    - <img src="https://cdn.simpleicons.org/streamlit" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **Streamlit** for data apps
+    - :material-code-json: **Data formats** — GeoTIFF, NetCDF, GeoJSON
 
 -   :material-database:{ .lg .middle } **Data & Cloud**
 
     ---
 
-    - :simple-postgresql: **PostgreSQL** + **PostGIS**
-    - :simple-amazons3: **AWS S3**
-    - :simple-googlecloud: **Google Cloud Storage**
+    - <img src="https://cdn.simpleicons.org/postgresql" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **PostgreSQL** + **PostGIS**
+    - <img src="https://cdn.simpleicons.org/amazons3" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **AWS S3**
+    - <img src="https://cdn.simpleicons.org/googlecloud" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"> **Google Cloud Storage**
 </div>
 
 

@@ -151,9 +151,32 @@
 }
 
 /* Skills grid cards on the Home page */
+/* Glowy Blue Outline */
 .md-typeset .grid.cards > ul > li {
   background-color: var(--md-default-bg-color--light);
-  border: 1px solid var(--md-default-fg-color--lightest);
+  
+  /* Crisp blue border */
+  border: 1px solid rgba(33, 150, 243, 0.6); 
+  
+  /* Ambient blue outer glow */
+  box-shadow: 0 0 12px rgba(33, 150, 243, 0.25),
+              0 0 2px rgba(33, 150, 243, 0.4);
+              
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect: Glow brightens slightly when mouse hovers */
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: rgba(33, 150, 243, 0.9);
+  box-shadow: 0 0 20px rgba(33, 150, 243, 0.5),
+              0 0 4px rgba(33, 150, 243, 0.8);
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Bold & Blue Title Text (Icons remain untouched) */
+.md-typeset .grid.cards > ul > li > :first-child strong {
+  color: #2196f3;
+  font-weight: 700;
 }
 
 /* Project cards on the Projects gallery page */
