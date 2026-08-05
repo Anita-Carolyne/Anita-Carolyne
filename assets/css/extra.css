@@ -229,7 +229,7 @@
 /* Custom Header Site Title: Green & Increased Size */
 .md-header__title .custom-site-title {
   color: #034a08;       /* Standard Vibrant Green */
-  font-size: 1.35rem;   /* Increased size */
+  font-size: 1.25rem;   /* Increased size */
   font-weight: 800;
   display: inline-block;
 }
