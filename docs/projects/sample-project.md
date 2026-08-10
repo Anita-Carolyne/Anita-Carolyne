@@ -178,6 +178,7 @@ function calculateAndDisplay() {
 
 > When executed in GEE, the web interface embeds custom UI controls on the left panel, updating the spatial layers and area metrics on-the-fly:
 
+![UI computation image](../assets/images/caneAreas.png)
 ---
 
 ## Summarized Logic steps
@@ -206,11 +207,11 @@ function calculateAndDisplay() {
 
 ## 📈 Impact & Applications
 
-1. Dynamic Decision Support: _Enables rapid estimation of sugarcane biomass across individual supply zones (outgrower schemes) versus factory catchment baselines._
+1. **Dynamic Decision Support**: Enables rapid estimation of sugarcane biomass across individual supply zones (outgrower schemes) versus factory catchment baselines.
 
-2. Scalable GIS Infrastructure: _The approach complements manual digitizing with automated, multi-spectral cloud computing capable of processing multi-gigabyte satellite scenes in seconds._
+2. **Scalable GIS Infrastructure**: The approach complements manual digitizing with automated, multi-spectral cloud computing capable of processing multi-gigabyte satellite scenes in seconds.
 
-3. Export Readiness: _Integrates direct 10m resolution GeoTIFF exports to Google Drive for offline downstream GIS modeling in QGIS or ArcGIS Pro._
+3. **Export Readiness**: Integrates direct 10m resolution GeoTIFF exports to Google Drive for offline downstream GIS modeling in QGIS or ArcGIS Pro.
 
 ---
 
