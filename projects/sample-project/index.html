@@ -916,7 +916,7 @@ CHECKLIST (copy this file for each new project):
 - [ ] Add a nav entry in mkdocs.yml
 -->
 
-<h1 id="sugarcane-areas-estimation-western-kenya">[Sugarcane Areas Estimation - Western Kenya]</h1>
+<h1 id="sugarcane-areas-estimation-western-kenya">Sugarcane Areas Estimation - Western Kenya</h1>
 <p><img alt="Project overview image" src="../../assets/images/caneEstimation.png" /></p>
 <h2 id="executive-summary">📌 Executive Summary</h2>
 <p>Determining crop coverage across dynamic agricultural catchments requires <em>balancing fine spatial resolution</em> for local farm blocks <em>with computational efficiency</em> across larger administrative boundaries. </p>
@@ -940,8 +940,7 @@ CHECKLIST (copy this file for each new project):
 <h3 id="step-1-pre-processing-index-generation">Step 1: Pre-Processing &amp; Index Generation</h3>
 <p>We ingest Sentinel-2 Surface Reflectance data, apply cloud masking based on the Scene Classification Layer (<code>SCL</code>), and generate an array of multi-spectral indices tailored for canopy canopy density and water content analysis.</p>
 <h3 id="step-1-pre-processing-index-generation_1">Step 1: Pre-Processing &amp; Index Generation</h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span><span class="w"> </span><span class="nx">raw</span><span class="w"> </span><span class="o">%</span><span class="p">}</span>
-<span class="cm">/**</span>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Sentinel-2 Processing &amp; Index Calculation Module</span>
 <span class="cm"> */</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;COPERNICUS/S2_SR_HARMONIZED&quot;</span><span class="p">);</span>
@@ -951,7 +950,6 @@ CHECKLIST (copy this file for each new project):
 <span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">3</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">8</span><span class="p">)).</span><span class="nx">and</span><span class="p">(</span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">9</span><span class="p">)).</span><span class="nx">and</span><span class="p">(</span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">10</span><span class="p">));</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="p">{</span><span class="o">%</span><span class="w"> </span><span class="nx">endraw</span><span class="w"> </span><span class="o">%</span><span class="p">}</span>
 </code></pre></div>
 <hr />
 <h2 id="methods-tools">Methods &amp; Tools</h2>
