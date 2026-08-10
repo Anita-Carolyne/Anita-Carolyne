@@ -6,7 +6,7 @@ CHECKLIST (copy this file for each new project):
 - [ ] Add a nav entry in mkdocs.yml
 -->
 
-# [Sugarcane Areas Estimation - Western Kenya]
+# Sugarcane Areas Estimation - Western Kenya
 
 ![Project overview image](../assets/images/caneEstimation.png)
 
@@ -43,7 +43,6 @@ We ingest Sentinel-2 Surface Reflectance data, apply cloud masking based on the 
 ### Step 1: Pre-Processing & Index Generation
 
 ```javascript
-{% raw %}
 /**
  * Sentinel-2 Processing & Index Calculation Module
  */
@@ -54,7 +53,6 @@ function maskS2clouds(image) {
   var mask = scl.neq(3).and(scl.neq(8)).and(scl.neq(9)).and(scl.neq(10));
   return image.updateMask(mask);
 }
-{% endraw %}
 ```
 
 ---

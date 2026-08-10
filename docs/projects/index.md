@@ -12,7 +12,8 @@ CHECKLIST FOR THIS PAGE:
 
 # Projects
 
-My Geospatial projects at a glance. **Click** any card to see the _full write-up_.
+> My Geospatial projects at a glance. 
+**Click** any card to see the _full write-up_.
 
 <div class="grid" markdown>
 
