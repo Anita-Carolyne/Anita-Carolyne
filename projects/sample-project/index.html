@@ -608,17 +608,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#asynchronous-calculation-function-bound-to-gui-compute-trigger-function-calculateanddisplay-if-selectedaoi-selectedcatchmentfc-instructionslabelsetvalueerror-please-complete-steps-1-and-2-return-var-aoiscale-scalemode-single-100-parseintaoiscaleselectgetvaluereplacem-10-var-catchmentscale-100-instructionslabelsetvaluecomputing-areas-aoi-aoiscale-m-catchment-catchmentscale-m-calculate-area-reductions-server-side-var-aoiarea-areaimagehareduceregion-reducer-eereducersum-geometry-selectedaoigeometry-scale-aoiscale-maxpixels-1e13-getarea_ha-var-catchmentarea-areaimagehareduceregion-reducer-eereducersum-geometry-selectedcatchmentfcgeometry-scale-catchmentscale-maxpixels-1e13-getarea_ha-non-blocking-client-side-evaluation-callback-var-callback-functionresults-var-rawaoi-results0-0-var-rawcatchment-results1-0-var-computedaoiarea-mathroundrawaoi-100-100tolocalestring-var-computedcatchmentarea-mathroundrawcatchment-100-100tolocalestring-aoiarealabelsetvaluearea-ha-for-selected-aoi-computedaoiarea-scale-aoiscale-m-catchmentarealabelsetvaluetotal-area-ha-for-catchment-computedcatchmentarea-scale-catchmentscale-m-instructionslabelsetvaluecomputation-complete-send-server-request-asynchronously-eelistaoiarea-catchmentareaevaluatecallback" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        // Asynchronous calculation function bound to GUI compute trigger function calculateAndDisplay() { if (!selectedAOI || !selectedCatchmentFC) { instructionsLabel.setValue(&#39;ERROR: Please complete steps 1 and 2.&#39;); return; } var aoiScale = (scaleMode === &#39;single&#39;) ? 100 : parseInt(aoiScaleSelect.getValue().replace(&#39;m&#39;, &#39;&#39;), 10); var catchmentScale = 100; instructionsLabel.setValue(&#39;Computing areas... (AOI: &#39; + aoiScale + &#39;m, Catchment: &#39; + catchmentScale + &#39;m)&#39;); // Calculate area reductions server-side var aoiArea = areaImageHa.reduceRegion({ reducer: ee.Reducer.sum(), geometry: selectedAOI.geometry(), scale: aoiScale, maxPixels: 1e13 }).get(&#39;area_ha&#39;); var catchmentArea = areaImageHa.reduceRegion({ reducer: ee.Reducer.sum(), geometry: selectedCatchmentFC.geometry(), scale: catchmentScale, maxPixels: 1e13 }).get(&#39;area_ha&#39;); // Non-blocking Client-Side Evaluation Callback var callback = function(results) { var rawAoi = results[0] || 0; var rawCatchment = results[1] || 0; var computedAOIArea = (Math.round(rawAoi * 100) / 100).toLocaleString(); var computedCatchmentArea = (Math.round(rawCatchment * 100) / 100).toLocaleString(); aoiAreaLabel.setValue(&#39;Area (Ha) for Selected AOI: &#39; + computedAOIArea + &#39; (Scale: &#39; + aoiScale + &#39;m)&#39;); catchmentAreaLabel.setValue(&#39;Total Area (Ha) for Catchment: &#39; + computedCatchmentArea + &#39; (Scale: &#39; + catchmentScale + &#39;m)&#39;); instructionsLabel.setValue(&#39;Computation Complete.&#39;); }; // Send server request asynchronously ee.List([aoiArea, catchmentArea]).evaluate(callback); }
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#interactive-interface-results-visualizer" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -630,10 +619,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#-summarized-logic-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        
+        --- Summarized Logic steps
       
     </span>
   </a>
@@ -641,21 +630,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summarized-logic-steps" class="md-nav__link">
+  <a href="#-tools-used" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summarized Logic steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tools Used
+        --- Tools Used
       
     </span>
   </a>
@@ -925,17 +903,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#asynchronous-calculation-function-bound-to-gui-compute-trigger-function-calculateanddisplay-if-selectedaoi-selectedcatchmentfc-instructionslabelsetvalueerror-please-complete-steps-1-and-2-return-var-aoiscale-scalemode-single-100-parseintaoiscaleselectgetvaluereplacem-10-var-catchmentscale-100-instructionslabelsetvaluecomputing-areas-aoi-aoiscale-m-catchment-catchmentscale-m-calculate-area-reductions-server-side-var-aoiarea-areaimagehareduceregion-reducer-eereducersum-geometry-selectedaoigeometry-scale-aoiscale-maxpixels-1e13-getarea_ha-var-catchmentarea-areaimagehareduceregion-reducer-eereducersum-geometry-selectedcatchmentfcgeometry-scale-catchmentscale-maxpixels-1e13-getarea_ha-non-blocking-client-side-evaluation-callback-var-callback-functionresults-var-rawaoi-results0-0-var-rawcatchment-results1-0-var-computedaoiarea-mathroundrawaoi-100-100tolocalestring-var-computedcatchmentarea-mathroundrawcatchment-100-100tolocalestring-aoiarealabelsetvaluearea-ha-for-selected-aoi-computedaoiarea-scale-aoiscale-m-catchmentarealabelsetvaluetotal-area-ha-for-catchment-computedcatchmentarea-scale-catchmentscale-m-instructionslabelsetvaluecomputation-complete-send-server-request-asynchronously-eelistaoiarea-catchmentareaevaluatecallback" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        // Asynchronous calculation function bound to GUI compute trigger function calculateAndDisplay() { if (!selectedAOI || !selectedCatchmentFC) { instructionsLabel.setValue(&#39;ERROR: Please complete steps 1 and 2.&#39;); return; } var aoiScale = (scaleMode === &#39;single&#39;) ? 100 : parseInt(aoiScaleSelect.getValue().replace(&#39;m&#39;, &#39;&#39;), 10); var catchmentScale = 100; instructionsLabel.setValue(&#39;Computing areas... (AOI: &#39; + aoiScale + &#39;m, Catchment: &#39; + catchmentScale + &#39;m)&#39;); // Calculate area reductions server-side var aoiArea = areaImageHa.reduceRegion({ reducer: ee.Reducer.sum(), geometry: selectedAOI.geometry(), scale: aoiScale, maxPixels: 1e13 }).get(&#39;area_ha&#39;); var catchmentArea = areaImageHa.reduceRegion({ reducer: ee.Reducer.sum(), geometry: selectedCatchmentFC.geometry(), scale: catchmentScale, maxPixels: 1e13 }).get(&#39;area_ha&#39;); // Non-blocking Client-Side Evaluation Callback var callback = function(results) { var rawAoi = results[0] || 0; var rawCatchment = results[1] || 0; var computedAOIArea = (Math.round(rawAoi * 100) / 100).toLocaleString(); var computedCatchmentArea = (Math.round(rawCatchment * 100) / 100).toLocaleString(); aoiAreaLabel.setValue(&#39;Area (Ha) for Selected AOI: &#39; + computedAOIArea + &#39; (Scale: &#39; + aoiScale + &#39;m)&#39;); catchmentAreaLabel.setValue(&#39;Total Area (Ha) for Catchment: &#39; + computedCatchmentArea + &#39; (Scale: &#39; + catchmentScale + &#39;m)&#39;); instructionsLabel.setValue(&#39;Computation Complete.&#39;); }; // Send server request asynchronously ee.List([aoiArea, catchmentArea]).evaluate(callback); }
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#interactive-interface-results-visualizer" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -947,10 +914,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#-summarized-logic-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        
+        --- Summarized Logic steps
       
     </span>
   </a>
@@ -958,21 +925,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summarized-logic-steps" class="md-nav__link">
+  <a href="#-tools-used" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summarized Logic steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tools Used
+        --- Tools Used
       
     </span>
   </a>
@@ -1128,7 +1084,7 @@ CHECKLIST (copy this file for each new project):
 </code></pre></div>
 <h3 id="step-3-reactive-ui-controller-non-blocking-area-reductions">Step 3: Reactive UI Controller &amp; Non-Blocking Area Reductions</h3>
 <p>The interactive GUI allows users to select catchments and sub-counties, set variable spatial resolution scales (10m vs 100m), and trigger client-side evaluation without blocking the map UI thread.</p>
-<h2 id="asynchronous-calculation-function-bound-to-gui-compute-trigger-function-calculateanddisplay-if-selectedaoi-selectedcatchmentfc-instructionslabelsetvalueerror-please-complete-steps-1-and-2-return-var-aoiscale-scalemode-single-100-parseintaoiscaleselectgetvaluereplacem-10-var-catchmentscale-100-instructionslabelsetvaluecomputing-areas-aoi-aoiscale-m-catchment-catchmentscale-m-calculate-area-reductions-server-side-var-aoiarea-areaimagehareduceregion-reducer-eereducersum-geometry-selectedaoigeometry-scale-aoiscale-maxpixels-1e13-getarea_ha-var-catchmentarea-areaimagehareduceregion-reducer-eereducersum-geometry-selectedcatchmentfcgeometry-scale-catchmentscale-maxpixels-1e13-getarea_ha-non-blocking-client-side-evaluation-callback-var-callback-functionresults-var-rawaoi-results0-0-var-rawcatchment-results1-0-var-computedaoiarea-mathroundrawaoi-100-100tolocalestring-var-computedcatchmentarea-mathroundrawcatchment-100-100tolocalestring-aoiarealabelsetvaluearea-ha-for-selected-aoi-computedaoiarea-scale-aoiscale-m-catchmentarealabelsetvaluetotal-area-ha-for-catchment-computedcatchmentarea-scale-catchmentscale-m-instructionslabelsetvaluecomputation-complete-send-server-request-asynchronously-eelistaoiarea-catchmentareaevaluatecallback"><div class="highlight"><pre><span></span><code><span class="c1">// Asynchronous calculation function bound to GUI compute trigger</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Asynchronous calculation function bound to GUI compute trigger</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">calculateAndDisplay</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">selectedAOI</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">selectedCatchmentFC</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">instructionsLabel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;ERROR: Please complete steps 1 and 2.&#39;</span><span class="p">);</span>
@@ -1171,13 +1127,15 @@ CHECKLIST (copy this file for each new project):
 <span class="w">  </span><span class="c1">// Send server request asynchronously</span>
 <span class="w">  </span><span class="nx">ee</span><span class="p">.</span><span class="nx">List</span><span class="p">([</span><span class="nx">aoiArea</span><span class="p">,</span><span class="w"> </span><span class="nx">catchmentArea</span><span class="p">]).</span><span class="nx">evaluate</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div></h2>
+</code></pre></div>
+<hr />
 <h2 id="interactive-interface-results-visualizer">📊 Interactive Interface &amp; Results Visualizer</h2>
 <blockquote>
 <p>When executed in GEE, the web interface embeds custom UI controls on the left panel, updating the spatial layers and area metrics on-the-fly:</p>
 </blockquote>
-<h2 id="_1"><img alt="UI computation image" src="../../assets/images/caneAreas.png" /></h2>
-<h2 id="summarized-logic-steps">Summarized Logic steps</h2>
+<p><img alt="UI computation image" src="../../assets/images/caneAreas.png" /></p>
+<hr />
+<h2 id="-summarized-logic-steps">--- Summarized Logic steps</h2>
 <ol>
 <li>Load pre-processed data into QGIS to confirm extents with a basemap overaly</li>
 <li>Digitize farm boundaries</li>
@@ -1190,7 +1148,7 @@ CHECKLIST (copy this file for each new project):
 <li>Develop UI with interactive elements for dynamic computations</li>
 </ol>
 <hr />
-<h2 id="tools-used">Tools Used</h2>
+<h2 id="-tools-used">--- Tools Used</h2>
 <table>
 <thead>
 <tr>
