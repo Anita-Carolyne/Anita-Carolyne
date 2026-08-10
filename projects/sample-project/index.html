@@ -921,10 +921,10 @@ CHECKLIST (copy this file for each new project):
 <h2 id="executive-summary">📌 Executive Summary</h2>
 <p>Determining crop coverage across dynamic agricultural catchments requires <em>balancing fine spatial resolution</em> for local farm blocks <em>with computational efficiency</em> across larger administrative boundaries. </p>
 <p>This project implements an <em>unsupervised K-means classification workflow</em> paired with <em>dynamic spectral matching</em> against ground-truth cane farm geometries. The interactive user interface allows decision-makers to evaluate <em>area statistics</em> across <strong>Dual-Scale modes</strong> (10m–30m local sub-county AOIs vs. 100m catchment baselines).</p>
-<p><strong>Study Area:</strong> [West Kenya]<br />
-<strong>Duration:</strong> [April 2025 – August 2025]<br />
-<strong>Role:</strong> [Geospatial Analyst - Team lead]<br />
-<strong>Status:</strong> [Completed ]</p>
+<p><strong>Study Area:</strong> West Kenya<br />
+<strong>Duration:</strong> July 2025 – November 2025<br />
+<strong>Role:</strong> Geospatial Analyst - <em>Team lead</em><br />
+<strong>Status:</strong> Completed </p>
 <hr />
 <h2 id="methodology-technical-architecture">🛠️ Methodology &amp; Technical Architecture</h2>
 <h3 id="key-technical-highlights">Key Technical Highlights:</h3>
@@ -940,17 +940,46 @@ CHECKLIST (copy this file for each new project):
 <h3 id="step-1-pre-processing-index-generation">Step 1: Pre-Processing &amp; Index Generation</h3>
 <p>We ingest Sentinel-2 Surface Reflectance data, apply cloud masking based on the Scene Classification Layer (<code>SCL</code>), and generate an array of multi-spectral indices tailored for canopy canopy density and water content analysis.</p>
 <h3 id="step-1-pre-processing-index-generation_1">Step 1: Pre-Processing &amp; Index Generation</h3>
+<blockquote>
+<p>We ingest Sentinel-2 Surface Reflectance data, apply cloud masking based on the Scene Classification Layer (<code>SCL</code>), and generate an array of multi-spectral indices tailored for canopy density and water content analysis.
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Sentinel-2 Processing &amp; Index Calculation Module</span>
 <span class="cm"> */</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;COPERNICUS/S2_SR_HARMONIZED&quot;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">dw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/DYNAMICWORLD/V1&#39;</span><span class="p">);</span>
 
+<span class="c1">// Cloud Masking Function utilizing SCL band</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">maskS2clouds</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">scl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;SCL&#39;</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">3</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">8</span><span class="p">)).</span><span class="nx">and</span><span class="p">(</span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">9</span><span class="p">)).</span><span class="nx">and</span><span class="p">(</span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">10</span><span class="p">));</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+
+<span class="c1">// Stacking 11 Spectral Indices</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">addVegetationIndices</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">nir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">red</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">green</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B3&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">blue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B2&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">redEdge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B5&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">swir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B11&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">ndvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">red</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDVI&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">gcvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">green</span><span class="p">).</span><span class="nx">subtract</span><span class="p">(</span><span class="mf">1</span><span class="p">).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;GCVI&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">gndvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">green</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">green</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;GNDVI&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">ndre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">redEdge</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">redEdge</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDRE&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">vari</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">green</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">green</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">blue</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;VARI&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">savi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">1.5</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;SAVI&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">msavi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">2</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="mf">1</span><span class="p">).</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">2</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="mf">1</span><span class="p">).</span><span class="nx">pow</span><span class="p">(</span><span class="mf">2</span><span class="p">).</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">8</span><span class="p">)).</span><span class="nx">sqrt</span><span class="p">()).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">2</span><span class="p">).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;MSAVI&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">ndmi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">swir</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">swir</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDMI&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">evi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">2.5</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">red</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">6</span><span class="p">)).</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">blue</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">7.5</span><span class="p">)).</span><span class="nx">add</span><span class="p">(</span><span class="mf">1</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;EVI&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">lai</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">evi</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">3.618</span><span class="p">).</span><span class="nx">subtract</span><span class="p">(</span><span class="mf">0.118</span><span class="p">).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;LAI&#39;</span><span class="p">).</span><span class="nx">max</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">min</span><span class="p">(</span><span class="mf">7</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">mndwi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">green</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">swir</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">green</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">swir</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;MNDWI&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">addBands</span><span class="p">([</span><span class="nx">ndvi</span><span class="p">,</span><span class="w"> </span><span class="nx">gcvi</span><span class="p">,</span><span class="w"> </span><span class="nx">evi</span><span class="p">,</span><span class="w"> </span><span class="nx">gndvi</span><span class="p">,</span><span class="w"> </span><span class="nx">ndre</span><span class="p">,</span><span class="w"> </span><span class="nx">vari</span><span class="p">,</span><span class="w"> </span><span class="nx">savi</span><span class="p">,</span><span class="w"> </span><span class="nx">msavi</span><span class="p">,</span><span class="w"> </span><span class="nx">ndmi</span><span class="p">,</span><span class="w"> </span><span class="nx">lai</span><span class="p">,</span><span class="w"> </span><span class="nx">mndwi</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</blockquote>
 <hr />
 <h2 id="methods-tools">Methods &amp; Tools</h2>
 <p><strong>Data Sources</strong></p>
@@ -960,15 +989,15 @@ CHECKLIST (copy this file for each new project):
 </ul>
 <p><strong>Logic Steps</strong></p>
 <ol>
-<li>[Load pre-processed data into QGIS to confirm extents with a basemap overaly]</li>
-<li>[Digitize farm boundaries]</li>
-<li>[Check for errors and/or inconsistencies]</li>
-<li>[Export cleaned data (with appropriate naming structure) as shapefiles]</li>
-<li>[Load data into GEE, defining time period and extents]</li>
-<li>[Filter and pre-process data]</li>
-<li>[Compute relevant indices]</li>
-<li>[Perform supervised classification (DW) &amp; Unsupervised classification (clusters)]</li>
-<li>[Develop UI with interactive elements for dynamic computations]</li>
+<li>Load pre-processed data into QGIS to confirm extents with a basemap overaly</li>
+<li>Digitize farm boundaries</li>
+<li>Check for errors and/or inconsistencies</li>
+<li>Export cleaned data (with appropriate naming structure) as shapefiles</li>
+<li>Load data into GEE, defining time period and extents</li>
+<li>Filter and pre-process data</li>
+<li>Compute relevant indices</li>
+<li>Perform supervised classification (DW) &amp; Unsupervised classification (clusters)</li>
+<li>Develop UI with interactive elements for dynamic computations</li>
 </ol>
 <p><strong>Tools Used</strong></p>
 <table>
@@ -980,25 +1009,25 @@ CHECKLIST (copy this file for each new project):
 </thead>
 <tbody>
 <tr>
-<td>[QGIS ]</td>
-<td>[Initial loading &amp; cleaning]</td>
+<td>QGIS</td>
+<td>Initial loading &amp; cleaning</td>
 </tr>
 <tr>
-<td>[ArcGIS Pro]</td>
-<td>[Digitization ]</td>
+<td>ArcGIS Pro</td>
+<td>Digitization</td>
 </tr>
 <tr>
-<td>[Google Earth Engine]</td>
-<td>[Pre-processing, Analysis &amp; Visualization]</td>
+<td>Google Earth Engine</td>
+<td>Pre-processing, Analysis &amp; Visualization</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="key-findings">Key Findings</h2>
 <ul>
-<li>[Finding one — include a number or metric if possible]</li>
-<li>[Finding two]</li>
-<li>[Finding three]</li>
+<li>Finding one — include a number or metric if possible</li>
+<li>Finding two</li>
+<li>Finding three</li>
 </ul>
 <hr />
 <h2 id="links">Links</h2>
