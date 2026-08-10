@@ -1,27 +1,61 @@
 <!--
-CHECKLIST FOR THIS PAGE (copy this file for each new project):
-- [ ] Replace [YOUR PROJECT TITLE] with your project title
-- [ ] Replace the hero image with your own (add to docs/assets/images/)
-- [ ] Update the Overview section
-- [ ] Update the Methods & Tools section
+CHECKLIST (copy this file for each new project):
 - [ ] Update the Key Findings section
 - [ ] Update the Links section
 - [ ] Add a card for this project on docs/projects/index.md
 - [ ] Add a nav entry in mkdocs.yml
 -->
 
-# [YOUR PROJECT TITLE]
+# [Sugarcane Areas Estimation - Western Kenya]
 
-![Project overview image](../assets/images/placeholder-project.png)
+![Project overview image](../assets/images/caneEstimation.png)
 
-## Overview
+## 📌 Executive Summary
 
-[One or two sentences describing what you did, what data you used, and why it matters.]
+Determining crop coverage across dynamic agricultural catchments requires _balancing fine spatial resolution_ for local farm blocks _with computational efficiency_ across larger administrative boundaries. 
 
-**Study Area:** [Region or extent]  
-**Duration:** [Start month/year – End month/year]  
-**Role:** [Solo project / Team lead / Contributor]  
-**Status:** [Completed / In progress]
+This project implements an _unsupervised K-means classification workflow_ paired with _dynamic spectral matching_ against ground-truth cane farm geometries. The interactive user interface allows decision-makers to evaluate _area statistics_ across **Dual-Scale modes** (10m–30m local sub-county AOIs vs. 100m catchment baselines).
+
+**Study Area:** [West Kenya]  
+**Duration:** [April 2025 – August 2025]  
+**Role:** [Geospatial Analyst - Team lead]  
+**Status:** [Completed ]
+
+---
+
+## 🛠️ Methodology & Technical Architecture
+### Key Technical Highlights:
+1. **Dynamic World Crop Masking:** Restricts spatial clustering specifically to active crop pixels (`label == 4`), eliminating urban and natural vegetation false positives.
+2. **Multi-Spectral Index Stacking:** Combines 11 indices including chlorophyll-sensitive Red-Edge (`NDRE`), moisture-sensitive (`NDMI`), and soil-adjusted canopy metrics (`MSAVI`, `LAI`).
+3. **Spectral Matching Strategy:** Extracts the dominant cluster overlapping known historical sugarcane plots (`caneFarms`) using modal regional reduction.
+4. **Asynchronous UI Area Reduction:** Implements non-blocking client-side asynchronous JavaScript evaluation (`evaluate()`) for seamless map interactions without client-server locking.
+
+---
+
+## 💻 Earth Engine Workflow & Code Breakdown
+
+Below is the complete, execution-ready Earth Engine JavaScript code structured into functional blocks.
+
+### Step 1: Pre-Processing & Index Generation
+
+We ingest Sentinel-2 Surface Reflectance data, apply cloud masking based on the Scene Classification Layer (`SCL`), and generate an array of multi-spectral indices tailored for canopy canopy density and water content analysis.
+
+### Step 1: Pre-Processing & Index Generation
+
+```javascript
+{% raw %}
+/**
+ * Sentinel-2 Processing & Index Calculation Module
+ */
+var s2 = ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED");
+
+function maskS2clouds(image) {
+  var scl = image.select('SCL');
+  var mask = scl.neq(3).and(scl.neq(8)).and(scl.neq(9)).and(scl.neq(10));
+  return image.updateMask(mask);
+}
+{% endraw %}
+```
 
 ---
 
@@ -29,23 +63,28 @@ CHECKLIST FOR THIS PAGE (copy this file for each new project):
 
 **Data Sources**
 
-- [Dataset name and source]
-- [Dataset name and source]
+- [Drone Datasets (DJU Mavic 3 MSS)]
+- [Kenya Counties ]
 
-**Processing Steps**
+**Logic Steps**
 
-1. [Step one]
-2. [Step two]
-3. [Step three]
-4. [Step four]
+1. [Load pre-processed data into QGIS to confirm extents with a basemap overaly]
+2. [Digitize farm boundaries]
+3. [Check for errors and/or inconsistencies]
+4. [Export cleaned data (with appropriate naming structure) as shapefiles]
+5. [Load data into GEE, defining time period and extents]
+6. [Filter and pre-process data]
+7. [Compute relevant indices]
+8. [Perform supervised classification (DW) & Unsupervised classification (clusters)]
+9. [Develop UI with interactive elements for dynamic computations]
 
 **Tools Used**
 
 | Tool | Purpose |
 |------|---------|
-| [Tool 1] | [What you used it for] |
-| [Tool 2] | [What you used it for] |
-| [Tool 3] | [What you used it for] |
+| [QGIS ] | [Initial loading & cleaning] |
+| [ArcGIS Pro] | [Digitization ] |
+| [Google Earth Engine] | [Pre-processing, Analysis & Visualization] |
 
 ---
 ## Key Findings
@@ -58,5 +97,6 @@ CHECKLIST FOR THIS PAGE (copy this file for each new project):
 
 ## Links
 
-[View Code on GitHub](https://github.com/[YOUR-GITHUB-USERNAME]/[YOUR-REPO-NAME]){ .md-button }
-[View Data Source](https://example.com){ .md-button }
+[View User Interface on Earth Engine](https://code.earthengine.google.com/bcc9fdcc4a53e8438de4e1533002d2b3){ .md-button }
+[View Code on GitHub](https://anita-carolyne.github.io/Anita-Carolyne/){ .md-button }
+

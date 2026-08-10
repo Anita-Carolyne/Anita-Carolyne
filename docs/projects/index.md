@@ -6,40 +6,36 @@ hide:
 <!--
 CHECKLIST FOR THIS PAGE:
 - [ ] Replace the two placeholder cards (marked [YOUR PROJECT ...]) with your real projects
-- [ ] For each project: add a thumbnail image to docs/assets/images/ and update the path below
 - [ ] For each project: create a project page by copying sample-project.md
 - [ ] For each project: add a nav entry in mkdocs.yml (see the comments there)
-- [ ] Delete placeholder cards you don't need yet
 -->
 
 # Projects
 
-A selection of my geospatial projects. Click any card to see the full write-up.
+My Geospatial projects at a glance. **Click** any card to see the _full write-up_.
 
 <div class="grid" markdown>
 
 <div class="project-card" markdown>
-![](../assets/images/placeholder-project.png)
+![](../assets/images/caneEstimation.png)
 
-**[Sample Project](sample-project.md)**
+**[Sugarcane Areas Estimation](sample-project.md)**
 
-[YOUR PROJECT DESCRIPTION — one or two sentences: what you did, what data you used,
-and what you found or built.]
+[Estimating sugarcane cultivated area across western catchment counties. High-resolution drone imagery and field data were pre-processed in desktop GIS environments (ArcGIS Pro/QGIS) and analyzed using Google Earth Engine. The final deliverable features an interactive web UI that dynamically calculates and maps sugarcane coverage based on user-selected parameters.]
 
-`[TOOL 1]` `[TOOL 2]` `[TOOL 3]`
+`[Google Earth Engine]` `[ArcGIS Pro]` `[QGIS]`
 
 [View Project →](sample-project.md){ .md-button }
 </div>
 
 <div class="project-card" markdown>
-![](../assets/images/placeholder-notebook.png)
+![](../assets/images/caneEstimation.png)
 
-**[Sample Notebook](sample-notebook.ipynb)**
+**[Automated Cane Area Estimation](sample-notebook.ipynb)**
 
-[YOUR PROJECT DESCRIPTION — one or two sentences: what you did, what data you used,
-and what you found or built.]
+[Automating the sugarcane census workflow across key sugar zones in Kenya to monitor coverage, pre-inform yield, and harvest capacity. Designed to eliminate repetitive spatial analysis, this pipeline integrates field surveys and factory/miller datasets for robust model training and validation. Includes a Google Earth Engine interactive UI to streamline decision-making for industry stakeholders.]
 
-`Python` `pandas` `Folium`
+`Google Earth Engine` `ArcGIS Pro` `QGIS`
 
 [View Project →](sample-notebook.ipynb){ .md-button }
 </div>
