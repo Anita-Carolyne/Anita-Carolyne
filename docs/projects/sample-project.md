@@ -17,14 +17,16 @@ Determining crop coverage across dynamic agricultural catchments requires _balan
 This project implements an _unsupervised K-means classification workflow_ paired with _dynamic spectral matching_ against ground-truth cane farm geometries. The interactive user interface allows decision-makers to evaluate _area statistics_ across **Dual-Scale modes** (10m–30m local sub-county AOIs vs. 100m catchment baselines).
 
 **Study Area:** West Kenya Catchment
+
 **Duration:** _July 2025 – November 2025_ 
+
 **Role:** Geospatial Analyst - _Team lead_  
+
 **Status:** Completed 
 
 ---
 
-## 🛠️ Methodology & Technical Architecture
-### Key Technical Highlights:
+## 🛠️ Key Technical Highlights:
 1. **Dynamic World Crop Masking:** Restricts spatial clustering specifically to active crop pixels (`label == 4`), eliminating urban and natural vegetation false positives.
 2. **Multi-Spectral Index Stacking:** Combines 11 indices including chlorophyll-sensitive Red-Edge (`NDRE`), moisture-sensitive (`NDMI`), and soil-adjusted canopy metrics (`MSAVI`, `LAI`).
 3. **Spectral Matching Strategy:** Extracts the dominant cluster overlapping known historical sugarcane plots (`caneFarms`) using modal regional reduction.
