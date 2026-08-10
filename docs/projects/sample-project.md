@@ -16,8 +16,8 @@ Determining crop coverage across dynamic agricultural catchments requires _balan
 
 This project implements an _unsupervised K-means classification workflow_ paired with _dynamic spectral matching_ against ground-truth cane farm geometries. The interactive user interface allows decision-makers to evaluate _area statistics_ across **Dual-Scale modes** (10m–30m local sub-county AOIs vs. 100m catchment baselines).
 
-**Study Area:** West Kenya  
-**Duration:** July 2025 – November 2025  
+**Study Area:** West Kenya Catchment
+**Duration:** _July 2025 – November 2025_ 
 **Role:** Geospatial Analyst - _Team lead_  
 **Status:** Completed 
 
@@ -170,12 +170,13 @@ function calculateAndDisplay() {
   // Send server request asynchronously
   ee.List([aoiArea, catchmentArea]).evaluate(callback);
 }
+
 ```
 ---
 
 ## 📊 Interactive Interface & Results Visualizer
 
->When executed in GEE, the web interface embeds custom UI controls on the left panel, updating the spatial layers and area metrics on-the-fly:
+> When executed in GEE, the web interface embeds custom UI controls on the left panel, updating the spatial layers and area metrics on-the-fly:
 
 ---
 
@@ -191,7 +192,9 @@ function calculateAndDisplay() {
 8. Perform supervised classification (DW) & Unsupervised classification (clusters)
 9. Develop UI with interactive elements for dynamic computations
 
-**Tools Used**
+---
+
+## Tools Used
 
 | Tool | Purpose |
 |------|---------|
@@ -203,11 +206,11 @@ function calculateAndDisplay() {
 
 ## 📈 Impact & Applications
 
-1. Dynamic Decision Support: Enables rapid estimation of sugarcane biomass across individual supply zones (outgrower schemes) versus factory catchment baselines.
+1. Dynamic Decision Support: _Enables rapid estimation of sugarcane biomass across individual supply zones (outgrower schemes) versus factory catchment baselines._
 
-2. Scalable GIS Infrastructure: The approach complements manual digitizing with automated, multi-spectral cloud computing capable of processing multi-gigabyte satellite scenes in seconds.
+2. Scalable GIS Infrastructure: _The approach complements manual digitizing with automated, multi-spectral cloud computing capable of processing multi-gigabyte satellite scenes in seconds._
 
-3. Export Readiness: Integrates direct 10m resolution GeoTIFF exports to Google Drive for offline downstream GIS modeling in QGIS or ArcGIS Pro.
+3. Export Readiness: _Integrates direct 10m resolution GeoTIFF exports to Google Drive for offline downstream GIS modeling in QGIS or ArcGIS Pro._
 
 ---
 
