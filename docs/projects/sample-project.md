@@ -41,7 +41,7 @@ Below is the complete, execution-ready Earth Engine JavaScript code structured i
 We ingest Sentinel-2 Surface Reflectance data, apply cloud masking based on the Scene Classification Layer (`SCL`), and generate an array of multi-spectral indices tailored for canopy canopy density and water content analysis.
 
 ### Step 1: Pre-Processing & Index Generation
-> We ingest Sentinel-2 Surface Reflectance data, apply cloud masking based on the Scene Classification Layer (`SCL`), and generate an array of multi-spectral indices tailored for canopy density and water content analysis.
+We ingest Sentinel-2 Surface Reflectance data, apply cloud masking based on the Scene Classification Layer (`SCL`), and generate an array of multi-spectral indices tailored for canopy density and water content analysis.
 ```javascript
 /**
  * Sentinel-2 Processing & Index Calculation Module
