@@ -580,17 +580,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#step-1-pre-processing-index-generation_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Pre-Processing &amp; Index Generation
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -842,17 +831,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#step-1-pre-processing-index-generation_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Pre-Processing &amp; Index Generation
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -939,8 +917,6 @@ CHECKLIST (copy this file for each new project):
 <p>Below is the complete, execution-ready Earth Engine JavaScript code structured into functional blocks.</p>
 <h3 id="step-1-pre-processing-index-generation">Step 1: Pre-Processing &amp; Index Generation</h3>
 <p>We ingest Sentinel-2 Surface Reflectance data, apply cloud masking based on the Scene Classification Layer (<code>SCL</code>), and generate an array of multi-spectral indices tailored for canopy canopy density and water content analysis.</p>
-<h3 id="step-1-pre-processing-index-generation_1">Step 1: Pre-Processing &amp; Index Generation</h3>
-<p>We ingest Sentinel-2 Surface Reflectance data, apply cloud masking based on the Scene Classification Layer (<code>SCL</code>), and generate an array of multi-spectral indices tailored for canopy density and water content analysis.
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Sentinel-2 Processing &amp; Index Calculation Module</span>
 <span class="cm"> */</span>
@@ -977,7 +953,7 @@ CHECKLIST (copy this file for each new project):
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">addBands</span><span class="p">([</span><span class="nx">ndvi</span><span class="p">,</span><span class="w"> </span><span class="nx">gcvi</span><span class="p">,</span><span class="w"> </span><span class="nx">evi</span><span class="p">,</span><span class="w"> </span><span class="nx">gndvi</span><span class="p">,</span><span class="w"> </span><span class="nx">ndre</span><span class="p">,</span><span class="w"> </span><span class="nx">vari</span><span class="p">,</span><span class="w"> </span><span class="nx">savi</span><span class="p">,</span><span class="w"> </span><span class="nx">msavi</span><span class="p">,</span><span class="w"> </span><span class="nx">ndmi</span><span class="p">,</span><span class="w"> </span><span class="nx">lai</span><span class="p">,</span><span class="w"> </span><span class="nx">mndwi</span><span class="p">]);</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <hr />
 <h2 id="methods-tools">Methods &amp; Tools</h2>
 <p><strong>Data Sources</strong></p>
