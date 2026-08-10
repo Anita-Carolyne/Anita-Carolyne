@@ -120,8 +120,8 @@ var caneStats = medianImage.select(indices)
 var caneClusterID = caneStats.get('unsupervisedClusters');
 var extractedCane = clusteredImage.eq(ee.Image.constant(caneClusterID));
 var finalCaneAreas = extractedCane.updateMask(extractedCane.eq(1));
-
 ```
+
 ### Step 3: Reactive UI Controller & Non-Blocking Area Reductions
 
 The interactive GUI allows users to select catchments and sub-counties, set variable spatial resolution scales (10m vs 100m), and trigger client-side evaluation without blocking the map UI thread.
@@ -170,8 +170,8 @@ function calculateAndDisplay() {
   // Send server request asynchronously
   ee.List([aoiArea, catchmentArea]).evaluate(callback);
 }
-
 ```
+
 ---
 
 ## 📊 Interactive Interface & Results Visualizer
@@ -179,9 +179,10 @@ function calculateAndDisplay() {
 > When executed in GEE, the web interface embeds custom UI controls on the left panel, updating the spatial layers and area metrics on-the-fly:
 
 ![UI computation image](../assets/images/caneAreas.png)
+
 ---
 
-## Summarized Logic steps
+## --- Summarized Logic steps
 
 1. Load pre-processed data into QGIS to confirm extents with a basemap overaly
 2. Digitize farm boundaries
@@ -195,7 +196,7 @@ function calculateAndDisplay() {
 
 ---
 
-## Tools Used
+## --- Tools Used
 
 | Tool | Purpose |
 |------|---------|
