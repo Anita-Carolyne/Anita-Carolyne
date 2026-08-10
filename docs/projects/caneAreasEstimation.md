@@ -17,11 +17,8 @@ Determining crop coverage across dynamic agricultural catchments requires _balan
 This project implements an _unsupervised K-means classification workflow_ paired with _dynamic spectral matching_ against ground-truth cane farm geometries. The interactive user interface allows decision-makers to evaluate _area statistics_ across **Dual-Scale modes** (10m–30m local sub-county AOIs vs. 100m catchment baselines).
 
 **Study Area:** West Kenya Catchment
-
 **Duration:** _July 2025 – November 2025_ 
-
 **Role:** Geospatial Analyst - _Team lead_  
-
 **Status:** Completed 
 
 ---
