@@ -75,13 +75,17 @@ nav:
   - Projects:
     - "All Projects": projects/index.md
     - "Cane Areas Estimation": projects/caneAreasEstimation.md
-    - "Jupyter Notebook Project": projects/sample-notebook.ipynb
+    - "Invasive Species Mapping": projects/invasiveSpecies.md
     # HOW TO ADD A NEW PROJECT:
     # 1. Copy docs/projects/sample-project.md to docs/projects/your-project-name.md
     #    (or drop an .ipynb file into docs/projects/ for a Jupyter notebook project)
     # 2. Edit the new file with your project content
     # 3. Add a line below (same format): - "Your Project Title": projects/your-project-name.md
     # 4. Add a project card on docs/projects/index.md
+  - Automations:
+    - "All Automations": projects/index.md
+    - "R": projects/caneAreasEstimation.md
+    - "Python": projects/caneAreasEstimation.md
   - Publications: publications.md
   - Experience: experience.md
   - Contact: contact.md
