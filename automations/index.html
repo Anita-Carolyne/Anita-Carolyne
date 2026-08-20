@@ -25,7 +25,7 @@
     
     
       
-        <title>Index - <span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span></title>
+        <title>Automations - <span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span></title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#projects" class="md-skip">
+        <a href="#automations" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Automations
             
           </span>
         </div>
@@ -787,33 +787,25 @@
 
 
 
-<!--
-CHECKLIST FOR THIS PAGE:
-- [ ] Replace the two placeholder cards (marked [YOUR PROJECT ...]) with your real projects
-- [ ] For each project: create a project page by copying sample-project.md
-- [ ] For each project: add a nav entry in mkdocs.yml (see the comments there)
--->
-
-<h1 id="projects">Projects</h1>
+<h1 id="automations">Automations</h1>
 <blockquote>
-<p>My Geospatial projects at a glance. 
-<strong>Click</strong> any card to see the <em>full write-up</em>.</p>
+<p>Spatial Automations - make processes easier!. 
+<strong>Click</strong> any card to see the <em>automation logic</em>.</p>
 </blockquote>
 <div class="grid">
 <div class="project-card">
-<p><img alt="" src="../assets/images/caneEstimation.png" /></p>
-<p><strong><a href="caneAreasEstimation/">Automated Sugarcane Areas Estimation</a></strong></p>
-<p>Automating the sugarcane census workflow across key sugar zones in Kenya to monitor coverage, pre-inform yield, and harvest capacity. Designed to eliminate repetitive spatial analysis, this pipeline integrates field surveys and factory/miller datasets for robust model training and validation. 
-Includes a Google Earth Engine interactive UI that calculates and maps sugarcane coverage based on user-selected parameters to streamline decision-making for industry stakeholders.</p>
-<p><code>Google Earth Engine</code> <code>ArcGIS Pro</code> <code>QGIS</code></p>
-<p><a class="md-button" href="caneAreasEstimation/">View Project →</a></p>
+<p><img alt="" src="../assets/images/LiDAR/chunkProcessing.png" /></p>
+<p><strong><a href="terrain/">Automated DTM &amp; Contour Generation</a></strong></p>
+<p>An end-to-end R automated workflow designed to process <em>multi-chunk LiDAR point cloud</em> datasets. The pipeline systematically <strong>batch-filters ground returns</strong> (Class 2), <strong>generates 1-meter DTMs</strong> (Digital Terrain Models) via <em>Triangulated Irregular Networks (TIN)</em>, <em>normalizes elevation datums</em> across the Area of Interest (AOI), and extracts <em>seamless</em>, <em>publication-ready</em> vector contour layers.</p>
+<p><code>R programming</code> <code>ArcGIS Pro</code> <code>QGIS</code></p>
+<p><a class="md-button" href="terrain/">View Project →</a></p>
 </div>
 <div class="project-card">
 <p><img alt="" src="../assets/images/invasiveSpecies/speciesRangeChangeMapsPlot26.png" /></p>
-<p><strong><a href="invasiveSpecies/">Invasive Species Mapping</a></strong></p>
+<p><strong><a href="scraper/">Web scraping</a></strong></p>
 <p>Predicting the expansion of invasive flora is critical for safeguarding agricultural ecosystems and guiding targeted control measures. This project modeled the spatial distribution and projected spread of <em>Acacia reficiens</em> and <em>Opuntia</em> (Cactus) across climate scenarios (RCP 2.6 and RCP 8.5). Utilizing BIOMOD2, the pipeline evaluated multiple species distribution algorithms, selecting the top three performing models to assess environmental predictors across three feature sets: bioclimatic variables, biophysical variables, and a combined bio-climatic/biophysical ensemble. </p>
 <p><code>R</code> <code>ArcGIS Pro</code> <code>QGIS</code></p>
-<p><a class="md-button" href="invasiveSpecies/">View Project →</a></p>
+<p><a class="md-button" href="scraper/">View Project →</a></p>
 </div>
 </div>
 

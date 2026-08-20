@@ -1,0 +1,1327 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Bridging the data gap using Geospatial solutions">
+      
+      
+        <meta name="author" content="Anita Carolyne Orera">
+      
+      
+        <link rel="canonical" href="https://anita-carolyne.github.io/Anita-Carolyne/automations/terrain/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Terrain - <span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span></title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css?v=2">
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#automated-dtm-generation-contour-processing-pipeline" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="&lt;span class=&#39;custom-site-title&#39;&gt;Earth observation, GeoAI &amp; Analytics&lt;/span&gt; &lt;span class=&#39;site-title-author&#39;&gt;with Anita&lt;/span&gt;" class="md-header__button md-logo" aria-label="<span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span>" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.9 17.39c-.26-.8-1.01-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.984 7.984 0 0 1 2.9 12.8M11 19.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.22.21-1.79L9 15v1a2 2 0 0 0 2 2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            <span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span>
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Terrain
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../projects/" class="md-tabs__link">
+          
+  
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../projects/" class="md-tabs__link">
+          
+  
+  
+  Automations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Publications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../experience/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Experience
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contact
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="&lt;span class=&#39;custom-site-title&#39;&gt;Earth observation, GeoAI &amp; Analytics&lt;/span&gt; &lt;span class=&#39;site-title-author&#39;&gt;with Anita&lt;/span&gt;" class="md-nav__button md-logo" aria-label="<span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span>" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.9 17.39c-.26-.8-1.01-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.984 7.984 0 0 1 2.9 12.8M11 19.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.22.21-1.79L9 15v1a2 2 0 0 0 2 2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+
+    </a>
+    <span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span>
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/caneAreasEstimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cane Areas Estimation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/invasiveSpecies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Invasive Species Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/caneAreasEstimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cane Areas Estimation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/caneAreasEstimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cane Areas Estimation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Technical Specifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-pipeline-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Workflow &amp; Pipeline Architecture:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Workflow &amp; Pipeline Architecture:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features-engineering-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 Key Features &amp; Engineering Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-workflow-code-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R Workflow &amp; Code Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="R Workflow &amp; Code Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-call-necessary-libraries-initialize-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Call necessary libraries &amp; initialize directories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-batch-generate-dtms-from-chunked-las-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Batch-Generate DTMs from chunked LAS files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-extract-seamless-contours-export-geopackage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Extract seamless contours &amp; export geopackage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-interface-results-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Interactive Interface &amp; Results Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-summarized-logic-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        --- Summarized Logic steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-tools-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        --- Tools Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-use-cases-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Practical Use Cases &amp; Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Practical Use Cases &amp; Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practical-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-efficiency-performance-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Efficiency &amp; Performance Benchmark
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!--
+CHECKLIST (copy this file for each new project):
+- [ ] Update the Key Findings section
+- [ ] Update the Links section
+- [ ] Add a card for this project on docs/projects/index.md
+- [ ] Add a nav entry in mkdocs.yml
+-->
+
+<h1 id="automated-dtm-generation-contour-processing-pipeline">Automated DTM Generation &amp; Contour Processing Pipeline</h1>
+<p><img alt="Project overview image" src="../../assets/images/LiDAR/chunkProcessing.png" /></p>
+<h2 id="executive-summary">📌 Executive Summary</h2>
+<p>An end-to-end R automated workflow designed to process <em>multi-chunk LiDAR point cloud</em> datasets. The pipeline systematically <strong>batch-filters ground returns</strong> (Class 2), <strong>generates 1-meter DTMs</strong> (Digital Terrain Models) via <em>Triangulated Irregular Networks (TIN)</em>, <em>normalizes elevation datums</em> across the Area of Interest (AOI), and extracts <em>seamless</em>, <em>publication-ready</em> vector contour layers.</p>
+<p><strong>Role:</strong> Geospatial Analyst - <em>R programmer</em><br />
+<strong>Status:</strong> Completed </p>
+<hr />
+<h2 id="technical-specifications">🛠️ Technical Specifications</h2>
+<ul>
+<li><strong>Language &amp; Core Libraries:</strong> R (<code>lidR</code>, <code>rlas</code>, <code>terra</code>, <code>sf</code>, <code>leaflet</code>, <code>dplyr</code>, <code>tmap</code>, <code>mapview</code>)</li>
+<li><strong>Input Data:</strong> Point Cloud LAS Datasets</li>
+<li><strong>Output Formats:</strong> GeoTIFF (<code>.tif</code>), GeoPackage (<code>.gpkg</code>), Interactive HTML Map</li>
+<li><strong>Target AOI:</strong> Gaduud Corridor, Jubaland, Somalia (Elevation Range: 2m – 14m)</li>
+</ul>
+<hr />
+<h2 id="workflow-pipeline-architecture">🛠️ Workflow &amp; Pipeline Architecture:</h2>
+<blockquote>
+<p>LAS Chunks -&gt; lidR Catalog Filtering  -&gt;  1m Chunk DTMs -&gt; terra Mosaic &amp; Datum Shift -&gt;  Seamless AOI DTM -&gt;  1m Vector Contours</p>
+</blockquote>
+<hr />
+<h3 id="key-features-engineering-logic">💻 Key Features &amp; Engineering Logic</h3>
+<ol>
+<li><strong>Parallelized Chunk Processing:</strong> Efficiently streams large LAS catalogs in 250*250 m blocks with a 10 m buffer <em>to eliminate edge artifacts</em>.</li>
+<li><strong>Datum Uniform Shift:</strong> Normalizes raw ellipsoid/relative height offsets upward to ground level 0.0 m baseline, <em>maintaining relative micro-topography without terrain flipping artifacts</em>.</li>
+<li><strong>Seamless Contour Extraction:</strong> Computes 1 m vector contours directly from the merged AOI raster surface <em>to guarantee edge-matching continuity across tile boundaries</em>.</li>
+<li><strong>Optimized GeoPackage Storage:</strong> Replaces legacy Shapefiles with OGC-standard GeoPackage (<code>.gpkg</code>) files <em>to maintain field naming integrity and eliminate file-size restrictions</em>.</li>
+</ol>
+<hr />
+<h2 id="r-workflow-code-breakdown">R Workflow &amp; Code Breakdown</h2>
+<p>Below is a snippet of code as structured in R.</p>
+<h3 id="step-1-call-necessary-libraries-initialize-directories">Step 1: Call necessary libraries &amp; initialize directories</h3>
+<blockquote>
+<p>You need to install the listed packages if not initially installed
+We call all necessary packages to allow function calling. We also point R to the working directory with file paths relevant to data, images and outputs.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># Call the necessary libraries</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lidR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">rlas</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">terra</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">mapview</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tmap</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">leaflet</span><span class="p">)</span>
+
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># Setup Directories &amp; Inputs</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="n">chunk_dirs</span><span class="w">  </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list.dirs</span><span class="p">(</span><span class="s">&quot;path/to/chunksdata&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">recursive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="n">dtms_dir</span><span class="w">    </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;desired/path/to/dtmOutputs&quot;</span>
+<span class="n">aoi_out_dir</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;desired/path/to/final/aoi_outputs&quot;</span>
+<span class="nf">dir.create</span><span class="p">(</span><span class="n">dtms_dir</span><span class="p">,</span><span class="w"> </span><span class="n">recursive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">showWarnings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">dir.create</span><span class="p">(</span><span class="n">aoi_out_dir</span><span class="p">,</span><span class="w"> </span><span class="n">recursive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">showWarnings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="n">contour_interval</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c1"># 1-meter contour resolution</span>
+</code></pre></div>
+<h3 id="step-2-batch-generate-dtms-from-chunked-las-files">Step 2: Batch-Generate DTMs from chunked LAS files</h3>
+<blockquote>
+<p>These chunk files were split in R from an original source containing all datasets.
+Chunk splitting was done to cater for processing needs and the huge dataset availed.
+To create your own chunks, let R read in all the file names in your directory. Afterwards, let it split these datasets into chunks based on matching patterns within the file names e.g. <em>matching 5 characters</em>, <em>similar suffix</em> etc. These chunks will now be labelled as <em>chunk1</em>, <em>chunk2</em> etc. </p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># Batch-Generation of DTMs from Chunked LAS Files</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">chunk_path</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">chunk_dirs</span><span class="p">)</span><span class="w"> </span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="n">chunk_name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">basename</span><span class="p">(</span><span class="n">chunk_path</span><span class="p">)</span>
+<span class="w">    </span><span class="n">output_dir</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">file.path</span><span class="p">(</span><span class="n">dtms_dir</span><span class="p">,</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="n">chunk_name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DTM&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nf">dir.exists</span><span class="p">(</span><span class="n">output_dir</span><span class="p">))</span><span class="w"> </span><span class="nf">dir.create</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span><span class="w"> </span><span class="n">recursive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">ctg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readLAScatalog</span><span class="p">(</span><span class="n">chunk_path</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">ctg</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="kr">next</span>
+
+<span class="w">    </span><span class="c1"># Optimization &amp; Ground Filtering (Class 2)</span>
+<span class="w">    </span><span class="nf">opt_chunk_size</span><span class="p">(</span><span class="n">ctg</span><span class="p">)</span><span class="w">   </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">250</span>
+<span class="w">    </span><span class="nf">opt_chunk_buffer</span><span class="p">(</span><span class="n">ctg</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span>
+<span class="w">    </span><span class="nf">opt_filter</span><span class="p">(</span><span class="n">ctg</span><span class="p">)</span><span class="w">       </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;-keep_class 2 -drop_overlap&quot;</span>
+
+<span class="w">    </span><span class="c1"># Generate 1m DTM</span>
+<span class="w">    </span><span class="n">dtm_raw</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">grid_terrain</span><span class="p">(</span><span class="n">ctg</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">algorithm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tin</span><span class="p">())</span>
+<span class="w">    </span><span class="n">dtm</span><span class="w">     </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rast</span><span class="p">(</span><span class="n">dtm_raw</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nf">writeRaster</span><span class="p">(</span><span class="n">dtm</span><span class="p">,</span><span class="w"> </span><span class="nf">file.path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="n">chunk_name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DTM.tif&quot;</span><span class="p">)),</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># Merge Rasters &amp; Shift Datum</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="n">dtm_files</span><span class="w">   </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list.files</span><span class="p">(</span><span class="n">dtms_dir</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;\\.tif$&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">recursive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">full.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">dtm_list</span><span class="w">    </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="n">dtm_files</span><span class="p">,</span><span class="w"> </span><span class="n">rast</span><span class="p">)</span>
+<span class="n">aoi_dtm_raw</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">merge</span><span class="p">(</span><span class="nf">sprc</span><span class="p">(</span><span class="n">dtm_list</span><span class="p">))</span>
+
+<span class="c1"># Shift surface baseline to 0 meters</span>
+<span class="n">min_val</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">minmax</span><span class="p">(</span><span class="n">aoi_dtm_raw</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">aoiDTM</span><span class="w">  </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">aoi_dtm_raw</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min_val</span>
+
+<span class="nf">writeRaster</span><span class="p">(</span><span class="n">aoiDTM</span><span class="p">,</span><span class="w"> </span><span class="nf">file.path</span><span class="p">(</span><span class="n">aoi_out_dir</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;aoiDTM.tif&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="step-3-extract-seamless-contours-export-geopackage">Step 3: Extract seamless contours &amp; export geopackage</h3>
+<blockquote>
+<p>Further visualization requires use of desktop GIS software to ensure presence of all significant map elements.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># Contour extraction, data export &amp; dummy visualization</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="n">elev_min</span><span class="w">    </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">minmax</span><span class="p">(</span><span class="n">aoiDTM</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">elev_max</span><span class="w">    </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">minmax</span><span class="p">(</span><span class="n">aoiDTM</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span>
+<span class="n">levels_seq</span><span class="w">  </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ceiling</span><span class="p">(</span><span class="n">elev_min</span><span class="p">),</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">floor</span><span class="p">(</span><span class="n">elev_max</span><span class="p">),</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contour_interval</span><span class="p">)</span>
+
+<span class="n">aoi_contours</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.contour</span><span class="p">(</span><span class="n">aoiDTM</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">levels_seq</span><span class="p">)</span>
+<span class="nf">writeVector</span><span class="p">(</span><span class="n">aoi_contours</span><span class="p">,</span><span class="w"> </span><span class="nf">file.path</span><span class="p">(</span><span class="n">aoi_out_dir</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;aoiContours.gpkg&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">layer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;aoiContours&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># Interactive Visualization Setup</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="n">aoi_contours_sf</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_as_sf</span><span class="p">(</span><span class="n">aoi_contours</span><span class="p">)</span>
+
+<span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mapview</span><span class="p">(</span>
+<span class="w">              </span><span class="n">aoi_contours_sf</span><span class="p">,</span>
+<span class="w">              </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#8B4513&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="n">lwd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span>
+<span class="w">              </span><span class="n">legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span>
+<span class="w">              </span><span class="n">map.types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;OpenTopoMap&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Esri.WorldImagery&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">)</span>
+
+<span class="c1"># Render map with custom attribution</span>
+<span class="n">leaflet</span><span class="o">::</span><span class="nf">addTiles</span><span class="p">(</span><span class="n">m</span><span class="o">@</span><span class="n">map</span><span class="p">,</span><span class="w"> </span><span class="n">attribution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;© 2026 Anita Carolyne | DTM Automation&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="interactive-interface-results-visualizer">📊 Interactive Interface &amp; Results Visualizer</h2>
+<blockquote>
+<p>To obtain an interactive webmap, use tmap and set the mode to "view".
+Mapview allows you to visualize your data on a basemap within the R environment.
+Click on any contour line to inspect exact elevation values.
+<img alt="UI computation image" src="../../assets/images/LiDAR/chunkProcessing.png" /></p>
+</blockquote>
+<hr />
+<h2 id="-summarized-logic-steps">--- Summarized Logic steps</h2>
+<ol>
+<li><strong>Catalog &amp; Stream LAS Chunks:</strong> <em>Load multi-tile LiDAR point clouds into a memory-efficient catalog (<code>readLAScatalog</code>), setting chunk sizes and overlapping buffers to prevent edge artifacts.</em></li>
+<li><strong>Filter &amp; Interpolate Ground Returns:</strong> <em>Extract Class 2 (ground) points, dropping overlapping points, and generate individual 1-meter Digital Terrain Models (DTMs) per tile via Triangulated Irregular Network (<code>tin()</code>) interpolation.</em></li>
+<li><strong>Mosaic DTM Tiles:</strong> <em>Combine the processed raster tiles into a single spatial raster collection (<code>sprc</code>) and merge them into a seamless Area of Interest (AOI) raster surface.</em></li>
+<li><strong>Normalize Elevation Datum:</strong> <em>Calculate the minimum elevation across the merged surface and subtract it from the raster to shift the baseline to 0.0 m, eliminating negative height offsets while preserving accurate relative terrain relief.</em></li>
+<li><strong>Calculate Bounded Contour Levels:</strong> <em>Extract the exact shifted minimum and maximum elevation range, then construct a sequence array bounded strictly between <code>ceiling(min)</code> and <code>floor(max)</code> at your target contour interval (e.g., 1 m).</em></li>
+<li><strong>Extract Seamless Vector Contours:</strong> <em>Generate continuous vector lines across the entire AOI using <code>as.contour()</code> with the bounded sequence, avoiding artificial tile boundary breaks.</em></li>
+<li><strong>Export &amp; Render:</strong> <em>Save the raster as a GeoTIFF (<code>.tif</code>), export the vector contours as an OGC-standard GeoPackage (<code>.gpkg</code>), and convert features to an <code>sf</code> object for interactive rendering in <code>mapview</code>/<code>leaflet</code>.</em></li>
+</ol>
+<hr />
+<h2 id="-tools-used">--- Tools Used</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>Initial load, organizing &amp; cleaning</td>
+</tr>
+<tr>
+<td>ArcGIS Pro</td>
+<td>Visualization</td>
+</tr>
+<tr>
+<td>QGIS</td>
+<td>Visualization</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="practical-use-cases-applications">📈 Practical Use Cases &amp; Applications</h2>
+<h3 id="practical-use-cases">Practical Use Cases</h3>
+<ol>
+<li>
+<p><strong>Hydrological &amp; Flood Risk Modeling:</strong> In flat coastal terrain, micro-topography dictates water movement. </p>
+<blockquote>
+<p>The automated 1-meter contours clearly identify seasonal drainage channels, and low-lying depression zones prone to waterlogging during heavy rain seasons.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Infrastructure &amp; Road Network Planning:</strong> For primary transit corridors like the Kismaayo–Jilib highway stretch, precise micro-relief data supports <em>optimal road alignment</em>, <em>culvert placement</em>, and <em>earthwork volume estimation (cut-and-fill calculations)</em>, directly mitigating runoff erosion and washouts.</p>
+</li>
+<li>
+<p><strong>Agricultural Land Suitability:</strong> Identifies subtle slope gradients across alluvial plains to assess gravity-fed irrigation feasibility, soil erosion risks, and surface runoff flow directions for regional agricultural development.</p>
+</li>
+<li>
+<p><strong>Climate Adaptation &amp; Coastal Inundation Mapping:</strong> Establishes an accurate baseline elevation model to evaluate ecosystem vulnerability to extreme weather events, storm surges, and long-term sea-level variations along southern Somalia's coastal hinterland.</p>
+</li>
+</ol>
+<hr />
+<h3 id="pipeline-efficiency-performance-benchmark">Pipeline Efficiency &amp; Performance Benchmark</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operational Metric</th>
+<th style="text-align: left;">Manual GIS Workflow</th>
+<th style="text-align: left;">Automated R Pipeline</th>
+<th style="text-align: left;">Advantage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Execution Speed</strong></td>
+<td style="text-align: left;">Hours of manual software interactions per tile</td>
+<td style="text-align: left;"><strong>Minutes</strong> (unattended batch execution)</td>
+<td style="text-align: left;">Rapid turnaround for multi-gigabyte point clouds</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Edge Continuity</strong></td>
+<td style="text-align: left;">Visible boundary gaps or line misalignments</td>
+<td style="text-align: left;"><strong>Seamless</strong> (mosaicked surface extraction)</td>
+<td style="text-align: left;">Completely eliminates tile boundary artifacts</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Datum Consistency</strong></td>
+<td style="text-align: left;">Manual elevation offsets prone to operator error</td>
+<td style="text-align: left;"><strong>Automated Normalization</strong> (0.0m baseline)</td>
+<td style="text-align: left;">Enforces unified relative height metrics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Reproducibility</strong></td>
+<td style="text-align: left;">Difficult to document and standardize</td>
+<td style="text-align: left;"><strong>100% Scripted</strong> (version-controlled R code)</td>
+<td style="text-align: left;">Re-run identical parameters instantly on new data</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Deliverable Quality</strong></td>
+<td style="text-align: left;">Static Shapefiles subject to size limits</td>
+<td style="text-align: left;"><strong>OGC GeoPackage + Interactive HTML Web Map</strong></td>
+<td style="text-align: left;">Modern, lightweight, web-ready spatial deliverables</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="links">Links</h2>
+<p><a href="mailto:anitaskyelynn@gmail.com">Request a consultation</a>
+<a href="https://linkedin.com/in/anita-carolyne-orera/">Request code</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Anita Carolyne Orera
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Anita-Carolyne" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/anita-carolyne-orera/" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:anitaskyelynn@gmail.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../assets/js/extra.js"></script>
+      
+    
+  </body>
+</html>
