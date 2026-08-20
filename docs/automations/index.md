@@ -12,7 +12,7 @@ hide:
 <div class="grid" markdown>
 
 <div class="automation-card" markdown>
-![](../assets/images/LiDAR/chunkPattern.png)
+![](../assets/images/LiDAR/chunkProcessing.png)
 
 **[Automated DTM & Contour Generation](terrain.md)**
 
