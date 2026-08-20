@@ -199,6 +199,6 @@ Mapview allows you to visualize your data on a basemap within the R environment.
 
 ## Links
 
-[Request a consultation](mailto:anitaskyelynn@gmail.com)
-[Request code](https://linkedin.com/in/anita-carolyne-orera/)
+| [Request a consultation](mailto:anitaskyelynn@gmail.com) |
+| [Request code](https://linkedin.com/in/anita-carolyne-orera/) |
 
