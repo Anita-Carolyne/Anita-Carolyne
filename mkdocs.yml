@@ -83,9 +83,9 @@ nav:
     # 3. Add a line below (same format): - "Your Project Title": projects/your-project-name.md
     # 4. Add a project card on docs/projects/index.md
   - Automations:
-    - "All Automations": projects/index.md
-    - "R": projects/caneAreasEstimation.md
-    - "Python": projects/caneAreasEstimation.md
+    - "All Automations": automations/index.md
+    - "DTM Generation & Contour Processing": automations/terrain.md
+    - "Web scraping with R": automations/scraper.md
   - Publications: publications.md
   - Experience: experience.md
   - Contact: contact.md
