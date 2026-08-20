@@ -3,43 +3,36 @@ hide:
   - toc
   - navigation
 ---
-<!--
-CHECKLIST FOR THIS PAGE:
-- [ ] Replace the two placeholder cards (marked [YOUR PROJECT ...]) with your real projects
-- [ ] For each project: create a project page by copying sample-project.md
-- [ ] For each project: add a nav entry in mkdocs.yml (see the comments there)
--->
 
-# Projects
+# Automations
 
-> My Geospatial projects at a glance. 
-**Click** any card to see the _full write-up_.
+> Spatial Automations - make processes easier!. 
+**Click** any card to see the _automation logic_.
 
 <div class="grid" markdown>
 
 <div class="project-card" markdown>
-![](../assets/images/caneEstimation.png)
+![](../assets/images/LiDAR/chunkProcessing.png)
 
-**[Automated Sugarcane Areas Estimation](caneAreasEstimation.md)**
+**[Automated DTM & Contour Generation](terrain.md)**
 
-Automating the sugarcane census workflow across key sugar zones in Kenya to monitor coverage, pre-inform yield, and harvest capacity. Designed to eliminate repetitive spatial analysis, this pipeline integrates field surveys and factory/miller datasets for robust model training and validation. 
-Includes a Google Earth Engine interactive UI that calculates and maps sugarcane coverage based on user-selected parameters to streamline decision-making for industry stakeholders.
+An end-to-end R automated workflow designed to process _multi-chunk LiDAR point cloud_ datasets. The pipeline systematically **batch-filters ground returns** (Class 2), **generates 1-meter DTMs** (Digital Terrain Models) via _Triangulated Irregular Networks (TIN)_, _normalizes elevation datums_ across the Area of Interest (AOI), and extracts _seamless_, _publication-ready_ vector contour layers.
 
-`Google Earth Engine` `ArcGIS Pro` `QGIS`
+`R programming` `ArcGIS Pro` `QGIS`
 
-[View Project →](caneAreasEstimation.md){ .md-button }
+[View Project →](terrain.md){ .md-button }
 </div>
 
 <div class="project-card" markdown>
 ![](../assets/images/invasiveSpecies/speciesRangeChangeMapsPlot26.png)
 
-**[Invasive Species Mapping](invasiveSpecies.md)**
+**[Web scraping](scraper.md)**
 
 Predicting the expansion of invasive flora is critical for safeguarding agricultural ecosystems and guiding targeted control measures. This project modeled the spatial distribution and projected spread of _Acacia reficiens_ and _Opuntia_ (Cactus) across climate scenarios (RCP 2.6 and RCP 8.5). Utilizing BIOMOD2, the pipeline evaluated multiple species distribution algorithms, selecting the top three performing models to assess environmental predictors across three feature sets: bioclimatic variables, biophysical variables, and a combined bio-climatic/biophysical ensemble. 
 
 `R` `ArcGIS Pro` `QGIS`
 
-[View Project →](invasiveSpecies.md){ .md-button }
+[View Project →](scraper.md){ .md-button }
 </div>
 
 </div>
