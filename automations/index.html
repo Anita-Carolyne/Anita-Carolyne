@@ -667,7 +667,7 @@
   <span class="md-ellipsis">
     
   
-    Web scraping with R
+    Scraping public time series datasets
   
 
     
@@ -817,14 +817,15 @@
 <div class="automation-card">
 <p><img alt="" src="../assets/images/LiDAR/chunkProcessing.png" /></p>
 <p><strong><a href="terrain/">Automated DTM &amp; Contour Generation</a></strong></p>
-<p>An end-to-end R automated workflow designed to process <em>multi-chunk LiDAR point cloud</em> datasets. The pipeline systematically <strong>batch-filters ground returns</strong> (Class 2), <strong>generates 1-meter DTMs</strong> (Digital Terrain Models) via <em>Triangulated Irregular Networks (TIN)</em>, <em>normalizes elevation datums</em> across the Area of Interest (AOI), and extracts <em>seamless</em>, <em>publication-ready</em> vector contour layers.</p>
+<p>This <strong>automated geospatial pipeline</strong> addresses the <em>key challenges</em> of processing large-scale, LiDAR point cloud datasets. By replacing manual, tile-by-tile GIS processing with a <em>scripted R workflow</em>, the pipeline systematically extracts ground classification then executes DTM generation, datum normalization, and seamless contour extraction. The resulting workflow eliminates tile boundary artifacts, enforces strict datum consistency, and <strong>accelerates turnaround times</strong> from hours to minutes, delivering <em>standardized</em>, <em>OGC-compliant</em> GeoPackages and <em>web-ready</em> interactive deliverables tailored for varied use cases such as infrastructure planning and flood risk assessment.</p>
 <p><code>R programming</code> <code>ArcGIS Pro</code> <code>QGIS</code></p>
 <p><a class="md-button" href="terrain/">View Automation →</a></p>
 </div>
 <div class="automation-card">
-<p><img alt="" src="../assets/images/invasiveSpecies/speciesRangeChangeMapsPlot26.png" /></p>
+<p><img alt="" src="../assets/images/scraper/infantMortality.png" /></p>
 <p><strong><a href="scraper/">Web scraping</a></strong></p>
-<p>Predicting the expansion of invasive flora is critical for safeguarding agricultural ecosystems and guiding targeted control measures. This project modeled the spatial distribution and projected spread of <em>Acacia reficiens</em> and <em>Opuntia</em> (Cactus) across climate scenarios (RCP 2.6 and RCP 8.5). Utilizing BIOMOD2, the pipeline evaluated multiple species distribution algorithms, selecting the top three performing models to assess environmental predictors across three feature sets: bioclimatic variables, biophysical variables, and a combined bio-climatic/biophysical ensemble. </p>
+<p><strong>Project Overview</strong></p>
+<p>Tracking <em>multi-decadal demographic shifts</em> is essential for understanding <strong>national population dynamics</strong> and <em>establishing accurate baselines for future spatial allocation models</em>. This automated data extraction and analytics pipeline <em>programmatically interfaces</em> with the World Bank Open Data API to collect, transform, and evaluate 30+ years of demographic time-series data for Kenya (1989–2021). Designed as a <strong>foundational ingestion engine</strong>, the resulting pipeline establishes a standardized data baseline structured to integrate seamlessly into sub-national spatial join workflows across Kenya’s administrative boundaries.</p>
 <p><code>R</code> <code>ArcGIS Pro</code> <code>QGIS</code></p>
 <p><a class="md-button" href="scraper/">View Automation →</a></p>
 </div>

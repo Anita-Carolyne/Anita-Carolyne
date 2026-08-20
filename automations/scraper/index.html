@@ -29,7 +29,7 @@
     
     
       
-        <title>Web scraping with R - <span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span></title>
+        <title>Scraping public time series datasets - <span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span></title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#invasive-species-mapping-laikipia-isiolo" class="md-skip">
+        <a href="#web-scraping-public-datasets" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Web scraping with R
+              Scraping public time series datasets
             
           </span>
         </div>
@@ -664,7 +664,7 @@
   <span class="md-ellipsis">
     
   
-    Web scraping with R
+    Scraping public time series datasets
   
 
     
@@ -682,7 +682,7 @@
   <span class="md-ellipsis">
     
   
-    Web scraping with R
+    Scraping public time series datasets
   
 
     
@@ -719,10 +719,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-technical-highlights" class="md-nav__link">
+  <a href="#technical-specifications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛠️ Key Technical Highlights:
+        🛠️ Technical Specifications
       
     </span>
   </a>
@@ -730,22 +730,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#earth-engine-workflow-code-breakdown" class="md-nav__link">
+  <a href="#data-transformation-visualization-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💻 Earth Engine Workflow &amp; Code Breakdown
+        💻 Data Transformation &amp; Visualization Pipeline
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="💻 Earth Engine Workflow &amp; Code Breakdown">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-workflow-code-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R Workflow &amp; Code Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="R Workflow &amp; Code Breakdown">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-pre-processing-index-generation" class="md-nav__link">
+  <a href="#step-1-call-necessary-libraries-initialize" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Pre-Processing &amp; Index Generation
+        Step 1: Call necessary libraries &amp; initialize
       
     </span>
   </a>
@@ -753,10 +764,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-crop-masked-k-means-clustering-spectral-matching" class="md-nav__link">
+  <a href="#step-2-filter-clean-calculate-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Crop-Masked K-Means Clustering &amp; Spectral Matching
+        Step 2: Filter, Clean &amp; Calculate Metrics
       
     </span>
   </a>
@@ -764,10 +775,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-reactive-ui-controller-non-blocking-area-reductions" class="md-nav__link">
+  <a href="#step-3-visualization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Reactive UI Controller &amp; Non-Blocking Area Reductions
+        Step 3: Visualization
       
     </span>
   </a>
@@ -780,21 +791,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interactive-interface-results-visualizer" class="md-nav__link">
+  <a href="#summarized-logic-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📊 Interactive Interface &amp; Results Visualizer
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-summarized-logic-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        --- Summarized Logic steps
+        Summarized Logic steps
       
     </span>
   </a>
@@ -813,10 +813,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#impact-applications" class="md-nav__link">
+  <a href="#practical-application" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📈 Impact &amp; Applications
+        📈 Practical Application
       
     </span>
   </a>
@@ -824,10 +824,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#links" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Links
+        Next steps
       
     </span>
   </a>
@@ -969,10 +969,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-technical-highlights" class="md-nav__link">
+  <a href="#technical-specifications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛠️ Key Technical Highlights:
+        🛠️ Technical Specifications
       
     </span>
   </a>
@@ -980,22 +980,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#earth-engine-workflow-code-breakdown" class="md-nav__link">
+  <a href="#data-transformation-visualization-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💻 Earth Engine Workflow &amp; Code Breakdown
+        💻 Data Transformation &amp; Visualization Pipeline
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="💻 Earth Engine Workflow &amp; Code Breakdown">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-workflow-code-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R Workflow &amp; Code Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="R Workflow &amp; Code Breakdown">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-pre-processing-index-generation" class="md-nav__link">
+  <a href="#step-1-call-necessary-libraries-initialize" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Pre-Processing &amp; Index Generation
+        Step 1: Call necessary libraries &amp; initialize
       
     </span>
   </a>
@@ -1003,10 +1014,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-crop-masked-k-means-clustering-spectral-matching" class="md-nav__link">
+  <a href="#step-2-filter-clean-calculate-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Crop-Masked K-Means Clustering &amp; Spectral Matching
+        Step 2: Filter, Clean &amp; Calculate Metrics
       
     </span>
   </a>
@@ -1014,10 +1025,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-reactive-ui-controller-non-blocking-area-reductions" class="md-nav__link">
+  <a href="#step-3-visualization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Reactive UI Controller &amp; Non-Blocking Area Reductions
+        Step 3: Visualization
       
     </span>
   </a>
@@ -1030,21 +1041,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interactive-interface-results-visualizer" class="md-nav__link">
+  <a href="#summarized-logic-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📊 Interactive Interface &amp; Results Visualizer
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-summarized-logic-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        --- Summarized Logic steps
+        Summarized Logic steps
       
     </span>
   </a>
@@ -1063,10 +1063,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#impact-applications" class="md-nav__link">
+  <a href="#practical-application" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📈 Impact &amp; Applications
+        📈 Practical Application
       
     </span>
   </a>
@@ -1074,10 +1074,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#links" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Links
+        Next steps
       
     </span>
   </a>
@@ -1101,168 +1101,171 @@
 
 
 
-<h1 id="invasive-species-mapping-laikipia-isiolo">Invasive Species Mapping - Laikipia &amp; Isiolo</h1>
-<p><img alt="Project overview image" src="../../assets/images/invasiveSpecies/speciesRangeChangeMapsPlot26.png" /></p>
+<h1 id="web-scraping-public-datasets">Web scraping (public datasets)</h1>
+<p><img alt="Automation overview image" src="../assets/images/scraper/infantMortality.png" /></p>
 <h2 id="executive-summary">📌 Executive Summary</h2>
-<p>To assess regional agricultural vulnerability, this study modeled the current and future distribution of two invasive plant species <em>Acacia reficiens</em> and <em>Opuntia spp.</em> under RCP 2.6 and RCP 8.5 climate scenarios. Built within the BIOMOD2 ensemble framework, candidate machine learning algorithms were evaluated to identify the top three performing models. The workflow systematically tested predictive performance using bioclimatic variables, biophysical factors, and a combined dataset to evaluate environmental drivers of spread.</p>
-<p><strong>Study Area:</strong> Laikipia &amp; Isiolo
-<strong>Duration:</strong> <em>November 2023 – January 2024</em> 
-<strong>Role:</strong> Geospatial Analyst - <em>Researcher &amp; Developer</em><br />
-<strong>Status:</strong> Completed </p>
+<p>This <em>automated</em>, <em>reproducible</em> data extraction pipeline engineered in R, interfaces with the World Bank Open Data RESTful API (v2) using the {wbstats} package to query multi-decadal demographic time-series datasets for Kenya. The ingestion module <strong>dynamically retrieves</strong> structured JSON payloads for <em>key macro-level metrics</em>, including age cohort distributions, gender ratios, and infant mortality rates. </p>
+<blockquote>
+<p>Instead of manually downloading spreadsheets, the R script automatically fetches updated numbers, processes demographic trends across major census years, and outputs visual charts with a single command.</p>
+</blockquote>
+<p><strong>Region of Interest:</strong> Kenya
+<strong>Time period:</strong> <em>1989 – 2021</em> </p>
 <hr />
-<h2 id="key-technical-highlights">🛠️ Key Technical Highlights:</h2>
+<h2 id="technical-specifications">🛠️ Technical Specifications</h2>
+<ul>
+<li><strong>Language &amp; Core Libraries:</strong> R (<code>wbstats</code>, <code>tidyverse</code>, <code>scales</code>)</li>
+<li><strong>Input Data:</strong> Open access data - WorldBank</li>
+</ul>
+<hr />
+<h2 id="data-transformation-visualization-pipeline">💻 Data Transformation &amp; Visualization Pipeline</h2>
 <ol>
-<li><strong>Dynamic World Crop Masking:</strong> Restricts spatial clustering specifically to active crop pixels (<code>label == 4</code>), eliminating urban and natural vegetation false positives.</li>
-<li><strong>Multi-Spectral Index Stacking:</strong> Combines 11 indices including chlorophyll-sensitive Red-Edge (<code>NDRE</code>), moisture-sensitive (<code>NDMI</code>), and soil-adjusted canopy metrics (<code>MSAVI</code>, <code>LAI</code>).</li>
-<li><strong>Spectral Matching Strategy:</strong> Extracts the dominant cluster overlapping known historical sugarcane plots (<code>caneFarms</code>) using modal regional reduction.</li>
-<li><strong>Asynchronous UI Area Reduction:</strong> Implements non-blocking client-side asynchronous JavaScript evaluation (<code>evaluate()</code>) for seamless map interactions without client-server locking.</li>
+<li>
+<p><strong>ETL Engine</strong>: Leverages {tidyverse} (dplyr, tidyr) for <em>tidy data transformation</em>, <em>performing vector-based calculations</em> (absolute gender counts) and <em>temporal filtering</em> focused on standard census years (<em>1989, 1999, 2009, 2019</em>).</p>
+</li>
+<li>
+<p><strong>Automated Reporting</strong>: Uses {ggplot2} to generate <em>parameterized summary outputs</em> including age cohort bar charts, gender proportion breakdowns, and mortality trendlines; ensuring <em>programmatic execution</em> without manual spreadsheet manipulation.</p>
+</li>
+<li>
+<p><strong>Modular Integration</strong>: Designed as <em>an independent ingestion micro-service</em>. Data outputs (CSV/RData) serve as a standardized baseline layer, structured to seamlessly integrate with Phase 2 sub-national spatial join workflows </p>
+<blockquote>
+<p>(e.g., KNBS ADM1/ADM2 county vector layers and WorldPop raster datasets).</p>
+</blockquote>
+</li>
 </ol>
 <hr />
-<h2 id="earth-engine-workflow-code-breakdown">💻 Earth Engine Workflow &amp; Code Breakdown</h2>
-<p>Below is the complete, execution-ready Earth Engine JavaScript code structured into functional blocks.</p>
-<h3 id="step-1-pre-processing-index-generation">Step 1: Pre-Processing &amp; Index Generation</h3>
-<p>We ingest Sentinel-2 Surface Reflectance data, apply cloud masking based on the Scene Classification Layer (<code>SCL</code>), and generate an array of multi-spectral indices tailored for canopy canopy density and water content analysis.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
-<span class="cm"> * Sentinel-2 Processing &amp; Index Calculation Module</span>
-<span class="cm"> */</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;COPERNICUS/S2_SR_HARMONIZED&quot;</span><span class="p">);</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">dw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/DYNAMICWORLD/V1&#39;</span><span class="p">);</span>
-
-<span class="c1">// Cloud Masking Function utilizing SCL band</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">maskS2clouds</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">scl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;SCL&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">3</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">8</span><span class="p">)).</span><span class="nx">and</span><span class="p">(</span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">9</span><span class="p">)).</span><span class="nx">and</span><span class="p">(</span><span class="nx">scl</span><span class="p">.</span><span class="nx">neq</span><span class="p">(</span><span class="mf">10</span><span class="p">));</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">// Stacking 11 Spectral Indices</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">addVegetationIndices</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">nir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">red</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">green</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B3&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">blue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B2&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">redEdge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B5&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">swir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B11&#39;</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
-
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">ndvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">red</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDVI&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">gcvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">green</span><span class="p">).</span><span class="nx">subtract</span><span class="p">(</span><span class="mf">1</span><span class="p">).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;GCVI&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">gndvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">green</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">green</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;GNDVI&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">ndre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">redEdge</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">redEdge</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDRE&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">vari</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">green</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">green</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">blue</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;VARI&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">savi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">1.5</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;SAVI&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">msavi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">2</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="mf">1</span><span class="p">).</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">2</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="mf">1</span><span class="p">).</span><span class="nx">pow</span><span class="p">(</span><span class="mf">2</span><span class="p">).</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">8</span><span class="p">)).</span><span class="nx">sqrt</span><span class="p">()).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">2</span><span class="p">).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;MSAVI&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">ndmi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">swir</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">swir</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDMI&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">evi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">2.5</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">red</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">6</span><span class="p">)).</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">blue</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">7.5</span><span class="p">)).</span><span class="nx">add</span><span class="p">(</span><span class="mf">1</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;EVI&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">lai</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">evi</span><span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">3.618</span><span class="p">).</span><span class="nx">subtract</span><span class="p">(</span><span class="mf">0.118</span><span class="p">).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;LAI&#39;</span><span class="p">).</span><span class="nx">max</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">min</span><span class="p">(</span><span class="mf">7</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">mndwi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">green</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">swir</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">green</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">swir</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;MNDWI&#39;</span><span class="p">);</span>
-
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">image</span><span class="p">.</span><span class="nx">addBands</span><span class="p">([</span><span class="nx">ndvi</span><span class="p">,</span><span class="w"> </span><span class="nx">gcvi</span><span class="p">,</span><span class="w"> </span><span class="nx">evi</span><span class="p">,</span><span class="w"> </span><span class="nx">gndvi</span><span class="p">,</span><span class="w"> </span><span class="nx">ndre</span><span class="p">,</span><span class="w"> </span><span class="nx">vari</span><span class="p">,</span><span class="w"> </span><span class="nx">savi</span><span class="p">,</span><span class="w"> </span><span class="nx">msavi</span><span class="p">,</span><span class="w"> </span><span class="nx">ndmi</span><span class="p">,</span><span class="w"> </span><span class="nx">lai</span><span class="p">,</span><span class="w"> </span><span class="nx">mndwi</span><span class="p">]);</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="step-2-crop-masked-k-means-clustering-spectral-matching">Step 2: Crop-Masked K-Means Clustering &amp; Spectral Matching</h3>
-<p>We mask out non-agricultural areas using Dynamic World land cover metrics, sample the remaining pixels across Western Kenya, and apply Weka K-Means clustering.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Dynamic World Crop Filter (Label 4 = Crops)</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">dwModeImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dw</span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;2025-09-10&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2025-10-31&#39;</span><span class="p">)</span>
-<span class="w">                    </span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">entireAOI</span><span class="p">)</span>
-<span class="w">                    </span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">)</span>
-<span class="w">                    </span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">mode</span><span class="p">())</span>
-<span class="w">                    </span><span class="p">.</span><span class="nx">clip</span><span class="p">(</span><span class="nx">entireAOI</span><span class="p">);</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">cropsMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dwModeImage</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mf">4</span><span class="p">).</span><span class="nx">selfMask</span><span class="p">();</span>
-
-<span class="c1">// Perform Unsupervised K-Means Clustering</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;NDVI&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;GCVI&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;EVI&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;GNDVI&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NDRE&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;VARI&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SAVI&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;MSAVI&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NDMI&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LAI&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;MNDWI&#39;</span><span class="p">];</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">maskedImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">medianImage</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">indices</span><span class="p">).</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">cropsMask</span><span class="p">);</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">training</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">maskedImage</span><span class="p">.</span><span class="nx">sample</span><span class="p">({</span>
-<span class="w">  </span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="nx">entireAOI</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">numPixels</span><span class="o">:</span><span class="w"> </span><span class="mf">10000</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">seed</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">tileScale</span><span class="o">:</span><span class="w"> </span><span class="mf">16</span>
-<span class="p">});</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">clusterer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Clusterer</span><span class="p">.</span><span class="nx">wekaKMeans</span><span class="p">(</span><span class="mf">12</span><span class="p">).</span><span class="nx">train</span><span class="p">(</span><span class="nx">training</span><span class="p">);</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">clusteredImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">maskedImage</span><span class="p">.</span><span class="nx">cluster</span><span class="p">(</span><span class="nx">clusterer</span><span class="p">).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;unsupervisedClusters&#39;</span><span class="p">);</span>
-
-<span class="c1">// Mode reduction to extract the cluster ID matching verified cane farm plots</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">caneStats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">medianImage</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">indices</span><span class="p">)</span>
-<span class="w">                           </span><span class="p">.</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">clusteredImage</span><span class="p">)</span>
-<span class="w">                           </span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;unsupervisedClusters&#39;</span><span class="p">)</span>
-<span class="w">                           </span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
-<span class="w">                             </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">mode</span><span class="p">(),</span>
-<span class="w">                             </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">caneFarms</span><span class="p">,</span>
-<span class="w">                             </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                             </span><span class="nx">maxPixels</span><span class="o">:</span><span class="w"> </span><span class="mf">1e13</span>
-<span class="w">                           </span><span class="p">});</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">caneClusterID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">caneStats</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;unsupervisedClusters&#39;</span><span class="p">);</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">extractedCane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">clusteredImage</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">.</span><span class="nx">constant</span><span class="p">(</span><span class="nx">caneClusterID</span><span class="p">));</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">finalCaneAreas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">extractedCane</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">extractedCane</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mf">1</span><span class="p">));</span>
-</code></pre></div>
-<h3 id="step-3-reactive-ui-controller-non-blocking-area-reductions">Step 3: Reactive UI Controller &amp; Non-Blocking Area Reductions</h3>
-<p>The interactive GUI allows users to select catchments and sub-counties, set variable spatial resolution scales (10m vs 100m), and trigger client-side evaluation without blocking the map UI thread.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Asynchronous calculation function bound to GUI compute trigger</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">calculateAndDisplay</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">selectedAOI</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">selectedCatchmentFC</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">instructionsLabel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;ERROR: Please complete steps 1 and 2.&#39;</span><span class="p">);</span>
-<span class="w">    </span><span class="k">return</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">aoiScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">scaleMode</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;single&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">100</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">aoiScaleSelect</span><span class="p">.</span><span class="nx">getValue</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">),</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">catchmentScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
-
-<span class="w">  </span><span class="nx">instructionsLabel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;Computing areas... (AOI: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">aoiScale</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;m, Catchment: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">catchmentScale</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;m)&#39;</span><span class="p">);</span>
-
-<span class="w">  </span><span class="c1">// Calculate area reductions server-side</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">aoiArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">areaImageHa</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">sum</span><span class="p">(),</span>
-<span class="w">    </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">selectedAOI</span><span class="p">.</span><span class="nx">geometry</span><span class="p">(),</span>
-<span class="w">    </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="nx">aoiScale</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">maxPixels</span><span class="o">:</span><span class="w"> </span><span class="mf">1e13</span>
-<span class="w">  </span><span class="p">}).</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;area_ha&#39;</span><span class="p">);</span>
-
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">catchmentArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">areaImageHa</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">sum</span><span class="p">(),</span>
-<span class="w">    </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">selectedCatchmentFC</span><span class="p">.</span><span class="nx">geometry</span><span class="p">(),</span>
-<span class="w">    </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="nx">catchmentScale</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">maxPixels</span><span class="o">:</span><span class="w"> </span><span class="mf">1e13</span>
-<span class="w">  </span><span class="p">}).</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;area_ha&#39;</span><span class="p">);</span>
-
-<span class="w">  </span><span class="c1">// Non-blocking Client-Side Evaluation Callback</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">rawAoi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">results</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">rawCatchment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">results</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">computedAOIArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">rawAoi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100</span><span class="p">).</span><span class="nx">toLocaleString</span><span class="p">();</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">computedCatchmentArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">rawCatchment</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100</span><span class="p">).</span><span class="nx">toLocaleString</span><span class="p">();</span>
-
-<span class="w">    </span><span class="nx">aoiAreaLabel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;Area (Ha) for Selected AOI: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">computedAOIArea</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; (Scale: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">aoiScale</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;m)&#39;</span><span class="p">);</span>
-<span class="w">    </span><span class="nx">catchmentAreaLabel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;Total Area (Ha) for Catchment: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">computedCatchmentArea</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; (Scale: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">catchmentScale</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;m)&#39;</span><span class="p">);</span>
-<span class="w">    </span><span class="nx">instructionsLabel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;Computation Complete.&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="p">};</span>
-
-<span class="w">  </span><span class="c1">// Send server request asynchronously</span>
-<span class="w">  </span><span class="nx">ee</span><span class="p">.</span><span class="nx">List</span><span class="p">([</span><span class="nx">aoiArea</span><span class="p">,</span><span class="w"> </span><span class="nx">catchmentArea</span><span class="p">]).</span><span class="nx">evaluate</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="interactive-interface-results-visualizer">📊 Interactive Interface &amp; Results Visualizer</h2>
+<h2 id="r-workflow-code-breakdown">R Workflow &amp; Code Breakdown</h2>
+<p>Below is a snippet of code as structured in R.</p>
+<h3 id="step-1-call-necessary-libraries-initialize">Step 1: Call necessary libraries &amp; initialize</h3>
 <blockquote>
-<p>When executed in GEE, the web interface embeds custom UI controls on the left panel, updating the spatial layers and area metrics on-the-fly:</p>
+<p>You need to install the listed packages if not initially installed
+We call all necessary packages to allow function calling. We also point R to the working directory with file paths relevant to data, images and outputs.</p>
 </blockquote>
-<p><img alt="UI computation image" src="../../assets/images/caneAreas.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># Call the necessary libraries after installation</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;wbstats&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tidyverse&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;scales&quot;</span><span class="p">))</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">wbstats</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">scales</span><span class="p">)</span>
+
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># Define indicators for Kenya</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="n">wb_indicators</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<span class="w">                    </span><span class="n">total_pop</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SP.POP.TOTL&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">age_0_14</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SP.POP.0014.TO.ZS&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">age_15_64</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SP.POP.1564.TO.ZS&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">age_65_plus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SP.POP.65UP.TO.ZS&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">female_pct</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SP.POP.TOTL.FE.ZS&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">male_pct</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SP.POP.TOTL.MA.ZS&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">infant_mort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SP.DYN.IMRT.IN&quot;</span>
+<span class="w">                  </span><span class="p">)</span>
+
+<span class="c1"># ----------- Fetch data directly via World Bank API (1989–2021)</span>
+<span class="n">kenya_raw</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">wb_data</span><span class="p">(</span>
+<span class="w">                      </span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;KEN&quot;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">indicator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wb_indicators</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">start_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1989</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">end_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2021</span>
+<span class="w">                    </span><span class="p">)</span>
+</code></pre></div>
+<h3 id="step-2-filter-clean-calculate-metrics">Step 2: Filter, Clean &amp; Calculate Metrics</h3>
+<blockquote>
+<p>Knowledge of census years is paramount (i.e. expert/local knowledge of area of interest &amp; index is needed when scraping public datasets).
+In this example, census is carrried out in Kenya every <em>10 years</em>. </p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># Filter for key census years, clean columns and calculate statistics</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="n">census_years</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1989</span><span class="p">,</span><span class="w"> </span><span class="m">1999</span><span class="p">,</span><span class="w"> </span><span class="m">2009</span><span class="p">,</span><span class="w"> </span><span class="m">2019</span><span class="p">)</span>
+
+<span class="n">kenya_census</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">kenya_raw</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">                        </span><span class="nf">filter</span><span class="p">(</span><span class="n">date</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">census_years</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">                        </span><span class="nf">select</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">total_pop</span><span class="p">,</span><span class="w"> </span><span class="n">age_0_14</span><span class="p">,</span><span class="w"> </span><span class="n">age_15_64</span><span class="p">,</span><span class="w"> </span><span class="n">age_65_plus</span><span class="p">,</span><span class="w"> </span><span class="n">female_pct</span><span class="p">,</span><span class="w"> </span><span class="n">male_pct</span><span class="p">,</span><span class="w"> </span><span class="n">infant_mort</span><span class="p">)</span>
+
+<span class="c1"># Calculate summary metrics table</span>
+<span class="n">kenya_summary</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">kenya_census</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">                              </span><span class="nf">mutate</span><span class="p">(</span>
+<span class="w">                                      </span><span class="n">female_pop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total_pop</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">female_pct</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">100</span><span class="p">),</span>
+<span class="w">                                      </span><span class="n">male_pop</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">total_pop</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">male_pct</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">100</span><span class="p">)</span>
+<span class="w">                                    </span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">kenya_summary</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="step-3-visualization">Step 3: Visualization</h3>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># Visualize extracted data</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># ----------- a) BAR CHART</span>
+<span class="n">age_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">kenya_census</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">select</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">`0-14 yrs`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age_0_14</span><span class="p">,</span><span class="w"> </span><span class="n">`15-64 yrs`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age_15_64</span><span class="p">,</span><span class="w"> </span><span class="n">`65+ yrs`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age_65_plus</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Age_Group&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Percentage&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot Grouped Bar Chart</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">age_data</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">year</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Percentage</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Age_Group</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;identity&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dodge&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.7</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Set2&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">        </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Kenya Age Demographics Across Census Years&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">subtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Source: World Bank Open Data API&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Census Year&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Percentage of Total Population&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Age Cohort&quot;</span>
+<span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_minimal</span><span class="p">(</span><span class="n">base_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bold&quot;</span><span class="p">))</span>
+</code></pre></div>
+<img alt="UI computation image" src="../assets/images/scraper/ageDemograph.png" /></p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># ----------- b) PIE CHART</span>
+<span class="c1"># Extract 2019 gender breakdown</span>
+<span class="n">gender_2019</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">kenya_census</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">                            </span><span class="nf">filter</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2019</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">                            </span><span class="nf">select</span><span class="p">(</span><span class="n">female_pct</span><span class="p">,</span><span class="w"> </span><span class="n">male_pct</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">                            </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">everything</span><span class="p">(),</span><span class="w"> </span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Gender&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Percentage&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">                            </span><span class="nf">mutate</span><span class="p">(</span><span class="n">Gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ifelse</span><span class="p">(</span><span class="n">Gender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;female_pct&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Female&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Male&quot;</span><span class="p">))</span>
+
+<span class="c1"># Plot Pie Chart</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">gender_2019</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Percentage</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Gender</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;identity&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;white&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">coord_polar</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Female&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#e7298a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Male&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#000080&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_text</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">Percentage</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;%&quot;</span><span class="p">)),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">position_stack</span><span class="p">(</span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">),</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;white&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fontface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bold&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">        </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Gender Distribution in Kenya (2019 Census)&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Gender&quot;</span>
+<span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_void</span><span class="p">(</span><span class="n">base_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bold&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">))</span>
+</code></pre></div>
+<img alt="UI computation image" src="../assets/images/scraper/genderDist2019.png" /></p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># ----------- c) LINE GRAPH</span>
+<span class="c1"># Plot continuous line chart using full raw time-series data</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">kenya_raw</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">infant_mort</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_line</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#d95f02&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">linewidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">kenya_raw</span><span class="p">,</span><span class="w"> </span><span class="n">date</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">census_years</span><span class="p">),</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#7570b3&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scales</span><span class="o">::</span><span class="n">comma</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Kenya Infant Mortality Rate Trend (1989–2021)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">subtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Deaths per 1,000 live births (Census points highlighted)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mortality Rate (per 1,000)&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_minimal</span><span class="p">(</span><span class="n">base_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bold&quot;</span><span class="p">))</span>
+</code></pre></div>
+<img alt="UI computation image" src="../assets/images/scraper/infantMortality.png" /></p>
 <hr />
-<h2 id="-summarized-logic-steps">--- Summarized Logic steps</h2>
+<h2 id="summarized-logic-steps">Summarized Logic steps</h2>
 <ol>
-<li>Load pre-processed data into QGIS to confirm extents with a basemap overaly</li>
-<li>Digitize farm boundaries</li>
-<li>Check for errors and/or inconsistencies</li>
-<li>Export cleaned data (with appropriate naming structure) as shapefiles</li>
-<li>Load data into GEE, defining time period and extents</li>
-<li>Filter and pre-process data</li>
-<li>Compute relevant indices</li>
-<li>Perform supervised classification (DW) &amp; Unsupervised classification (clusters)</li>
-<li>Develop UI with interactive elements for dynamic computations</li>
+<li><strong>API Connection:</strong> Query the World Bank Open Data API (<code>wbstats</code>) to fetch Kenya's demographic time-series data <em>(1989–2021)</em>.</li>
+<li><strong>Data Parsing:</strong> Extract target indicators: <em>age cohorts</em> (0–14, 15–64, 65+), <em>gender percentages</em>, and <em>infant mortality rates</em>.</li>
+<li><strong>Temporal Filtering:</strong> Filter the full time series down to <em>key national census benchmark years</em> (1989, 1999, 2009, 2019).</li>
+<li><strong>Feature Transformation:</strong> Calculate <em>absolute gender counts</em> and reshape wide data into tidy formats using <code>dplyr</code> and <code>tidyr</code>.</li>
+<li><strong>Visualization Generation:</strong> Programmatically execute <code>ggplot2</code> scripts to output <em>age-structure bar charts</em>, <em>gender distribution breakdowns</em>, and <em>mortality trendlines</em>.</li>
+<li><strong>Pipeline Structuring:</strong> Export <em>structured tabular data</em> and figures to serve as a <em>baseline layer</em> for sub-national GIS integration.</li>
 </ol>
 <hr />
 <h2 id="-tools-used">--- Tools Used</h2>
@@ -1275,36 +1278,33 @@
 </thead>
 <tbody>
 <tr>
-<td>QGIS</td>
-<td>Initial loading &amp; cleaning</td>
-</tr>
-<tr>
-<td>ArcGIS Pro</td>
-<td>Digitization</td>
-</tr>
-<tr>
-<td>Google Earth Engine</td>
-<td>Pre-processing, Analysis &amp; Visualization</td>
+<td>R</td>
+<td>Initial load, organizing &amp; cleaning, visualization</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="impact-applications">📈 Impact &amp; Applications</h2>
+<h2 id="practical-application">📈 Practical Application</h2>
 <ol>
 <li>
-<p><strong>Dynamic Decision Support</strong>: Enables rapid estimation of sugarcane biomass across individual supply zones (outgrower schemes) versus factory catchment baselines.</p>
+<p><strong>Automated Data Gathering:</strong> This script connects directly to web data servers to stream demographic indicators instantly.</p>
 </li>
 <li>
-<p><strong>Scalable GIS Infrastructure</strong>: The approach complements manual digitizing with automated, multi-spectral cloud computing capable of processing multi-gigabyte satellite scenes in seconds.</p>
+<p><strong>Demographic Tracking:</strong> The generation of clear visual summary charts can be applied in time series analysis of demography trends within countries or even cities.</p>
+<blockquote>
+<p>i.e. Showing how a country's age groups have evolved over time ensures targeted measures for the different ages.</p>
+</blockquote>
 </li>
 <li>
-<p><strong>Export Readiness</strong>: Integrates direct 10m resolution GeoTIFF exports to Google Drive for offline downstream GIS modeling in QGIS or ArcGIS Pro.</p>
+<p><strong>Future-Ready Design:</strong> This automation can serve as "Phase 1" of a broader analytics engine. </p>
+<blockquote>
+<p>While current outputs focus on national trends, a backend can be built to plug directly into future mapping software to visualize demographic shifts across a region or area of interest.</p>
+</blockquote>
 </li>
 </ol>
 <hr />
-<h2 id="links">Links</h2>
-<p><a class="md-button" href="https://code.earthengine.google.com/bcc9fdcc4a53e8438de4e1533002d2b3">View User Interface on Earth Engine</a>
-<a class="md-button" href="https://anita-carolyne.github.io/Anita-Carolyne/">View Code on GitHub</a></p>
+<h2 id="next-steps">Next steps</h2>
+<p><a class="md-button" href="mailto:anitaskyelynn@gmail.com">Request a consultation</a></p>
 
 
 
