@@ -249,6 +249,27 @@
   margin-bottom: 0.75rem;
 }
 
+/* Automation cards on the Automations Home page */
+.automation-card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: var(--md-default-bg-color--light);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.automation-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.automation-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
 /* Glowing Blue Typing Text & Cursor */
 .typing-text {
   color: #2196f3;
