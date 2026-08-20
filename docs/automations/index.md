@@ -16,7 +16,7 @@ hide:
 
 **[Automated DTM & Contour Generation](terrain.md)**
 
-An end-to-end R automated workflow designed to process _multi-chunk LiDAR point cloud_ datasets. The pipeline systematically **batch-filters ground returns** (Class 2), **generates 1-meter DTMs** (Digital Terrain Models) via _Triangulated Irregular Networks (TIN)_, _normalizes elevation datums_ across the Area of Interest (AOI), and extracts _seamless_, _publication-ready_ vector contour layers.
+This **automated geospatial pipeline** addresses the _key challenges_ of processing large-scale, LiDAR point cloud datasets. By replacing manual, tile-by-tile GIS processing with a _scripted R workflow_, the pipeline systematically extracts ground classification then executes DTM generation, datum normalization, and seamless contour extraction. The resulting workflow eliminates tile boundary artifacts, enforces strict datum consistency, and **accelerates turnaround times** from hours to minutes, delivering _standardized_, _OGC-compliant_ GeoPackages and _web-ready_ interactive deliverables tailored for varied use cases such as infrastructure planning and flood risk assessment.
 
 `R programming` `ArcGIS Pro` `QGIS`
 
@@ -24,11 +24,13 @@ An end-to-end R automated workflow designed to process _multi-chunk LiDAR point 
 </div>
 
 <div class="automation-card" markdown>
-![](../assets/images/invasiveSpecies/speciesRangeChangeMapsPlot26.png)
+![](../assets/images/scraper/infantMortality.png)
 
 **[Web scraping](scraper.md)**
 
-Predicting the expansion of invasive flora is critical for safeguarding agricultural ecosystems and guiding targeted control measures. This project modeled the spatial distribution and projected spread of _Acacia reficiens_ and _Opuntia_ (Cactus) across climate scenarios (RCP 2.6 and RCP 8.5). Utilizing BIOMOD2, the pipeline evaluated multiple species distribution algorithms, selecting the top three performing models to assess environmental predictors across three feature sets: bioclimatic variables, biophysical variables, and a combined bio-climatic/biophysical ensemble. 
+**Project Overview**
+
+Tracking _multi-decadal demographic shifts_ is essential for understanding **national population dynamics** and _establishing accurate baselines for future spatial allocation models_. This automated data extraction and analytics pipeline _programmatically interfaces_ with the World Bank Open Data API to collect, transform, and evaluate 30+ years of demographic time-series data for Kenya (1989–2021). Designed as a **foundational ingestion engine**, the resulting pipeline establishes a standardized data baseline structured to integrate seamlessly into sub-national spatial join workflows across Kenya’s administrative boundaries.
 
 `R` `ArcGIS Pro` `QGIS`
 

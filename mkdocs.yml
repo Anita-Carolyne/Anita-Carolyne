@@ -85,7 +85,7 @@ nav:
   - Automations:
     - "All Automations": automations/index.md
     - "DTM Generation & Contour Processing": automations/terrain.md
-    - "Web scraping with R": automations/scraper.md
+    - "Scraping public time series datasets": automations/scraper.md
   - Publications: publications.md
   - Experience: experience.md
   - Contact: contact.md
