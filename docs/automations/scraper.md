@@ -1,6 +1,6 @@
 # Web scraping (public datasets)
 
-![Automation overview image](../assets/images/scraper/infantMortality.png)
+![Automation overview image](../assets/images/scraping/infantMortality.png)
 
 ## 📌 Executive Summary
 
@@ -118,7 +118,7 @@ ggplot(age_data, aes(x = factor(year), y = Percentage, fill = Age_Group)) +
   theme_minimal(base_size = 12) +
   theme(plot.title = element_text(face = "bold"))
 ```
-![UI computation image](../assets/images/scraper/ageDemograph.png)
+![UI computation image](../assets/images/scraping/ageDemograph.png)
 
 ```r
 # ----------- b) PIE CHART
@@ -144,7 +144,7 @@ ggplot(gender_2019, aes(x = "", y = Percentage, fill = Gender)) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))
 
 ```
-![UI computation image](../assets/images/scraper/genderDist2019.png)
+![UI computation image](../assets/images/scraping/genderDist2019.png)
 
 ```r
 # ----------- c) LINE GRAPH
@@ -162,7 +162,7 @@ ggplot(kenya_raw, aes(x = date, y = infant_mort)) +
   theme_minimal(base_size = 12) +
   theme(plot.title = element_text(face = "bold"))
 ```
-![UI computation image](../assets/images/scraper/infantMortality.png)
+![UI computation image](../assets/images/scraping/infantMortality.png)
 
 ---
 

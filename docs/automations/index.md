@@ -24,11 +24,9 @@ This **automated geospatial pipeline** addresses the _key challenges_ of process
 </div>
 
 <div class="automation-card" markdown>
-![](../assets/images/scraper/infantMortality.png)
+![](../assets/images/scraping/infantMortality.png)
 
 **[Web scraping](scraper.md)**
-
-**Project Overview**
 
 Tracking _multi-decadal demographic shifts_ is essential for understanding **national population dynamics** and _establishing accurate baselines for future spatial allocation models_. This automated data extraction and analytics pipeline _programmatically interfaces_ with the World Bank Open Data API to collect, transform, and evaluate 30+ years of demographic time-series data for Kenya (1989–2021). Designed as a **foundational ingestion engine**, the resulting pipeline establishes a standardized data baseline structured to integrate seamlessly into sub-national spatial join workflows across Kenya’s administrative boundaries.
 
