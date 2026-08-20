@@ -2,34 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/</loc>
-         <lastmod>2026-08-10</lastmod>
+         <lastmod>2026-08-20</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/contact/</loc>
-         <lastmod>2026-08-10</lastmod>
+         <lastmod>2026-08-20</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/experience/</loc>
-         <lastmod>2026-08-10</lastmod>
+         <lastmod>2026-08-20</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/publications/</loc>
-         <lastmod>2026-08-10</lastmod>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://anita-carolyne.github.io/Anita-Carolyne/automations/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://anita-carolyne.github.io/Anita-Carolyne/automations/caneAreasEstimation/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://anita-carolyne.github.io/Anita-Carolyne/automations/invasiveSpecies/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://anita-carolyne.github.io/Anita-Carolyne/automations/sample-notebook/</loc>
+         <lastmod>2026-08-20</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/projects/</loc>
-         <lastmod>2026-08-10</lastmod>
+         <lastmod>2026-08-20</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/projects/caneAreasEstimation/</loc>
-         <lastmod>2026-08-10</lastmod>
+         <lastmod>2026-08-20</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/projects/invasiveSpecies/</loc>
-         <lastmod>2026-08-10</lastmod>
+         <lastmod>2026-08-20</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/projects/sample-notebook/</loc>
-         <lastmod>2026-08-10</lastmod>
+         <lastmod>2026-08-20</lastmod>
     </url>
 </urlset>
