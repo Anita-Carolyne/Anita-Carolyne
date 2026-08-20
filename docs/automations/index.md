@@ -18,7 +18,7 @@ hide:
 
 This **automated geospatial pipeline** addresses the _key challenges_ of processing large-scale, LiDAR point cloud datasets. By replacing manual, tile-by-tile GIS processing with a _scripted R workflow_, the pipeline systematically extracts ground classification then executes DTM generation, datum normalization, and seamless contour extraction. The resulting workflow eliminates tile boundary artifacts, enforces strict datum consistency, and **accelerates turnaround times** from hours to minutes, delivering _standardized_, _OGC-compliant_ GeoPackages and _web-ready_ interactive deliverables tailored for varied use cases such as infrastructure planning and flood risk assessment.
 
-`R programming` `ArcGIS Pro` `QGIS`
+`R programming`
 
 [View Automation →](terrain.md){ .md-button }
 </div>
