@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://anita-carolyne.github.io/Anita-Carolyne/automations/terrain/">
       
       
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../scraper/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Automated DTM Generation & Contour Processing Pipeline - <span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span></title>
+        <title>DTM Generation & Contour Processing - <span class='custom-site-title'>Earth observation, GeoAI & Analytics</span> <span class='site-title-author'>with Anita</span></title>
       
     
     
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Automated DTM Generation &amp; Contour Processing Pipeline
+              DTM Generation & Contour Processing
             
           </span>
         </div>
@@ -250,11 +254,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../projects/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -528,24 +534,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -563,7 +574,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -581,14 +592,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    All Projects
+    All Automations
   
 
     
@@ -606,17 +617,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../projects/caneAreasEstimation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DTM Generation & Contour Processing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Cane Areas Estimation
+    DTM Generation & Contour Processing
   
 
     
@@ -625,6 +663,209 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Technical Specifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-pipeline-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Workflow &amp; Pipeline Architecture:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Workflow &amp; Pipeline Architecture:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features-engineering-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 Key Features &amp; Engineering Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-workflow-code-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R Workflow &amp; Code Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="R Workflow &amp; Code Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-call-necessary-libraries-initialize-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Call necessary libraries &amp; initialize directories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-batch-generate-dtms-from-chunked-las-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Batch-Generate DTMs from chunked LAS files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-extract-seamless-contours-export-geopackage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Extract seamless contours &amp; export geopackage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-interface-results-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Interactive Interface &amp; Results Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-summarized-logic-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        --- Summarized Logic steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-tools-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        --- Tools Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-use-cases-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Practical Use Cases &amp; Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Practical Use Cases &amp; Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practical-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-efficiency-performance-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Efficiency &amp; Performance Benchmark
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -637,14 +878,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/caneAreasEstimation/" class="md-nav__link">
+      <a href="../scraper/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Cane Areas Estimation
+    Web scraping with R
   
 
     
