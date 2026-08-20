@@ -1,14 +1,6 @@
-<!--
-CHECKLIST (copy this file for each new project):
-- [ ] Update the Key Findings section
-- [ ] Update the Links section
-- [ ] Add a card for this project on docs/projects/index.md
-- [ ] Add a nav entry in mkdocs.yml
--->
-
 # Automated DTM Generation & Contour Processing Pipeline
 
-![Project overview image](../assets/images/LiDAR/chunkProcessing.png)
+![Automation overview image](../assets/images/LiDAR/chunkProcessing.png)
 
 ## 📌 Executive Summary
 

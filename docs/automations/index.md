@@ -11,7 +11,7 @@ hide:
 
 <div class="grid" markdown>
 
-<div class="project-card" markdown>
+<div class="automation-card" markdown>
 ![](../assets/images/LiDAR/chunkProcessing.png)
 
 **[Automated DTM & Contour Generation](terrain.md)**
@@ -20,10 +20,10 @@ An end-to-end R automated workflow designed to process _multi-chunk LiDAR point 
 
 `R programming` `ArcGIS Pro` `QGIS`
 
-[View Project →](terrain.md){ .md-button }
+[View Automation →](terrain.md){ .md-button }
 </div>
 
-<div class="project-card" markdown>
+<div class="automation-card" markdown>
 ![](../assets/images/invasiveSpecies/speciesRangeChangeMapsPlot26.png)
 
 **[Web scraping](scraper.md)**
@@ -32,7 +32,7 @@ Predicting the expansion of invasive flora is critical for safeguarding agricult
 
 `R` `ArcGIS Pro` `QGIS`
 
-[View Project →](scraper.md){ .md-button }
+[View Automation →](scraper.md){ .md-button }
 </div>
 
 </div>
