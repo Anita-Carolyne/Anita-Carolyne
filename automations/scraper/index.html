@@ -1102,7 +1102,7 @@
 
 
 <h1 id="web-scraping-public-datasets">Web scraping (public datasets)</h1>
-<p><img alt="Automation overview image" src="../assets/images/scraper/infantMortality.png" /></p>
+<p><img alt="Automation overview image" src="../../assets/images/scraping/infantMortality.png" /></p>
 <h2 id="executive-summary">📌 Executive Summary</h2>
 <p>This <em>automated</em>, <em>reproducible</em> data extraction pipeline engineered in R, interfaces with the World Bank Open Data RESTful API (v2) using the {wbstats} package to query multi-decadal demographic time-series datasets for Kenya. The ingestion module <strong>dynamically retrieves</strong> structured JSON payloads for <em>key macro-level metrics</em>, including age cohort distributions, gender ratios, and infant mortality rates. </p>
 <blockquote>
@@ -1217,7 +1217,7 @@ In this example, census is carrried out in Kenya every <em>10 years</em>. </p>
 <span class="w">  </span><span class="nf">theme_minimal</span><span class="p">(</span><span class="n">base_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
 <span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bold&quot;</span><span class="p">))</span>
 </code></pre></div>
-<img alt="UI computation image" src="../assets/images/scraper/ageDemograph.png" /></p>
+<img alt="UI computation image" src="../../assets/images/scraping/ageDemograph.png" /></p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># ----------- b) PIE CHART</span>
 <span class="c1"># Extract 2019 gender breakdown</span>
 <span class="n">gender_2019</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">kenya_census</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1240,7 +1240,7 @@ In this example, census is carrried out in Kenya every <em>10 years</em>. </p>
 <span class="w">  </span><span class="nf">theme_void</span><span class="p">(</span><span class="n">base_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
 <span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bold&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">))</span>
 </code></pre></div>
-<img alt="UI computation image" src="../assets/images/scraper/genderDist2019.png" /></p>
+<img alt="UI computation image" src="../../assets/images/scraping/genderDist2019.png" /></p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># ----------- c) LINE GRAPH</span>
 <span class="c1"># Plot continuous line chart using full raw time-series data</span>
 <span class="nf">ggplot</span><span class="p">(</span><span class="n">kenya_raw</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">infant_mort</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
@@ -1256,7 +1256,7 @@ In this example, census is carrried out in Kenya every <em>10 years</em>. </p>
 <span class="w">  </span><span class="nf">theme_minimal</span><span class="p">(</span><span class="n">base_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
 <span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bold&quot;</span><span class="p">))</span>
 </code></pre></div>
-<img alt="UI computation image" src="../assets/images/scraper/infantMortality.png" /></p>
+<img alt="UI computation image" src="../../assets/images/scraping/infantMortality.png" /></p>
 <hr />
 <h2 id="summarized-logic-steps">Summarized Logic steps</h2>
 <ol>
