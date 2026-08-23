@@ -18,7 +18,19 @@ CHECKLIST FOR THIS PAGE:
 <div class="grid" markdown>
 
 <div class="project-card" markdown>
-![](../assets/images/caneEstimation.png)
+![](../assets/images/forests/firesDashboard.png)
+
+**[Forest Loss & Driver Attribution](forestDisturbance.md)**
+
+Monitoring forest disturbance in tropical montane ecosystems is critical for safeguarding water towers, informing conservation policy, and guiding targeted restoration interventions. This project quantified seasonal tree canopy loss and attributed spatial drivers - distinguishing fire-driven events from manual land clearing-around the Mount Kenya ecosystem. Integrating Google Dynamic World 10m land cover probability bands with NASA FIRMS thermal anomaly data, the automated pipeline evaluates seasonal disturbance dynamics within user-defined spatial buffers. Implemented as an interactive Earth Engine web application, the system pairs a synchronized split-panel interface for multi-temporal comparative analysis with zonal statistics extraction, offering automated generation of analysis-ready spatial rasters and structured CSV loss reports.
+
+`Google Earth Engine`
+
+[View Project →](forestDisturbance.md){ .md-button }
+</div>
+
+<div class="project-card" markdown>
+![](../assets/images/agriculture/crops/caneEstimation.png)
 
 **[Automated Sugarcane Areas Estimation](caneAreasEstimation.md)**
 

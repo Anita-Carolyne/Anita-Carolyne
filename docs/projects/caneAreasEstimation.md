@@ -8,7 +8,7 @@ CHECKLIST (copy this file for each new project):
 
 # Sugarcane Areas Estimation - Western Kenya
 
-![Project overview image](../assets/images/caneEstimation.png)
+![Project overview image](../assets/images/agriculture/crops/caneEstimation.png)
 
 ## 📌 Executive Summary
 
@@ -33,7 +33,7 @@ This project implements an _unsupervised K-means classification workflow_ paired
 
 ## 💻 Earth Engine Workflow & Code Breakdown
 
-Below is the complete, execution-ready Earth Engine JavaScript code structured into functional blocks.
+Below are snippets of the Engine JavaScript code structured into functional blocks.
 
 ### Step 1: Pre-Processing & Index Generation
 
@@ -54,28 +54,7 @@ function maskS2clouds(image) {
 }
 
 // Stacking 11 Spectral Indices
-function addVegetationIndices(image) {
-  var nir = image.select('B8').divide(10000);
-  var red = image.select('B4').divide(10000);
-  var green = image.select('B3').divide(10000);
-  var blue = image.select('B2').divide(10000);
-  var redEdge = image.select('B5').divide(10000);
-  var swir = image.select('B11').divide(10000);
   
-  var ndvi = nir.subtract(red).divide(nir.add(red)).rename('NDVI');
-  var gcvi = nir.divide(green).subtract(1).rename('GCVI');
-  var gndvi = nir.subtract(green).divide(nir.add(green)).rename('GNDVI');
-  var ndre = nir.subtract(redEdge).divide(nir.add(redEdge)).rename('NDRE');
-  var vari = green.subtract(red).divide(green.add(red).subtract(blue)).rename('VARI');
-  var savi = nir.subtract(red).multiply(1.5).divide(nir.add(red).add(0.5)).rename('SAVI');
-  var msavi = nir.multiply(2).add(1).subtract(nir.multiply(2).add(1).pow(2).subtract(nir.subtract(red).multiply(8)).sqrt()).divide(2).rename('MSAVI');
-  var ndmi = nir.subtract(swir).divide(nir.add(swir)).rename('NDMI');
-  var evi = nir.subtract(red).multiply(2.5).divide(nir.add(red.multiply(6)).subtract(blue.multiply(7.5)).add(1)).rename('EVI');
-  var lai = evi.multiply(3.618).subtract(0.118).rename('LAI').max(0).min(7);
-  var mndwi = green.subtract(swir).divide(green.add(swir)).rename('MNDWI');
-  
-  return image.addBands([ndvi, gcvi, evi, gndvi, ndre, vari, savi, msavi, ndmi, lai, mndwi]);
-}
 ```
 ### Step 2: Crop-Masked K-Means Clustering & Spectral Matching
 
@@ -116,9 +95,7 @@ var caneStats = medianImage.select(indices)
                              maxPixels: 1e13
                            });
 
-var caneClusterID = caneStats.get('unsupervisedClusters');
-var extractedCane = clusteredImage.eq(ee.Image.constant(caneClusterID));
-var finalCaneAreas = extractedCane.updateMask(extractedCane.eq(1));
+// Obtain the cane statistics (caneClusterID), extractedCane image and finalCaneAreas
 ```
 
 ### Step 3: Reactive UI Controller & Non-Blocking Area Reductions
@@ -177,7 +154,7 @@ function calculateAndDisplay() {
 
 > When executed in GEE, the web interface embeds custom UI controls on the left panel, updating the spatial layers and area metrics on-the-fly:
 
-![UI computation image](../assets/images/caneAreas.png)
+![UI computation image](../assets/images/agriculture/crops/caneAreas.png)
 
 ---
 
@@ -217,6 +194,6 @@ function calculateAndDisplay() {
 
 ## Links
 
-[View User Interface on Earth Engine](https://code.earthengine.google.com/bcc9fdcc4a53e8438de4e1533002d2b3){ .md-button }
+[Go to User Interface](https://code.earthengine.google.com/bcc9fdcc4a53e8438de4e1533002d2b3){ .md-button }
 [View Code on GitHub](https://anita-carolyne.github.io/Anita-Carolyne/){ .md-button }
 
