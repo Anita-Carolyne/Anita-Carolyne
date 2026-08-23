@@ -167,7 +167,7 @@ function calculateAndDisplay() {
 
 > When executed in GEE, the web interface embeds custom UI controls on the left panel, updating the spatial layers and area metrics on-the-fly:
 
-![UI computation image](../assets/images/caneAreas.png)
+![UI computation image](../assets/images/invasiveSpecies/rcp26caMEANwm.png)
 
 ---
 
@@ -205,8 +205,8 @@ function calculateAndDisplay() {
 
 ---
 
-## Links
+## Next steps
 
-[View User Interface on Earth Engine](https://code.earthengine.google.com/bcc9fdcc4a53e8438de4e1533002d2b3){ .md-button }
-[View Code on GitHub](https://anita-carolyne.github.io/Anita-Carolyne/){ .md-button }
+[Request a consultation](mailto:anitaskyelynn@gmail.com){ .md-button }
+[Request full R code](https://linkedin.com/in/anita-carolyne-orera/){ .md-button }
 
