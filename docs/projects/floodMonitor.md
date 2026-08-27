@@ -1,5 +1,5 @@
 
-# Flood Monitoring (A historical and sesonal approach)
+# Flood Monitoring (_A historical and sesonal approach_)
 
 ![Project overview image](../assets/images/floods/monitorDashboard.png)
 
@@ -15,15 +15,15 @@ The Kenya Multi-Year & Custom Flood Monitor is an interactive Google Earth Engin
 ---
 
 ## 🛠️ Key Technical Highlights:
-1. **Dual Spatial Scale:** Flexibility to run macroeconomic assessments at the County level or granular localized evaluations at the Ward level.
+* **Dual Spatial Scale:** Flexibility to run macroeconomic assessments at the County level or granular localized evaluations at the Ward level.
 
 ![UI computation image](../assets/images/floods/countyAnalysis.png)
 
-2. **Weather-Independent Sensing:** By leveraging Sentinel-1 radar imagery, the tool pierces through cloud cover during extreme rainstorms—a major limitation of optical satellite sensors during active flood events.
+* **Weather-Independent Sensing:** By leveraging Sentinel-1 radar imagery, the tool pierces through cloud cover during extreme rainstorms—a major limitation of optical satellite sensors during active flood events.
 
-3. **Automated Risk Validation:** Combines satellite radar data with ground topography to ensure reported flood zones reflect actual physical risk rather than satellite noise.
+* **Automated Risk Validation:** Combines satellite radar data with ground topography to ensure reported flood zones reflect actual physical risk rather than satellite noise.
 
-4. **GIS Ready:** Directly connects satellite analytics to downstream GIS tools like QGIS and ArcGIS by providing automated exports of GeoTIFF rasters and Shapefile vectors.
+* **GIS Ready:** Directly connects satellite analytics to downstream GIS tools like QGIS and ArcGIS by providing automated exports of GeoTIFF rasters and Shapefile vectors.
 
 ---
 
