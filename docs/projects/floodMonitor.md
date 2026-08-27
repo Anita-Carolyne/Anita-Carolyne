@@ -1,27 +1,41 @@
 
 # Seasonal Forest Loss & Driver Attribution
 
-![Project overview image](../assets/images/forests/firesDashboard.png)
+![Project overview image](../assets/images/floods/monitorDashboard.png)
 
 ## 📌 Executive Summary
 
-Built on **Google Earth Engine**, this web application _quantifies seasonal canopy loss_ and _identifies disturbance drivers_ within customizable spatial buffers around Mount Kenya. 
-The workflow pairs Dynamic World’s _10m probability bands_ with _Sentinel-3/MODIS thermal anomalies_ to isolate fire impact from land clearing. 
-> Users can run dual-map spatial comparisons across custom periods, dynamically visualize zonal loss statistics, and export analysis-ready GeoTIFF rasters and CSV reports directly.
+The Kenya Multi-Year & Custom Flood Monitor is an interactive Google Earth Engine (GEE) web application engineered for rapid spatial inundation assessment across Kenyan administrative boundaries (County and Ward levels). The core analytical workflow combines Synthetic Aperture Radar (SAR) backscatter analysis with digital elevation model (DEM) terrain constraints to isolate true flood inundation from permanent water bodies and low-backscatter urban artifacts. 
+> Users can run flood comparisons across custom periods, dynamically visualize different administrative levels, and export results directly.
 
-**Study Area:** Mount Kenya Ecosystem
-**Target Years:** _2012 – 2023_ 
+**Study Area:** Kenya
 **Purpose:** _Research and Development_  
-**Status:** Completed 
+**Status:** In progress 
 
 ---
 
 ## 🛠️ Key Technical Highlights:
-1. **Multi-Source Data Integration:** Pairs Sentinel-2-derived 10m Dynamic World land cover probability bands with NASA FIRMS thermal anomaly data to isolate canopy loss and map spatial drivers.
-2. **Algorithmic Driver Attribution:** Implements a dual-condition spatial overlay algorithm to automatically classify total forest loss into distinct driver categories.
-3. **Dynamic Zonal Statistics Engine:** On-the-fly spatial reduction (reduceRegion) calculates precise areal loss statistics in hectares based on user-defined buffer radiuses around the study area.
-4. **Synchronized Multi-Temporal UI:** Custom split-panel architecture enables side-by-side comparative visualization across variable years and seasonal windows.
-5. **Automated Reporting & Export Pipeline:** Built-in event handlers directly generate downloadable CSV summary tables and multi-band GeoTIFF spatial rasters for offline geospatial workflows.
+1. **Dual Spatial Scale:** Flexibility to run macroeconomic assessments at the County level or granular localized evaluations at the Ward level.
+
+![UI computation image](../assets/images/floods/countyAnalysis.png)
+
+2. **Weather-Independent Sensing:** By leveraging Sentinel-1 radar imagery, the tool pierces through cloud cover during extreme rainstorms—a major limitation of optical satellite sensors during active flood events.
+
+3. **Automated Risk Validation:** Combines satellite radar data with ground topography to ensure reported flood zones reflect actual physical risk rather than satellite noise.
+
+4. **GIS Ready:** Directly connects satellite analytics to downstream GIS tools like QGIS and ArcGIS by providing automated exports of GeoTIFF rasters and Shapefile vectors.
+
+---
+
+## Data Pipelines & Processing Workflow
+1. **DSAR Inundation Detection:** Utilizes Sentinel-1 Ground Range Detected (GRD) C-band imagery (Interferometric Wide mode) acquired in dual-polarization. 
+> Synthetic aperture backscatter thresholds define surface water presence across pre- and post-event temporal windows to map change detection over time.
+2. **Topographic Vulnerability Refinement:** Integrates 30-meter USGS SRTM elevation data to calculate local slope gradients and lower 20th percentile elevation thresholds. 
+> This terrain mask eliminates backscatter noise over flat, smooth non-water surfaces (e.g., asphalt, runways) and restricts false positives to topographically vulnerable lowlands.
+3. **Spatial Aggregation & Area Analytics:** Exact flooded surface area is computed at 10-meter pixel resolution using ee.Image.pixelArea(). 
+> Results are aggregated across the targeted geometry vector boundary using reduceRegion reducers and formatted asynchronously for dynamic UI updates.
+![UI computation image](../assets/images/floods/wardSelection.png)
+4. **User Interface & Output Generation:** Features asynchronous, non-blocking cascading dropdowns driven by .evaluate() callback chains to query feature collections dynamically.
 
 ---
 
@@ -89,7 +103,7 @@ The interactive GUI allows users to select the buffer distance, season and compa
 
 > When executed in GEE, the web interface embeds custom UI controls on the left panel, updating the spatial layers and area metrics on-the-fly. 
 
-![UI computation image](../assets/images/forests/firesUI.png)
+![UI computation image](../assets/images/floods/wardAnalyzed.png)
 
 ---
 
@@ -134,9 +148,9 @@ The interactive GUI allows users to select the buffer distance, season and compa
 
 ---
 
-> Disclaimer: For a more accurate assessment, field collected data or organizational data (e.g. from KFS) is needed to accurately quantify burn area and forest losses.
+> Disclaimer: For a more accurate assessment, VHR satellite data or data obtained from KMD (Kenya Meteorological Department) is needed to accurately quantify flood behavior and impact.
 
 ## Links
 
-[Go to User Interface](https://ee-anitacarolyne.projects.earthengine.app/view/forest-disturbance){ .md-button }
+[Go to User Interface](https://ee-anitacarolyne.projects.earthengine.app/view/flood-monitor){ .md-button }
 [View Code on GitHub](https://anita-carolyne.github.io/Anita-Carolyne/){ .md-button }

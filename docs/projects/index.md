@@ -18,6 +18,18 @@ Monitoring forest disturbance in tropical montane ecosystems is critical for saf
 </div>
 
 <div class="project-card" markdown>
+![](../assets/images/floods/monitorDashboard.png)
+
+**[Flood monitoring](floodMonitor.md)**
+
+The Kenya Flood Engine is an end-to-end web mapping and spatial analytics application that enables disaster response teams, researchers, and policy planners to analyze historical and emerging flood events across Kenya. Users can select any county or individual ward, define custom baseline and flood event dates (or choose preset seasonal rainfall events), and generate automated flood extent maps in seconds.
+
+`Google Earth Engine`
+
+[View Project →](floodMonitor.md){ .md-button }
+</div>
+
+<div class="project-card" markdown>
 ![](../assets/images/agriculture/crops/caneEstimation.png)
 
 **[Automated Sugarcane Areas Estimation](caneAreasEstimation.md)**
