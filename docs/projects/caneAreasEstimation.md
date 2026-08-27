@@ -1,11 +1,3 @@
-<!--
-CHECKLIST (copy this file for each new project):
-- [ ] Update the Key Findings section
-- [ ] Update the Links section
-- [ ] Add a card for this project on docs/projects/index.md
-- [ ] Add a nav entry in mkdocs.yml
--->
-
 # Sugarcane Areas Estimation - Western Kenya
 
 ![Project overview image](../assets/images/agriculture/crops/caneEstimation.png)

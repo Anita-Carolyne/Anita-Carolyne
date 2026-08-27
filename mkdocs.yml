@@ -10,9 +10,7 @@ theme:
   # and replace "material/earth" with any "material/..." icon name you prefer.
   icon:
     logo: material/earth
-  palette:
-    # To change the color, edit the 'primary' and 'accent' values below for both
-    # the 'default' (light) and 'slate' (dark) schemes.
+    palette:
     # Available colors: red, pink, purple, deep purple, indigo, blue, light blue,
     # cyan, teal, green, light green, lime, yellow, amber, orange, deep orange
     - scheme: slate            # Dark mode
@@ -74,14 +72,10 @@ nav:
   - Home: index.md
   - Projects:
     - "All Projects": projects/index.md
+    - "Forest Loss Mapping": projects/forestDisturbance.md
+    - "Flood Analysis": projects/floodMonitor.md
     - "Cane Areas Estimation": projects/caneAreasEstimation.md
     - "Invasive Species Mapping": projects/invasiveSpecies.md
-    # HOW TO ADD A NEW PROJECT:
-    # 1. Copy docs/projects/sample-project.md to docs/projects/your-project-name.md
-    #    (or drop an .ipynb file into docs/projects/ for a Jupyter notebook project)
-    # 2. Edit the new file with your project content
-    # 3. Add a line below (same format): - "Your Project Title": projects/your-project-name.md
-    # 4. Add a project card on docs/projects/index.md
   - Automations:
     - "All Automations": automations/index.md
     - "DTM Generation & Contour Processing": automations/terrain.md

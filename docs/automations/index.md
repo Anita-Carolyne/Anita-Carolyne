@@ -6,7 +6,8 @@ hide:
 
 # Automations
 
-> Spatial Automations - make processes easier!. 
+> Spatial Automations - make processes easier. 
+
 **Click** any card to see the _automation logic_.
 
 <div class="grid" markdown>
