@@ -2,54 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/</loc>
-         <lastmod>2026-08-23</lastmod>
+         <lastmod>2026-08-27</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/contact/</loc>
-         <lastmod>2026-08-23</lastmod>
+         <lastmod>2026-08-27</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/experience/</loc>
-         <lastmod>2026-08-23</lastmod>
+         <lastmod>2026-08-27</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/publications/</loc>
-         <lastmod>2026-08-23</lastmod>
+         <lastmod>2026-08-27</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/automations/</loc>
-         <lastmod>2026-08-23</lastmod>
-    </url>
-    <url>
-         <loc>https://anita-carolyne.github.io/Anita-Carolyne/automations/sample-notebook/</loc>
-         <lastmod>2026-08-23</lastmod>
+         <lastmod>2026-08-27</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/automations/scraper/</loc>
-         <lastmod>2026-08-23</lastmod>
+         <lastmod>2026-08-27</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/automations/terrain/</loc>
-         <lastmod>2026-08-23</lastmod>
+         <lastmod>2026-08-27</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/projects/</loc>
-         <lastmod>2026-08-23</lastmod>
+         <lastmod>2026-08-27</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/projects/caneAreasEstimation/</loc>
-         <lastmod>2026-08-23</lastmod>
+         <lastmod>2026-08-27</lastmod>
+    </url>
+    <url>
+         <loc>https://anita-carolyne.github.io/Anita-Carolyne/projects/floodMonitor/</loc>
+         <lastmod>2026-08-27</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/projects/forestDisturbance/</loc>
-         <lastmod>2026-08-23</lastmod>
+         <lastmod>2026-08-27</lastmod>
     </url>
     <url>
          <loc>https://anita-carolyne.github.io/Anita-Carolyne/projects/invasiveSpecies/</loc>
-         <lastmod>2026-08-23</lastmod>
-    </url>
-    <url>
-         <loc>https://anita-carolyne.github.io/Anita-Carolyne/projects/sample-notebook/</loc>
-         <lastmod>2026-08-23</lastmod>
+         <lastmod>2026-08-27</lastmod>
     </url>
 </urlset>
