@@ -43,12 +43,13 @@ The Kenya Multi-Year & Custom Flood Monitor is an interactive Google Earth Engin
 
 Below are snippets of the Engine JavaScript code structured into functional blocks.
 
-### 1: Dual-Pol SAR & Vulnerability Modeling
+### 1: Pre-requisites
 
-The core processing engine extracts pre- and post-event backscatter medians from Sentinel-1 Ground Range Detected (GRD) scenes in Interferometric Wide (IW) mode.
+This step entails loading necessary data and performing necessary pre-processing.
 
 ```javascript
-
+// Load data
+// Pre-process data
 ```
 
 ### 2: Establish the core computation engine
