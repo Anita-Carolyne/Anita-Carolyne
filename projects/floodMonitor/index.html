@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#seasonal-forest-loss-driver-attribution" class="md-skip">
+        <a href="#flood-monitoring-a-historical-and-sesonal-approach" class="md-skip">
           Skip to content
         </a>
       
@@ -612,10 +612,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-pre-requisites" class="md-nav__link">
+  <a href="#1-dual-pol-sar-vulnerability-modeling" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Pre-requisites
+        1: Dual-Pol SAR &amp; Vulnerability Modeling
       
     </span>
   </a>
@@ -623,10 +623,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-establish-the-core-computation-engine" class="md-nav__link">
+  <a href="#2-establish-the-core-computation-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Establish the core computation engine
+        2: Establish the core computation engine
       
     </span>
   </a>
@@ -634,10 +634,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-reactive-ui-export-functionality" class="md-nav__link">
+  <a href="#3-metric-calculations-formatting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Reactive UI &amp; Export functionality
+        3: Metric Calculations &amp; Formatting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cascading-asynchronous-ui-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4: Cascading Asynchronous UI Logic
       
     </span>
   </a>
@@ -1081,10 +1092,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-pre-requisites" class="md-nav__link">
+  <a href="#1-dual-pol-sar-vulnerability-modeling" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Pre-requisites
+        1: Dual-Pol SAR &amp; Vulnerability Modeling
       
     </span>
   </a>
@@ -1092,10 +1103,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-establish-the-core-computation-engine" class="md-nav__link">
+  <a href="#2-establish-the-core-computation-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Establish the core computation engine
+        2: Establish the core computation engine
       
     </span>
   </a>
@@ -1103,10 +1114,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-reactive-ui-export-functionality" class="md-nav__link">
+  <a href="#3-metric-calculations-formatting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Reactive UI &amp; Export functionality
+        3: Metric Calculations &amp; Formatting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cascading-asynchronous-ui-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4: Cascading Asynchronous UI Logic
       
     </span>
   </a>
@@ -1201,7 +1223,7 @@
 
 
 
-<h1 id="seasonal-forest-loss-driver-attribution">Seasonal Forest Loss &amp; Driver Attribution</h1>
+<h1 id="flood-monitoring-a-historical-and-sesonal-approach">Flood Monitoring (A historical and sesonal approach)</h1>
 <p><img alt="Project overview image" src="../../assets/images/floods/monitorDashboard.png" /></p>
 <h2 id="executive-summary">📌 Executive Summary</h2>
 <p>The Kenya Multi-Year &amp; Custom Flood Monitor is an interactive Google Earth Engine (GEE) web application engineered for rapid spatial inundation assessment across Kenyan administrative boundaries (County and Ward levels). The core analytical workflow combines Synthetic Aperture Radar (SAR) backscatter analysis with digital elevation model (DEM) terrain constraints to isolate true flood inundation from permanent water bodies and low-backscatter urban artifacts. </p>
@@ -1231,7 +1253,7 @@
 <hr />
 <h2 id="data-pipelines-processing-workflow">Data Pipelines &amp; Processing Workflow</h2>
 <ol>
-<li><strong>DSAR Inundation Detection:</strong> Utilizes Sentinel-1 Ground Range Detected (GRD) C-band imagery (Interferometric Wide mode) acquired in dual-polarization. <blockquote>
+<li><strong>SAR Inundation Detection:</strong> Utilizes Sentinel-1 Ground Range Detected (GRD) C-band imagery (Interferometric Wide mode) acquired in dual-polarization. <blockquote>
 <p>Synthetic aperture backscatter thresholds define surface water presence across pre- and post-event temporal windows to map change detection over time.</p>
 </blockquote>
 </li>
@@ -1249,80 +1271,109 @@
 <hr />
 <h2 id="earth-engine-workflow-code-breakdown">💻 Earth Engine Workflow &amp; Code Breakdown</h2>
 <p>Below are snippets of the Engine JavaScript code structured into functional blocks.</p>
-<h3 id="step-1-pre-requisites">Step 1: Pre-requisites</h3>
-<p>We first load our necessary datasets and establish visualization parameters.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// =========================================================================</span>
-<span class="c1">// Load Datasets, Establish the default geometry setup and Palettes</span>
-<span class="c1">// =========================================================================</span>
-<span class="c1">// Mount Kenya Peak Point (37.3083° E, 0.1521° S)</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">mtKenyaPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">.</span><span class="nx">Point</span><span class="p">([</span><span class="mf">37.3083</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.1521</span><span class="p">]);</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">firmsCol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;FIRMS&quot;</span><span class="p">);</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">dwCol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;GOOGLE/DYNAMICWORLD/V1&quot;</span><span class="p">);</span>
-
-<span class="c1">// Visualization Palettes</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">lossVis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">palette</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">]};</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">fireVis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">palette</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">]};</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">manualVis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">palette</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;purple&#39;</span><span class="p">]};</span>
+<h3 id="1-dual-pol-sar-vulnerability-modeling">1: Dual-Pol SAR &amp; Vulnerability Modeling</h3>
+<p>The core processing engine extracts pre- and post-event backscatter medians from Sentinel-1 Ground Range Detected (GRD) scenes in Interferometric Wide (IW) mode.</p>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<h3 id="step-2-establish-the-core-computation-engine">Step 2: Establish the core computation engine</h3>
-<p>Develop the core computation engine, defining all relevant functions and parameters.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// =========================================================================</span>
-<span class="c1">// Define your Core computation Engine</span>
-<span class="c1">// =========================================================================</span>
-<span class="c1">// 1. Create the buffer</span>
-<span class="c1">// 2. Choose seasons (month range)</span>
-<span class="c1">// 3. Etablish DW thresholds for before and after tree cover</span>
-<span class="c1">// 4. Manipulate FIRMS data</span>
-</code></pre></div>
-<h3 id="step-3-reactive-ui-export-functionality">Step 3: Reactive UI &amp; Export functionality</h3>
-<p>The interactive GUI allows users to select the buffer distance, season and comparison years. It then allows export of the data and loaded layers</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Code snippet of loaded layers on Split-Panel UI</span>
-<span class="c1">// --- ADD LAYERS TO LEFT MAP ---</span>
-<span class="w">  </span><span class="nx">leftMap</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">leftData</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;fire_count&#39;</span><span class="p">).</span><span class="nx">selfMask</span><span class="p">(),</span><span class="w"> </span><span class="nx">fireVis</span><span class="p">,</span><span class="w"> </span><span class="nx">leftYear</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; Fire Count&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">leftMap</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">leftData</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;fire_driven_loss&#39;</span><span class="p">),</span><span class="w"> </span><span class="nx">lossVis</span><span class="p">,</span><span class="w"> </span><span class="nx">leftYear</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; Fire Loss&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">leftMap</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">leftData</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;manual_clearing_loss&#39;</span><span class="p">),</span><span class="w"> </span><span class="nx">manualVis</span><span class="p">,</span><span class="w"> </span><span class="nx">leftYear</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; Manual Loss&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">leftMap</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">styledRoi</span><span class="p">,</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s1">&#39;ROI Buffer&#39;</span><span class="p">);</span>
+<h3 id="2-establish-the-core-computation-engine">2: Establish the core computation engine</h3>
+<p>The core processing engine extracts pre- and post-event backscatter medians from Sentinel-1 Ground Range Detected (GRD) scenes in Interferometric Wide (IW) mode.</p>
+<blockquote>
+<p>Dual-Pol SAR &amp; Vulnerability Modeling</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1">// Extract surface inundation using VV and VH backscatter thresholds</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">beforeWater</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">before</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;VV&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="o">-</span><span class="mf">17</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">before</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;VH&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="o">-</span><span class="mf">20</span><span class="p">));</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">afterWater</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">after</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;VV&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="o">-</span><span class="mf">17</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">after</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;VH&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="o">-</span><span class="mf">20</span><span class="p">));</span>
 
-<span class="w">  </span><span class="c1">// --- ADD LAYERS TO RIGHT MAP ---</span>
-<span class="w">  </span><span class="nx">rightMap</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">rightData</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;fire_count&#39;</span><span class="p">).</span><span class="nx">selfMask</span><span class="p">(),</span><span class="w"> </span><span class="nx">fireVis</span><span class="p">,</span><span class="w"> </span><span class="nx">rightYear</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; Fire Count&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">rightMap</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">rightData</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;fire_driven_loss&#39;</span><span class="p">),</span><span class="w"> </span><span class="nx">lossVis</span><span class="p">,</span><span class="w"> </span><span class="nx">rightYear</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; Fire Loss&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">rightMap</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">rightData</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;manual_clearing_loss&#39;</span><span class="p">),</span><span class="w"> </span><span class="nx">manualVis</span><span class="p">,</span><span class="w"> </span><span class="nx">rightYear</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; Manual Loss&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">rightMap</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">styledRoi</span><span class="p">,</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s1">&#39;ROI Buffer&#39;</span><span class="p">);</span>
+<span class="c1">// Raw Flood Hazard: Water detected post-event that was not present pre-event</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">rawFloodHazard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">afterWater</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">beforeWater</span><span class="p">.</span><span class="nx">not</span><span class="p">());</span>
+
+<span class="c1">// Terrain Vulnerability: SRTM 30m DEM slope (&lt; 1.5°) &amp; bottom 20th percentile elevation</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">dem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="s1">&#39;USGS/SRTMGL1_003&#39;</span><span class="p">).</span><span class="nx">clip</span><span class="p">(</span><span class="nx">targetGeometry</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">lowAreasMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dem</span><span class="p">.</span><span class="nx">lt</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nb">Number</span><span class="p">(</span><span class="nx">dem</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">percentile</span><span class="p">([</span><span class="mf">20</span><span class="p">]),</span>
+<span class="w">  </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">targetGeometry</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span>
+<span class="p">}).</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;elevation&#39;</span><span class="p">)));</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">flatAreas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Terrain</span><span class="p">.</span><span class="nx">slope</span><span class="p">(</span><span class="nx">dem</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="mf">1.5</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">localVulnerability</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lowAreasMask</span><span class="p">.</span><span class="nx">or</span><span class="p">(</span><span class="nx">flatAreas</span><span class="p">);</span>
+
+<span class="c1">// Final Validated Flood Risk Layer</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">finalFloodRisk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hazardAligned</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">localVulnerability</span><span class="p">).</span><span class="nx">clip</span><span class="p">(</span><span class="nx">targetGeometry</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="3-metric-calculations-formatting">3: Metric Calculations &amp; Formatting</h3>
+<p>Area calculations compute the total inundated footprint in square meters and hectares.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">calculateFloodMetrics</span><span class="p">(</span><span class="nx">floodMask</span><span class="p">,</span><span class="w"> </span><span class="nx">targetGeometry</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">areaImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">floodMask</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">multiply</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">.</span><span class="nx">pixelArea</span><span class="p">()).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;flooded_sqm&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">stats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">areaImage</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">sum</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">targetGeometry</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">maxPixels</span><span class="o">:</span><span class="w"> </span><span class="mf">1e13</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">safeSqm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nb">Number</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Algorithms</span><span class="p">.</span><span class="nx">If</span><span class="p">(</span><span class="nx">stats</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;flooded_sqm&#39;</span><span class="p">),</span><span class="w"> </span><span class="nx">stats</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;flooded_sqm&#39;</span><span class="p">),</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">floodedAreaHectares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">safeSqm</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">totalRegionHectares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">targetGeometry</span><span class="p">.</span><span class="nx">area</span><span class="p">({</span><span class="nx">maxError</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">}).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">percentFlooded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">safeSqm</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">targetGeometry</span><span class="p">.</span><span class="nx">area</span><span class="p">({</span><span class="nx">maxError</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">})).</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">100</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">floodedHectares</span><span class="o">:</span><span class="w"> </span><span class="nx">floodedAreaHectares</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s1">&#39;%,.2f&#39;</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">totalHectares</span><span class="o">:</span><span class="w"> </span><span class="nx">totalRegionHectares</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s1">&#39;%,.2f&#39;</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">percentFlooded</span><span class="o">:</span><span class="w"> </span><span class="nx">percentFlooded</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s1">&#39;%.2f&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="4-cascading-asynchronous-ui-logic">4: Cascading Asynchronous UI Logic</h3>
+<p>To avoid blocking the interface during asset evaluation, county and ward attributes are queried asynchronously using .evaluate(). </p>
+<blockquote>
+<p>Selecting a county automatically populates its corresponding wards.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1">// Load Wards dynamically based on active County selection</span>
+<span class="nx">countySelect</span><span class="p">.</span><span class="nx">onChange</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">selectedCounty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">wardSelect</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">wardSelect</span><span class="p">.</span><span class="nx">setDisabled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">wardSelect</span><span class="p">.</span><span class="nx">setPlaceholder</span><span class="p">(</span><span class="s1">&#39;Loading Wards for &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">selectedCounty</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;...&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">filteredWards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wardsBoundary</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">selectedCounty</span><span class="p">));</span>
+
+<span class="w">  </span><span class="nx">filteredWards</span><span class="p">.</span><span class="nx">aggregate_array</span><span class="p">(</span><span class="s1">&#39;ward&#39;</span><span class="p">).</span><span class="nx">distinct</span><span class="p">().</span><span class="nx">sort</span><span class="p">().</span><span class="nx">evaluate</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">wards</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">wardSelect</span><span class="p">.</span><span class="nx">items</span><span class="p">().</span><span class="nx">reset</span><span class="p">(</span><span class="nx">wards</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">wardSelect</span><span class="p">.</span><span class="nx">setPlaceholder</span><span class="p">(</span><span class="s1">&#39;Select a Ward...&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">wardSelect</span><span class="p">.</span><span class="nx">setDisabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">});</span>
 </code></pre></div>
 <hr />
 <h2 id="interactive-interface-results-visualizer">📊 Interactive Interface &amp; Results Visualizer</h2>
+<p>Users can initiate export tasks to Google Drive directly from the UI panel.</p>
 <blockquote>
 <p>When executed in GEE, the web interface embeds custom UI controls on the left panel, updating the spatial layers and area metrics on-the-fly. </p>
 </blockquote>
 <p><img alt="UI computation image" src="../../assets/images/floods/wardAnalyzed.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Export High-Risk Inundation Vector as Shapefile</span>
+<span class="nx">Export</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">toDrive</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">collection</span><span class="o">:</span><span class="w"> </span><span class="nx">currentFloodResult</span><span class="p">.</span><span class="nx">reduceToVectors</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">currentAOI</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">crs</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">geometryType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;polygon&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">labelProperty</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;flood_risk&#39;</span>
+<span class="w">  </span><span class="p">}),</span>
+<span class="w">  </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="nx">currentExportName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;_Vectors&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">folder</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;GEE_Flood_Exports&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fileFormat</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;SHP&#39;</span>
+<span class="p">});</span>
+</code></pre></div>
 <hr />
 <h2 id="-summarized-logic-steps">--- Summarized Logic steps</h2>
 <ol>
-<li>Data Ingestion &amp; Filtering<blockquote>
-<p>Load Sentinel-2 Dynamic World land cover probabilities and NASA FIRMS active fire datasets filtered by chosen seasonal date ranges.</p>
-</blockquote>
-</li>
-<li>Buffer &amp; ROI Definition<blockquote>
-<p>Buffer the target study area geometry based on your area of interest to establish the analytical boundary.</p>
-</blockquote>
-</li>
-<li>Canopy Loss Detection<blockquote>
-<p>Identify pixels where forest probability drops below the defined baseline threshold between starting and ending timeframes.</p>
-</blockquote>
-</li>
-<li>Driver Classification<blockquote>
-<p>Mask loss pixels intersecting FIRMS thermal anomalies as Fire-Driven Loss, classifying all non-intersecting loss pixels as Manual Clearing.</p>
-</blockquote>
-</li>
-<li>Spatial Reduction<blockquote>
-<p>Compute zonal area statistics (<code>reduceRegion</code>) to calculate net hectare loss per driver category inside the buffer.</p>
-</blockquote>
-</li>
-<li>UI Rendering &amp; Export<blockquote>
-<p>Render styled raster overlays on the synchronized split-map and populate download links for CSV summary statistics and GeoTIFFs.</p>
-</blockquote>
-</li>
+<li><strong>Boundary &amp; Temporal Selection:</strong> Dynamic UI filters administrative boundaries (<em>County/Ward level</em>) and sets pre- (<em>baseline</em>) and post-event temporal ranges.</li>
+<li><strong>Sentinel-1 SAR Filtering:</strong> Sentinel-1 GRD imagery (<em>IW mode, 10m scale</em>) is fetched for both timeframes, filtering for <em>co-polarization (VV)</em> and <em>cross-polarization (VH)</em> backscatter.</li>
+<li><strong>Dual-Pol Water Surface Detection:</strong> Inundation masks are extracted using dual-polarization thresholding.</li>
+<li><strong>Change Detection (<em>Raw Hazard</em>):</strong> Post-flood water masks are <em>cross-referenced</em> with pre-flood baselines to <em>isolate newly inundated surface areas</em> from <em>permanent bodies</em> of water</li>
+<li><strong>Topographic Vulnerability Refinement:</strong> A <em>30m USGS SRTM DEM</em> screens out false positives (e.g., <em>asphalt/smooth surfaces</em>) by retaining only areas with low slopes or within the bottom 20th elevation percentile of the target AOI.</li>
+<li><strong>Metric Computation &amp; Export:</strong> Inundated surface area (<em>hectares and percentage cover</em>) is computed asynchronously and formatted for dynamic UI output and direct GIS exports.</li>
 </ol>
 <hr />
 <h2 id="-tools-used">--- Tools Used</h2>
@@ -1343,16 +1394,28 @@
 <hr />
 <h2 id="primary-use-cases">Primary Use Cases</h2>
 <ol>
-<li><strong>Routine Catchment Auditing:</strong> Environmental agencies and conservation NGOs can execute <em>seasonal</em> or <em>annual audits</em> to track canopy health trends across specific forest blocks or community reserves.</li>
-<li><strong>Post-Fire Damage &amp; Clearance Assessments:</strong> Disaster management units can <em>isolate wildfire scars</em> from <em>clear-cutting</em> to quantify burn severity, calculate total damaged hectares, and map recovery trajectories.</li>
-<li><strong>Stakeholder Reporting &amp; Open Access Data:</strong> Researchers, decision-makers, and field teams can <em>instantly generate standardized CSV summary tables</em> and download aligned spatial GeoTIFFs for further spatial analysis.</li>
+<li>
+<p><strong>Rapid Disaster Response:</strong> Operational mapping of emergency flood extents during heavy rain events (e.g., <em>MAM Long Rains</em>) when cloud cover prevents optical satellite imaging.</p>
+</li>
+<li>
+<p><strong>Localized Damage Assessment:</strong> Ward-level spatial evaluations to identify inundated critical infrastructure, residential zones, and agricultural fields.</p>
+</li>
+<li>
+<p><strong>Baseline Risk Profiling:</strong> Historical flood footprint analysis to map <em>recurrent</em> inundation hotspots and validate flood risk models.</p>
+</li>
 </ol>
 <hr />
 <h2 id="impact-applications">📈 Impact &amp; Applications</h2>
 <ol>
-<li><strong>Targeted Conservation &amp; Rapid Enforcement:</strong> Distinguishing <em>active wildfire fronts</em> from anthropogenic land clearing equips agency wardens (such as KFS and KWS) with actionable intelligence to <em>deploy targeted rapid-response teams</em>, <em>fight active blazes</em>, or <em>halt illegal logging operations</em> in high-risk buffer zones.</li>
-<li><strong>Protecting Water Tower Ecosystem Services:</strong> As one of Kenya’s primary montane water towers, <em>safeguarding the Mount Kenya catchment</em> directly maintains downstream hydrological regulation, reducing reservoir siltation for hydroelectric power and sustaining agricultural water security.</li>
-<li><strong>Data-Driven Restoration &amp; Policy:</strong> Automated zonal reports provide <em>empirical metrics</em> to guide <em>reforestation initiatives</em>, <em>evaluate community forest management (CFA) interventions</em>, and fulfill <em>international reporting obligations</em> under frameworks like REDD+ and AFR100.</li>
+<li>
+<p><strong>Cloud-Penetrating Disaster Intelligence:</strong> Leverages C-band radar to penetrate dense storm clouds, delivering actionable spatial data when optical satellites fail.</p>
+</li>
+<li>
+<p><strong>Granular Resource Allocation:</strong> Enables emergency responders and humanitarian aid teams to prioritize specific wards for targeted rescue and relief operations.</p>
+</li>
+<li>
+<p><strong>Automated GIS Integration:</strong> Accelerates downstream reporting by providing automated, vector-ready spatial datasets directly to local planning agencies and decision-makers.</p>
+</li>
 </ol>
 <hr />
 <blockquote>
