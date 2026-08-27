@@ -1,5 +1,5 @@
 
-# Seasonal Forest Loss & Driver Attribution
+# Flood Monitoring (A historical and sesonal approach)
 
 ![Project overview image](../assets/images/floods/monitorDashboard.png)
 
@@ -28,7 +28,7 @@ The Kenya Multi-Year & Custom Flood Monitor is an interactive Google Earth Engin
 ---
 
 ## Data Pipelines & Processing Workflow
-1. **DSAR Inundation Detection:** Utilizes Sentinel-1 Ground Range Detected (GRD) C-band imagery (Interferometric Wide mode) acquired in dual-polarization. 
+1. **SAR Inundation Detection:** Utilizes Sentinel-1 Ground Range Detected (GRD) C-band imagery (Interferometric Wide mode) acquired in dual-polarization. 
 > Synthetic aperture backscatter thresholds define surface water presence across pre- and post-event temporal windows to map change detection over time.
 2. **Topographic Vulnerability Refinement:** Integrates 30-meter USGS SRTM elevation data to calculate local slope gradients and lower 20th percentile elevation thresholds. 
 > This terrain mask eliminates backscatter noise over flat, smooth non-water surfaces (e.g., asphalt, runways) and restricts false positives to topographically vulnerable lowlands.
@@ -43,84 +43,129 @@ The Kenya Multi-Year & Custom Flood Monitor is an interactive Google Earth Engin
 
 Below are snippets of the Engine JavaScript code structured into functional blocks.
 
-### Step 1: Pre-requisites
+### 1: Dual-Pol SAR & Vulnerability Modeling
 
-We first load our necessary datasets and establish visualization parameters.
+The core processing engine extracts pre- and post-event backscatter medians from Sentinel-1 Ground Range Detected (GRD) scenes in Interferometric Wide (IW) mode.
 
 ```javascript
-// =========================================================================
-// Load Datasets, Establish the default geometry setup and Palettes
-// =========================================================================
-// Mount Kenya Peak Point (37.3083° E, 0.1521° S)
-var mtKenyaPoint = ee.Geometry.Point([37.3083, -0.1521]);
-
-var firmsCol = ee.ImageCollection("FIRMS");
-var dwCol = ee.ImageCollection("GOOGLE/DYNAMICWORLD/V1");
-
-// Visualization Palettes
-var lossVis = {min: 1, max: 1, palette: ['red']};
-var fireVis = {min: 1, max: 10, palette: ['yellow', 'orange', 'red']};
-var manualVis = {min: 1, max: 1, palette: ['purple']};
 
 ```
 
-### Step 2: Establish the core computation engine
+### 2: Establish the core computation engine
 
-Develop the core computation engine, defining all relevant functions and parameters.
+The core processing engine extracts pre- and post-event backscatter medians from Sentinel-1 Ground Range Detected (GRD) scenes in Interferometric Wide (IW) mode.
+> Dual-Pol SAR & Vulnerability Modeling
 
 ```javascript
-// =========================================================================
-// Define your Core computation Engine
-// =========================================================================
-// 1. Create the buffer
-// 2. Choose seasons (month range)
-// 3. Etablish DW thresholds for before and after tree cover
-// 4. Manipulate FIRMS data
+// Extract surface inundation using VV and VH backscatter thresholds
+var beforeWater = before.select('VV').lt(-17).and(before.select('VH').lt(-20));
+var afterWater  = after.select('VV').lt(-17).and(after.select('VH').lt(-20));
+
+// Raw Flood Hazard: Water detected post-event that was not present pre-event
+var rawFloodHazard = afterWater.and(beforeWater.not());
+
+// Terrain Vulnerability: SRTM 30m DEM slope (< 1.5°) & bottom 20th percentile elevation
+var dem = ee.Image('USGS/SRTMGL1_003').clip(targetGeometry);
+var lowAreasMask = dem.lt(ee.Number(dem.reduceRegion({
+  reducer: ee.Reducer.percentile([20]),
+  geometry: targetGeometry,
+  scale: 30
+}).get('elevation')));
+
+var flatAreas = ee.Terrain.slope(dem).lt(1.5);
+var localVulnerability = lowAreasMask.or(flatAreas);
+
+// Final Validated Flood Risk Layer
+var finalFloodRisk = hazardAligned.and(localVulnerability).clip(targetGeometry);
+
 ```
 
-### Step 3: Reactive UI & Export functionality
+### 3: Metric Calculations & Formatting
 
-The interactive GUI allows users to select the buffer distance, season and comparison years. It then allows export of the data and loaded layers
+Area calculations compute the total inundated footprint in square meters and hectares.
 
 ```javascript
-// Code snippet of loaded layers on Split-Panel UI
-// --- ADD LAYERS TO LEFT MAP ---
-  leftMap.addLayer(leftData.select('fire_count').selfMask(), fireVis, leftYear + ' Fire Count');
-  leftMap.addLayer(leftData.select('fire_driven_loss'), lossVis, leftYear + ' Fire Loss');
-  leftMap.addLayer(leftData.select('manual_clearing_loss'), manualVis, leftYear + ' Manual Loss');
-  leftMap.addLayer(styledRoi, {}, 'ROI Buffer');
+function calculateFloodMetrics(floodMask, targetGeometry) {
+  var areaImage = floodMask.gt(0).multiply(ee.Image.pixelArea()).rename('flooded_sqm');
+  var stats = areaImage.reduceRegion({
+    reducer: ee.Reducer.sum(),
+    geometry: targetGeometry,
+    scale: 10,
+    maxPixels: 1e13
+  });
 
-  // --- ADD LAYERS TO RIGHT MAP ---
-  rightMap.addLayer(rightData.select('fire_count').selfMask(), fireVis, rightYear + ' Fire Count');
-  rightMap.addLayer(rightData.select('fire_driven_loss'), lossVis, rightYear + ' Fire Loss');
-  rightMap.addLayer(rightData.select('manual_clearing_loss'), manualVis, rightYear + ' Manual Loss');
-  rightMap.addLayer(styledRoi, {}, 'ROI Buffer');
+  var safeSqm = ee.Number(ee.Algorithms.If(stats.get('flooded_sqm'), stats.get('flooded_sqm'), 0));
+  var floodedAreaHectares = safeSqm.divide(10000);
+  var totalRegionHectares = targetGeometry.area({maxError: 1}).divide(10000);
+  var percentFlooded = safeSqm.divide(targetGeometry.area({maxError: 1})).multiply(100);
+
+  return {
+    floodedHectares: floodedAreaHectares.format('%,.2f'),
+    totalHectares: totalRegionHectares.format('%,.2f'),
+    percentFlooded: percentFlooded.format('%.2f')
+  };
+}
+
+```
+
+### 4: Cascading Asynchronous UI Logic
+
+To avoid blocking the interface during asset evaluation, county and ward attributes are queried asynchronously using .evaluate(). 
+> Selecting a county automatically populates its corresponding wards.
+
+```javascript
+// Load Wards dynamically based on active County selection
+countySelect.onChange(function(selectedCounty) {
+  wardSelect.setValue(null, false);
+  wardSelect.setDisabled(true);
+  wardSelect.setPlaceholder('Loading Wards for ' + selectedCounty + '...');
+
+  var filteredWards = wardsBoundary.filter(ee.Filter.eq('county', selectedCounty));
+  
+  filteredWards.aggregate_array('ward').distinct().sort().evaluate(function(wards) {
+    wardSelect.items().reset(wards);
+    wardSelect.setPlaceholder('Select a Ward...');
+    wardSelect.setDisabled(false);
+  });
+});
+ 
 ```
 
 ---
 
 ## 📊 Interactive Interface & Results Visualizer
-
+Users can initiate export tasks to Google Drive directly from the UI panel.
 > When executed in GEE, the web interface embeds custom UI controls on the left panel, updating the spatial layers and area metrics on-the-fly. 
 
 ![UI computation image](../assets/images/floods/wardAnalyzed.png)
+
+```javascript
+// Export High-Risk Inundation Vector as Shapefile
+Export.table.toDrive({
+  collection: currentFloodResult.reduceToVectors({
+    geometry: currentAOI,
+    crs: 'EPSG:4326',
+    scale: 30,
+    geometryType: 'polygon',
+    labelProperty: 'flood_risk'
+  }),
+  description: currentExportName + '_Vectors',
+  folder: 'GEE_Flood_Exports',
+  fileFormat: 'SHP'
+});
+
+```
 
 ---
 
 ## --- Summarized Logic steps
 
-1. Data Ingestion & Filtering
-> Load Sentinel-2 Dynamic World land cover probabilities and NASA FIRMS active fire datasets filtered by chosen seasonal date ranges.
-2. Buffer & ROI Definition
-> Buffer the target study area geometry based on your area of interest to establish the analytical boundary.
-3. Canopy Loss Detection
-> Identify pixels where forest probability drops below the defined baseline threshold between starting and ending timeframes.
-4. Driver Classification
->Mask loss pixels intersecting FIRMS thermal anomalies as Fire-Driven Loss, classifying all non-intersecting loss pixels as Manual Clearing.
-5. Spatial Reduction
-> Compute zonal area statistics (`reduceRegion`) to calculate net hectare loss per driver category inside the buffer.
-6. UI Rendering & Export
-> Render styled raster overlays on the synchronized split-map and populate download links for CSV summary statistics and GeoTIFFs.
+1. **Boundary & Temporal Selection:** Dynamic UI filters administrative boundaries (_County/Ward level_) and sets pre- (_baseline_) and post-event temporal ranges.
+2. **Sentinel-1 SAR Filtering:** Sentinel-1 GRD imagery (_IW mode, 10m scale_) is fetched for both timeframes, filtering for _co-polarization (VV)_ and _cross-polarization (VH)_ backscatter.
+3. **Dual-Pol Water Surface Detection:** Inundation masks are extracted using dual-polarization thresholding.
+4. **Change Detection (_Raw Hazard_):** Post-flood water masks are _cross-referenced_ with pre-flood baselines to _isolate newly inundated surface areas_ from _permanent bodies_ of water
+5. **Topographic Vulnerability Refinement:** A _30m USGS SRTM DEM_ screens out false positives (e.g., _asphalt/smooth surfaces_) by retaining only areas with low slopes or within the bottom 20th elevation percentile of the target AOI.
+6. **Metric Computation & Export:** Inundated surface area (_hectares and percentage cover_) is computed asynchronously and formatted for dynamic UI output and direct GIS exports.
 
 ---
 
@@ -134,17 +179,21 @@ The interactive GUI allows users to select the buffer distance, season and compa
 
 ## Primary Use Cases
 
-1. **Routine Catchment Auditing:** Environmental agencies and conservation NGOs can execute _seasonal_ or _annual audits_ to track canopy health trends across specific forest blocks or community reserves.
-2. **Post-Fire Damage & Clearance Assessments:** Disaster management units can _isolate wildfire scars_ from _clear-cutting_ to quantify burn severity, calculate total damaged hectares, and map recovery trajectories.
-3. **Stakeholder Reporting & Open Access Data:** Researchers, decision-makers, and field teams can _instantly generate standardized CSV summary tables_ and download aligned spatial GeoTIFFs for further spatial analysis.
+1. **Rapid Disaster Response:** Operational mapping of emergency flood extents during heavy rain events (e.g., _MAM Long Rains_) when cloud cover prevents optical satellite imaging.
+
+2. **Localized Damage Assessment:** Ward-level spatial evaluations to identify inundated critical infrastructure, residential zones, and agricultural fields.
+
+3. **Baseline Risk Profiling:** Historical flood footprint analysis to map _recurrent_ inundation hotspots and validate flood risk models.
 
 ---
 
 ## 📈 Impact & Applications
 
-1. **Targeted Conservation & Rapid Enforcement:** Distinguishing _active wildfire fronts_ from anthropogenic land clearing equips agency wardens (such as KFS and KWS) with actionable intelligence to _deploy targeted rapid-response teams_, _fight active blazes_, or _halt illegal logging operations_ in high-risk buffer zones.
-2. **Protecting Water Tower Ecosystem Services:** As one of Kenya’s primary montane water towers, _safeguarding the Mount Kenya catchment_ directly maintains downstream hydrological regulation, reducing reservoir siltation for hydroelectric power and sustaining agricultural water security.
-3. **Data-Driven Restoration & Policy:** Automated zonal reports provide _empirical metrics_ to guide _reforestation initiatives_, _evaluate community forest management (CFA) interventions_, and fulfill _international reporting obligations_ under frameworks like REDD+ and AFR100.
+1. **Cloud-Penetrating Disaster Intelligence:** Leverages C-band radar to penetrate dense storm clouds, delivering actionable spatial data when optical satellites fail.
+
+2. **Granular Resource Allocation:** Enables emergency responders and humanitarian aid teams to prioritize specific wards for targeted rescue and relief operations.
+
+3. **Automated GIS Integration:** Accelerates downstream reporting by providing automated, vector-ready spatial datasets directly to local planning agencies and decision-makers.
 
 ---
 
