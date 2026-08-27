@@ -10,7 +10,7 @@ theme:
   # and replace "material/earth" with any "material/..." icon name you prefer.
   icon:
     logo: material/earth
-    palette:
+  palette:
     # Available colors: red, pink, purple, deep purple, indigo, blue, light blue,
     # cyan, teal, green, light green, lime, yellow, amber, orange, deep orange
     - scheme: slate            # Dark mode
